@@ -12,13 +12,14 @@ import PointOfView.MainApp;
 import PointOfView.Util.View.PasswordInputDialog;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.Glow;
 import javafx.scene.effect.SepiaTone;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Paint;
+import javafx.scene.layout.GridPane;
 
 public class OrderLayoutController implements Initializable {
 	
@@ -37,6 +38,8 @@ public class OrderLayoutController implements Initializable {
 	
 	@FXML Label lbnRestaurant;
 	@FXML Label lbnCurrentTime;
+	
+	@FXML GridPane tableField;
 	
 	/** 핸들 정의 **/
 	@FXML
@@ -112,6 +115,20 @@ public class OrderLayoutController implements Initializable {
 	 * 테이블을 Ground 에 출력한다.
 	 */
 	private void showTablesOnTheGround(){
+		
+		
+		try{
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("TableOverviewLayout.fxml"));
+			BorderPane pane = loader.load();
+
+			TableOverviewLayoutController controller = loader.getController();
+			//controller.setMainApp(mainApp, pane);
+			
+			tableField.add(pane, 2, 2);
+			
+		}catch (Exception e){
+			
+		}
 		
 	}
 	
