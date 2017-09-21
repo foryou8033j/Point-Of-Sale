@@ -15,10 +15,13 @@ public class TitleLayoutController implements Initializable{
 
 	private MainApp mainApp = null;
 	
+	
+	
 	@FXML private Button btnOrderMenu;
 	@FXML private Button btnStockMenu;
 	@FXML private Button btnStaffMenu;
 	@FXML private Button btnStatisticsMenu;
+	@FXML private Button btnExit;
 	
 	/* 버튼 핸들러 관리 */
 	@FXML
@@ -26,12 +29,19 @@ public class TitleLayoutController implements Initializable{
 		showOrderMenu();
 	}
 	
-	
+	@FXML
+	private void handleExitButton() {
+		System.exit(1);
+	}
 	
 	
 	/* 레이아웃 로드 관리 */
 	private void showOrderMenu(){
 		try{
+			mainApp.getPrimaryStage().setFullScreenExitHint("");
+			mainApp.getPrimaryStage().setFullScreen(true);
+			
+			
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("../../Order/View/OrderLayout.fxml"));
 			BorderPane pane = loader.load();
 

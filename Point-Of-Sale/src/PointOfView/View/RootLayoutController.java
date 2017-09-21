@@ -5,9 +5,11 @@ import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
 import PointOfView.Title.View.TitleLayoutController;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 public class RootLayoutController implements Initializable{
@@ -15,6 +17,8 @@ public class RootLayoutController implements Initializable{
 	//메인앱과 연동 될 객체이다.
 	private MainApp mainApp = null;
 	private BorderPane rootPane = null;
+	
+	@FXML Label titleLabel;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -27,6 +31,9 @@ public class RootLayoutController implements Initializable{
 		// TODO Auto-generated constructor stub
 	}
 	
+	/**
+	 * 타이틀 메뉴를 로드한다.
+	 */
 	private void loadTitleMenu(){
 		try{
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Title/View/TitleLayout.fxml"));
@@ -42,6 +49,10 @@ public class RootLayoutController implements Initializable{
 		}catch (Exception e){
 			e.printStackTrace();
 		}
+	}
+	
+	private void loadTitleLabel() {
+		titleLabel.setText(mainApp.getManagementData().getPOSTitle());
 	}
 	
 	/**
@@ -64,6 +75,7 @@ public class RootLayoutController implements Initializable{
 		this.rootPane = rootPane;
 		
 		loadTitleMenu();
+		loadTitleLabel();
 		
 	}
 	

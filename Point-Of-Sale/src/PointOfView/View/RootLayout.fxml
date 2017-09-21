@@ -6,28 +6,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.RootLayoutController">
+<BorderPane stylesheets="@../../../CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.RootLayoutController">
    <top>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="121.0" prefWidth="265.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="뀨뀨까까 레스토랑">
+            <Label fx:id="titleLabel" text="뀨뀨까까 레스토랑">
                <font>
                   <Font name="Malgun Gothic Bold" size="65.0" />
                </font>
             </Label>
-            <Label text="Handsom man made Pusion Inferno awesome foods" textAlignment="CENTER" textFill="RED">
-               <font>
-                  <Font name="Eras Demi ITC" size="32.0" />
-               </font>
-            </Label>
-            <Label text="장동건이 면 삶고, 원빈이 튀겨드립니다" textAlignment="CENTER">
-               <font>
-                  <Font name="MHunmin" size="28.0" />
-               </font>
-            </Label>
+            <Label text="Point-Of-Sale" />
          </children>
          <BorderPane.margin>
-            <Insets top="60.0" />
+            <Insets />
          </BorderPane.margin>
       </VBox>
    </top>
