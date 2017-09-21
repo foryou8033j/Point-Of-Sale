@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import PointOfView.Model.DataManagement;
+import PointOfView.Order.Model.Tables;
 import PointOfView.View.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -25,11 +26,13 @@ public class MainApp extends Application {
 	
 	private DataManagement managementData = new DataManagement();
 	
+	private Tables tables;
+	
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
-		
+		this.tables = new Tables();
 		initStage();
 		showTitleMenu();
 	}
@@ -106,6 +109,14 @@ public class MainApp extends Application {
 	 */
 	public DataManagement getDataManagement() {
 		return managementData;
+	}
+	
+	/**
+	 * 테이블 정보를 반환한다.
+	 * @return
+	 */
+	public Tables getTables(){
+		return tables;
 	}
 	
 	public static void main(String[] args) {

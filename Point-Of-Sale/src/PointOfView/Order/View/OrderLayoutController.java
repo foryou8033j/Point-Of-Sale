@@ -9,6 +9,8 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
+import PointOfView.Order.Model.TableData;
+import PointOfView.Order.Model.Tables;
 import PointOfView.Util.View.PasswordInputDialog;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -76,6 +78,9 @@ public class OrderLayoutController implements Initializable {
 	private void handleMenuManagementButton(){
 		if(tableEditMode){
 			
+			
+			
+			
 		}else{
 			if(new PasswordInputDialog(mainApp).isPass()){
 				
@@ -114,22 +119,41 @@ public class OrderLayoutController implements Initializable {
 	/**
 	 * 테이블을 Ground 에 출력한다.
 	 */
-	private void showTablesOnTheGround(){
+	private void loadTablesOnTheGround(){
 		
 		
+		int size = mainApp.getTables().getSize();
+		
+		TableData[] tables = mainApp.getTables().getTableDatas();
+		TableOverviewLayoutController[] tableOverviewLayoutControllers= new TableOverviewLayoutController[size];
+		
+		for(int i=0; i<size; i++){
+			if(tables[i].isShow()){
+				
+				//여기다가 간이 정보를 연결한다.
+				
+				tableField.add(drawTablesOnTheGround(i, tableOverviewLayoutControllers[i]), tables[i].getColumn(), tables[i].getRow());
+			}
+				
+		}
+		
+	}
+	
+	private BorderPane drawTablesOnTheGround(int tableNumber, TableOverviewLayoutController controller){
 		try{
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("TableOverviewLayout.fxml"));
 			BorderPane pane = loader.load();
 
-			TableOverviewLayoutController controller = loader.getController();
+			controller = loader.getController();
 			//controller.setMainApp(mainApp, pane);
 			
-			tableField.add(pane, 2, 2);
+			return pane;
 			
 		}catch (Exception e){
 			
 		}
 		
+		return null;
 	}
 	
 	/** 기본 메소드 **/
@@ -189,7 +213,7 @@ public class OrderLayoutController implements Initializable {
 		lbnRestaurant.setText(mainApp.getDataManagement().getPOSTitle());
 		
 		//테이블을 Ground 에 출력한다.
-		showTablesOnTheGround();
+		loadTablesOnTheGround();
 		printCurrentTime();
 	}
 	
