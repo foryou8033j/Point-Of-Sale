@@ -12,12 +12,22 @@ public class TableDataModel {
 	}
 	
 	public void setColumnAndRow(int column, int row){
+		showTable = true;
 		this.column = column;
 		this.row = row;
 	}
 	
 	public boolean isShow(){
 		return showTable;
+	}
+	
+	public void setShow(boolean set)
+	{
+		showTable = set;
+		if(!showTable){
+			column = -1;
+			row = -1;
+		}
 	}
 	
 	public int getColumn(){
