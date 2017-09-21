@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.Title.View.TitleLayoutController">
+   <top>
+      <Button fx:id="btnOrderMenu" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleShowOrderMenu" prefHeight="200.0" prefWidth="600.0" text="주문 관리" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="5.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="Malgun Gothic Bold" size="75.0" />
+         </font>
+      </Button>
+   </top>
+   <left>
+      <Button fx:id="btnStockMenu" mnemonicParsing="false" prefHeight="200.0" prefWidth="200.0" text="발주/재고&#10;관리" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="5.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="Malgun Gothic Bold" size="28.0" />
+         </font>
+      </Button>
+   </left>
+   <right>
+      <Button fx:id="btnStaffMenu" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="200.0" prefWidth="200.0" text="직원 관리" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Malgun Gothic Bold" size="28.0" />
+         </font>
+      </Button>
+   </right>
+   <center>
+      <Button fx:id="btnStatisticsMenu" mnemonicParsing="false" prefHeight="200.0" prefWidth="200.0" text="정산/통계" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="5.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="Malgun Gothic Bold" size="28.0" />
+         </font>
+      </Button>
+   </center>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>

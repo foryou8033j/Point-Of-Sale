@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.Order.View.OrderLayoutController">
+   <top>
+      <BorderPane prefHeight="32.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <right>
+            <Button fx:id="btnPrevToTitle" mnemonicParsing="false" onAction="#handlePrevToTitleButton" prefHeight="50.0" prefWidth="50.0" text="X" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </top>
+</BorderPane>
