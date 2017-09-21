@@ -5,16 +5,13 @@ public class Tables {
 	
 	private TableData[] tableDatas = new TableData[80];
 	private int size;
+	private int index;
 	
 	public Tables() {
 		
-		int index=0;
+		index = 0;
 		
-		for(int i=0; i<8; i++){
-			for(int j=0; j<10; j++){
-				tableDatas[index++] = new TableData();
-			}
-		}
+		//기본으로 데이터를 가져올 경우 여기 추가한다.
 		
 		size = index;
 		
@@ -26,6 +23,11 @@ public class Tables {
 	
 	public int getSize(){
 		return size;
+	}
+	
+	public void addTable(int column, int row){
+		tableDatas[index++] = new TableData(column, row);
+		size = index;
 	}
 	
 }

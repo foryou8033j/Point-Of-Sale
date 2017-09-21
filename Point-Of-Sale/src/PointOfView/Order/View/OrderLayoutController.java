@@ -10,12 +10,12 @@ import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
 import PointOfView.Order.Model.TableData;
-import PointOfView.Order.Model.Tables;
 import PointOfView.Util.View.PasswordInputDialog;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.Glow;
@@ -26,6 +26,9 @@ import javafx.scene.layout.GridPane;
 public class OrderLayoutController implements Initializable {
 	
 	private boolean tableEditMode;
+	private boolean tableAddMode;
+	private boolean tableMoveMode;
+	private boolean tableShareMode;
 	
 	private MainApp mainApp = null;
 	private BorderPane ground = null;
@@ -67,9 +70,7 @@ public class OrderLayoutController implements Initializable {
 			tableEditMode = false;
 			btnTableManagement.setEffect(null);
 			
-			btnMenuManagement.setText("메뉴\n관리");
-			btnReceptionManagement.setText("영수증\n관리");
-			btnStasticsManagement.setText("정산\n통계");
+			resetButtonText();
 		}
 			
 	}
@@ -78,7 +79,52 @@ public class OrderLayoutController implements Initializable {
 	private void handleMenuManagementButton(){
 		if(tableEditMode){
 			
+			//mainApp.getTables().addTable(2, 2);
+			//loadTablesOnTheGround();
 			
+			if(!tableAddMode){
+				
+				if(!new PasswordInputDialog(mainApp).isPass()) return;
+					
+					
+				tableAddMode = true;
+				
+				btnMenuManagement.setText("완료");
+				btnReceptionManagement.setDisable(true);
+				btnStasticsManagement.setDisable(true);
+				
+				for(int i=0; i<8; i++){
+					for(int j=0; j<10; j++){
+						if(getNodeFromGridPane(tableField, i, j) == null){
+							
+							final int _i = i;
+							final int _j = j;
+							
+							final Button btn = new Button("ADD");
+							
+							btn.setOnAction(e -> {
+								mainApp.getTables().addTable(_i, _j);
+								loadTablesOnTheGround();
+							});
+							
+							tableField.add(btn, i, j);
+							
+						}
+							
+					}
+				}
+				
+			}else{
+				
+				tableField.getChildren().clear();
+				loadTablesOnTheGround();
+				
+				
+				tableAddMode = false;
+				btnMenuManagement.setText("추가");
+				btnReceptionManagement.setDisable(false);
+				btnStasticsManagement.setDisable(false);
+			}
 			
 			
 		}else{
@@ -95,11 +141,11 @@ public class OrderLayoutController implements Initializable {
 		if(tableEditMode){
 			
 		}else{
-			if(new PasswordInputDialog(mainApp).isPass()){
+			if(!new PasswordInputDialog(mainApp).isPass()) return;
 				
 				//여기에 영수증 관리 화면을 보여준다.
 				
-			}
+			
 		}
 	}
 	
@@ -108,11 +154,11 @@ public class OrderLayoutController implements Initializable {
 		if(tableEditMode){
 			
 		}else{
-			if(new PasswordInputDialog(mainApp).isPass()){
+			if(!new PasswordInputDialog(mainApp).isPass()) return;
 				
 				//여기에 정산, 통계 화면을 보여준다.
 				
-			}
+			
 		}
 	}
 	
@@ -131,8 +177,19 @@ public class OrderLayoutController implements Initializable {
 			if(tables[i].isShow()){
 				
 				//여기다가 간이 정보를 연결한다.
+				BorderPane pane = drawTablesOnTheGround(i, tableOverviewLayoutControllers[i]);
+				final int column = tables[i].getColumn();
+				final int row = tables[i].getRow();
 				
-				tableField.add(drawTablesOnTheGround(i, tableOverviewLayoutControllers[i]), tables[i].getColumn(), tables[i].getRow());
+				pane.setOnMouseClicked(e -> {
+					
+					pane.setStyle("-fx-border-color: #000000; -fx-border-width: 3;");
+					
+						
+					
+				});
+				
+				tableField.add(pane, tables[i].getColumn(), tables[i].getRow());
 			}
 				
 		}
@@ -155,6 +212,25 @@ public class OrderLayoutController implements Initializable {
 		
 		return null;
 	}
+	
+
+	
+	/**
+	 * GridPane으로부터 해당 col, row의 노드를 반환한다.
+	 * @param gridPane
+	 * @param col
+	 * @param row
+	 * @return
+	 */
+	private Node getNodeFromGridPane(GridPane gridPane, int col, int row) {
+	    for (Node node : gridPane.getChildren()) {
+	        if (GridPane.getColumnIndex(node) == col && GridPane.getRowIndex(node) == row) {
+	            return node;
+	        }
+	    }
+	    return null;
+	}
+	
 	
 	/** 기본 메소드 **/
 	@Override
@@ -197,6 +273,20 @@ public class OrderLayoutController implements Initializable {
 			
 			
 		}).start();
+	}
+	
+	/**
+	 * 버튼 기본 속성 관련
+	 */
+	
+	private void resetButtonText(){
+		btnMenuManagement.setText("메뉴\n관리");
+		btnReceptionManagement.setText("영수증\n관리");
+		btnStasticsManagement.setText("정산\n통계");
+		
+		btnMenuManagement.setDisable(false);
+		btnReceptionManagement.setDisable(false);
+		btnStasticsManagement.setDisable(false);
 	}
 	
 	/**
