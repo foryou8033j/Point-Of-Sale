@@ -52,7 +52,7 @@ public class RootLayoutController implements Initializable{
 	}
 	
 	private void loadTitleLabel() {
-		titleLabel.setText(mainApp.getManagementData().getPOSTitle());
+		titleLabel.setText(mainApp.getDataManagement().getPOSTitle());
 	}
 	
 	/**

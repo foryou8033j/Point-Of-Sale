@@ -41,13 +41,16 @@ public class TitleLayoutController implements Initializable{
 			mainApp.getPrimaryStage().setFullScreenExitHint("");
 			mainApp.getPrimaryStage().setFullScreen(true);
 			
+			//이전에 적용된 스타일을 제거한다.
+			mainApp.getRootLayoutController().getRootPane().setStyle("");
+			
 			
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("../../Order/View/OrderLayout.fxml"));
 			BorderPane pane = loader.load();
 
 			
 			OrderLayoutController controller = loader.getController();
-			controller.setMainApp(mainApp);
+			controller.setMainApp(mainApp, pane);
 			
 			mainApp.getRootLayoutController().showThisPane(pane);
 			

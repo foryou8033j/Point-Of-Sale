@@ -1,6 +1,9 @@
 package PointOfView;
 
-import PointOfView.Model.ManagementData;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
+import PointOfView.Model.DataManagement;
 import PointOfView.View.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +23,7 @@ public class MainApp extends Application {
 	private Stage primaryStage = null;
 	private RootLayoutController rootLayoutController = null;
 	
-	private ManagementData managementData = new ManagementData();
+	private DataManagement managementData = new DataManagement();
 	
 	
 	@Override
@@ -33,12 +36,21 @@ public class MainApp extends Application {
 	
 	
 	private void initStage(){
+		
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		double width = screenSize.getWidth();
+		double height = screenSize.getHeight();
+		
 		primaryStage.setAlwaysOnTop(true);
 		primaryStage.setFocused(true);
 		primaryStage.setWidth(800);
 		primaryStage.setHeight(670);
 		primaryStage.setResizable(false);
 		primaryStage.initStyle(StageStyle.UNDECORATED);
+		
+		//최초 화면을 무조건 화면 중앙으로 이동
+		primaryStage.setX(width / 2 - primaryStage.getWidth()/2 );
+		primaryStage.setY(height / 2 - primaryStage.getHeight()/2 );
 		
 		primaryStage.show();
 	}
@@ -90,9 +102,9 @@ public class MainApp extends Application {
 	
 	/**
 	 * ManagementData 를 반환한다.
-	 * @return {@link ManagementData}
+	 * @return {@link DataManagement}
 	 */
-	public ManagementData getManagementData() {
+	public DataManagement getDataManagement() {
 		return managementData;
 	}
 	

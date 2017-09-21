@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.Title.View.TitleLayoutController">
+<BorderPane maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../../CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.Title.View.TitleLayoutController">
    <top>
-      <Button fx:id="btnOrderMenu" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#handleShowOrderMenu" prefHeight="200.0" prefWidth="600.0" text="주문 관리" BorderPane.alignment="CENTER">
+      <Button fx:id="btnOrderMenu" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#handleShowOrderMenu" prefHeight="200.0" prefWidth="600.0" style="-fx-font-size: 48; -fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold;" text="주문 관리" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="5.0" />
          </BorderPane.margin>
@@ -17,7 +17,7 @@
       </Button>
    </top>
    <left>
-      <Button fx:id="btnStockMenu" defaultButton="true" mnemonicParsing="false" prefHeight="200.0" prefWidth="200.0" text="발주/재고&#10;관리" textAlignment="CENTER" BorderPane.alignment="CENTER">
+      <Button fx:id="btnStockMenu" defaultButton="true" mnemonicParsing="false" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: &quot;Malgun Gothic&quot;;" text="재고 관리" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets right="5.0" />
          </BorderPane.margin>
@@ -27,14 +27,14 @@
       </Button>
    </left>
    <right>
-      <Button fx:id="btnStaffMenu" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="200.0" prefWidth="200.0" text="직원 관리" BorderPane.alignment="CENTER">
+      <Button fx:id="btnStaffMenu" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: &quot;Malgun Gothic&quot;;" text="직원 관리" BorderPane.alignment="CENTER">
          <font>
             <Font name="Malgun Gothic Bold" size="28.0" />
          </font>
       </Button>
    </right>
    <center>
-      <Button fx:id="btnStatisticsMenu" defaultButton="true" mnemonicParsing="false" prefHeight="200.0" prefWidth="200.0" text="정산/통계" BorderPane.alignment="CENTER">
+      <Button fx:id="btnStatisticsMenu" defaultButton="true" mnemonicParsing="false" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: &quot;Malgun Gothic&quot;;" text="환경 설정" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets right="5.0" />
          </BorderPane.margin>
@@ -47,7 +47,7 @@
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
    <bottom>
-      <Button fx:id="btnExit" defaultButton="true" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="60.0" prefWidth="580.0" text="종료" textFill="RED" BorderPane.alignment="CENTER">
+      <Button fx:id="btnExit" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="60.0" prefWidth="580.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: &quot;Malgun Gothic&quot;; -fx-text-fill: red;" text="종료" textFill="RED" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets top="5.0" />
          </BorderPane.margin>
