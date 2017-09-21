@@ -140,6 +140,27 @@ public class OrderLayoutController implements Initializable {
 	private void handleReceptionManagementButton(){
 		if(tableEditMode){
 			
+			if(!tableMoveMode){
+				tableMoveMode = true;
+				btnReceptionManagement.setText("완료");
+				btnMenuManagement.setDisable(true);
+				btnStasticsManagement.setDisable(true);
+			}else{
+				tableMoveMode = false;
+				
+				tableField.getChildren().clear();
+				loadTablesOnTheGround();
+				
+				
+				btnReceptionManagement.setText("이동");
+				btnMenuManagement.setDisable(false);
+				btnStasticsManagement.setDisable(false);
+			}
+			
+			
+			
+			
+			
 		}else{
 			if(!new PasswordInputDialog(mainApp).isPass()) return;
 				
@@ -152,7 +173,22 @@ public class OrderLayoutController implements Initializable {
 	@FXML
 	private void handleStasticsManagementhButton(){
 		if(tableEditMode){
-			
+			if(!tableShareMode){
+				tableShareMode = true;
+				btnStasticsManagement.setText("완료");
+				btnReceptionManagement.setDisable(true);
+				btnMenuManagement.setDisable(true);
+			}else{
+				tableShareMode = false;
+				
+				tableField.getChildren().clear();
+				loadTablesOnTheGround();
+				
+				
+				btnStasticsManagement.setText("합석");
+				btnReceptionManagement.setDisable(false);
+				btnMenuManagement.setDisable(false);
+			}
 		}else{
 			if(!new PasswordInputDialog(mainApp).isPass()) return;
 				
@@ -183,7 +219,8 @@ public class OrderLayoutController implements Initializable {
 				
 				pane.setOnMouseClicked(e -> {
 					
-					pane.setStyle("-fx-border-color: #000000; -fx-border-width: 3;");
+					if(tableMoveMode || tableShareMode)
+						pane.setStyle("-fx-border-color: #000000; -fx-border-width: 3;");
 					
 						
 					
