@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
 import PointOfView.Order.Model.TableData;
+import PointOfView.Order.Table.View.TableViewLayoutController;
 import PointOfView.Util.View.PasswordInputDialog;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -40,6 +41,7 @@ public class OrderLayoutController implements Initializable {
 	private BorderPane ground = null;
 	
 	private ObservableList<TableData> removeTableList = FXCollections.observableArrayList(); 
+	private TableData originalTableData = null;
 	
 	/** 컴포넌트 정의 **/
 	@FXML Button btnPrevToTitle;
@@ -93,7 +95,6 @@ public class OrderLayoutController implements Initializable {
 				
 				if(!new PasswordInputDialog(mainApp).isPass()) return;
 					
-				tableField.getChildren().clear();
 					
 				tableAddMode = true;
 				
@@ -112,19 +113,17 @@ public class OrderLayoutController implements Initializable {
 							
 							btn.setOnAction(e -> {
 								mainApp.getTables().addTable(_i, _j);
-								loadTablesOnTheGround(TableMode.EDIT);
+								loadTablesOnTheGround(TableMode.EDIT, false);
 							});
 							
 							tableField.add(btn, i, j);
-							
-						}
-							
+						}	
 					}
 				}
+				loadTablesOnTheGround(TableMode.EDIT, false);
 				
 			}else{
 				
-				tableField.getChildren().clear();
 				
 				if(removeTableList.size() > 0) {
 					
@@ -134,7 +133,7 @@ public class OrderLayoutController implements Initializable {
 					removeTableList.clear();
 				}
 				
-				loadTablesOnTheGround(TableMode.NOMAL);
+				loadTablesOnTheGround(TableMode.NOMAL, true);
 				
 				
 				tableAddMode = false;
@@ -162,16 +161,17 @@ public class OrderLayoutController implements Initializable {
 				btnReceptionManagement.setText("완료");
 				btnMenuManagement.setDisable(true);
 				btnStasticsManagement.setDisable(true);
+				
+				loadTablesOnTheGround(TableMode.MOVE, true);
 			}else{
 				tableMoveMode = false;
 				
-				tableField.getChildren().clear();
-				loadTablesOnTheGround(TableMode.MOVE);
-				
-				
+				originalTableData = null;
 				btnReceptionManagement.setText("이동");
 				btnMenuManagement.setDisable(false);
 				btnStasticsManagement.setDisable(false);
+				
+				loadTablesOnTheGround(TableMode.NOMAL, true);
 			}
 			
 			
@@ -198,8 +198,8 @@ public class OrderLayoutController implements Initializable {
 			}else{
 				tableShareMode = false;
 				
-				tableField.getChildren().clear();
-				loadTablesOnTheGround(TableMode.SHARE);
+				
+				loadTablesOnTheGround(TableMode.SHARE, true);
 				
 				
 				btnStasticsManagement.setText("합석");
@@ -218,7 +218,10 @@ public class OrderLayoutController implements Initializable {
 	/**
 	 * 테이블을 Ground 에 출력한다.
 	 */
-	private void loadTablesOnTheGround(TableMode tableMode){
+	private void loadTablesOnTheGround(TableMode tableMode, boolean clearMode){
+		
+		if(clearMode)
+			tableField.getChildren().clear();
 		
 		int size = mainApp.getTables().getSize();
 		
@@ -235,41 +238,98 @@ public class OrderLayoutController implements Initializable {
 				final int column = tables.get(i).getColumn();
 				final int row = tables.get(i).getRow();
 				
+				if(removeTableList.contains(tables.get(index))) {
+					pane.setStyle("-fx-border-color: #FF0000; "
+							+ "-fx-border-width: 1.5;"
+							+ "-fx-border-radius: 15;"
+							+ "-fx-background-radius: 16.4, 15;"
+							+ "-fx-background-color: #FFEEE9");
+				}else if(originalTableData != null && originalTableData.equals(tables.get(index))){
+					pane.setStyle("-fx-border-color: #00FF00;"
+							+ "-fx-border-width: 1.5;"
+							+ "-fx-border-radius: 15;"
+							+ "-fx-background-radius: 16.4, 15;"
+							+ "-fx-background-color: #EEFFE9");
+				}else{
+					pane.setStyle("-fx-border-color: #000000;"
+							+ "-fx-border-width: 1.5;"
+							+ "-fx-border-radius: 15;"
+							+ "-fx-background-radius: 16.4, 15;"
+							+ "-fx-background-color: #EFFFE9");
+					
+				}
+				
+
+				pane.setOnMousePressed(e -> {
+					pane.setStyle("-fx-border-color: #0000FF;"
+							+ "-fx-border-width: 1.5;"
+							+ "-fx-border-radius: 15;"
+							+ "-fx-background-radius: 16.4, 15;"
+							+ "-fx-background-color: #FFFFFF");
+				});
+				
+				pane.setOnMouseReleased(e -> {
+					pane.setStyle("-fx-border-color: #000000; "
+							+ "-fx-border-width: 1.5;"
+							+ "-fx-border-radius: 15;"
+							+ "-fx-background-radius: 16.4, 15;"
+							+ "-fx-background-color: #EFFFE9");
+				});
 				
 				pane.setOnMouseClicked(e -> {
-					
-					if(tableMoveMode || tableShareMode)
-						pane.setStyle("-fx-border-color: #000000; "
-								+ "-fx-border-width: 3;"
-								+ "-fx-border-radius: 15;"
-								+ "-fx-background-radius: 16.4, 15;");
 					
 					switch(tableMode) {
 					
 					case NOMAL:
-						//테이블 관리 메뉴를 보여준다.
+						
 						break;
 						
 					case EDIT:
-						//수정 모드에서 선택 될 경우는 삭제라고 가정한다.
-						if(removeTableList.contains(tables.get(index))) {
-							removeTableList.remove(tables.get(index));
-							pane.setStyle("-fx-border-color: #000000; "
-									+ "-fx-border-width: 3;"
-									+ "-fx-border-radius: 15;"
-									+ "-fx-background-radius: 16.4, 15;");
-						}else {
-							removeTableList.add(tables.get(index));
-							pane.setStyle("-fx-border-color: #FF0000; "
-									+ "-fx-border-width: 3;"
-									+ "-fx-border-radius: 15;"
-									+ "-fx-background-radius: 16.4, 15;");
-						}
-							
 						
+						//수정 모드에서 선택 될 경우는 삭제라고 가정한다.
+						if(removeTableList.contains(tables.get(index)))
+							removeTableList.remove(tables.get(index));
+						else 
+							removeTableList.add(tables.get(index));
+						
+						loadTablesOnTheGround(TableMode.EDIT, false);
 						break;
 						
 					case MOVE:
+						//이동모드에서 선택 될 경우 이동 될 대상이 된다.
+						if(originalTableData != null && originalTableData.equals(tables.get(index))){
+							originalTableData = null;
+							loadTablesOnTheGround(TableMode.MOVE, true);
+							break;
+						}
+							
+						
+						originalTableData = tables.get(index);
+
+						if(originalTableData.equals(tables.get(index))){
+							
+							for(int a=0; a<8; a++){
+								for(int b=0; b<10; b++){
+									if(getNodeFromGridPane(tableField, a, b) == null){
+										
+										final int _i = a;
+										final int _j = b;
+										
+										final Button btn = new Button("MOVE");
+										
+										btn.setOnAction(ee -> {
+											tables.get(index).setColumnAndRow(_i, _j);
+											originalTableData = null;
+											loadTablesOnTheGround(TableMode.MOVE, true);
+										});
+										
+										tableField.add(btn, a, b);
+									}
+								}
+							}
+							
+							loadTablesOnTheGround(TableMode.MOVE, false);
+						}
 						break;
 						
 					case SHARE:
@@ -310,6 +370,32 @@ public class OrderLayoutController implements Initializable {
 		return null;
 	}
 	
+	/**
+	 * 선택 된 테이블을 보여준다.
+	 */
+	private void showTableMenu(TableData tableData){
+		try{
+			mainApp.getPrimaryStage().setFullScreenExitHint("");
+			mainApp.getPrimaryStage().setFullScreen(true);
+			
+			//이전에 적용된 스타일을 제거한다.
+			mainApp.getRootLayoutController().getRootPane().setStyle("");
+			
+			
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Table/View/TableViewLayout.fxml"));
+			BorderPane pane = loader.load();
+
+			
+			TableViewLayoutController controller = loader.getController();
+			controller.setMainApp(mainApp);
+			
+			mainApp.getRootLayoutController().showThisPane(pane);
+			
+			
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
 
 	
 	/**
@@ -362,8 +448,7 @@ public class OrderLayoutController implements Initializable {
 				try {
 					new Robot().delay(1);
 				} catch (AWTException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					//ignore
 				}
 				
 			}
@@ -400,7 +485,7 @@ public class OrderLayoutController implements Initializable {
 		lbnRestaurant.setText(mainApp.getDataManagement().getPOSTitle());
 		
 		//테이블을 Ground 에 출력한다.
-		loadTablesOnTheGround(TableMode.NOMAL);
+		loadTablesOnTheGround(TableMode.NOMAL, true);
 		printCurrentTime();
 	}
 	
