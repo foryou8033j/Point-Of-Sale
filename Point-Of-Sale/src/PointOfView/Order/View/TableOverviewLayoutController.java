@@ -1,6 +1,7 @@
 package PointOfView.Order.View;
 
 import java.net.URL;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
@@ -22,6 +23,9 @@ public class TableOverviewLayoutController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
+
+		Calendar ad = Calendar.getInstance();
+		
 		
 	}
 	
