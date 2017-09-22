@@ -36,7 +36,7 @@ public class TitleLayoutController implements Initializable{
 	
 	
 	/* 레이아웃 로드 관리 */
-	private void showOrderMenu(){
+	public void showOrderMenu(){
 		try{
 			mainApp.getPrimaryStage().setFullScreenExitHint("");
 			mainApp.getPrimaryStage().setFullScreen(true);
