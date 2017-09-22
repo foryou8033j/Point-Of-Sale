@@ -18,7 +18,9 @@ public class RootLayoutController implements Initializable{
 	private MainApp mainApp = null;
 	private BorderPane rootPane = null;
 	
-	@FXML Label titleLabel;
+	@FXML Label titleLabel;	
+	
+	TitleLayoutController controller = null;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -40,7 +42,7 @@ public class RootLayoutController implements Initializable{
 			BorderPane pane = loader.load();
 
 			
-			TitleLayoutController controller = loader.getController();
+			controller = loader.getController();
 			controller.setMainApp(mainApp);
 			
 			rootPane.setCenter(pane);
@@ -61,6 +63,13 @@ public class RootLayoutController implements Initializable{
 	 */
 	public BorderPane getRootPane(){
 		return rootPane;
+	}
+	
+	/**
+	 * 주문 메뉴를 보여준다.
+	 */
+	public void showOrderMenu(){
+		controller.showOrderMenu();
 	}
 	
 	public void showThisPane(Node pane){
