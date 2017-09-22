@@ -17,7 +17,7 @@
    <top>
       <BorderPane prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #FFFFF3; -fx-border-color: #000000; -fx-border-width: 1.5;" BorderPane.alignment="CENTER">
          <right>
-            <Button fx:id="btnPrevToTitle" defaultButton="true" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" text="◀" BorderPane.alignment="CENTER" />
+            <Button fx:id="btnPrevToTitle" defaultButton="true" mnemonicParsing="false" onAction="#handlePrevToTitleButton" prefHeight="80.0" prefWidth="80.0" text="◀" BorderPane.alignment="CENTER" />
          </right>
          <center>
             <Label text="Table Number" BorderPane.alignment="CENTER">
@@ -102,7 +102,7 @@
    <center>
       <BorderPane prefHeight="550.0" prefWidth="602.0" BorderPane.alignment="CENTER">
          <right>
-            <GridPane gridLinesVisible="true" hgap="5.0" prefHeight="550.0" prefWidth="551.0" vgap="5.0" BorderPane.alignment="CENTER">
+            <GridPane gridLinesVisible="true" hgap="5.0" prefHeight="550.0" prefWidth="650.0" vgap="5.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

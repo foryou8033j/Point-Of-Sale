@@ -281,6 +281,7 @@ public class OrderLayoutController implements Initializable {
 					switch(tableMode) {
 					
 					case NOMAL:
+						showTableMenu(tables.get(index));
 						
 						break;
 						
