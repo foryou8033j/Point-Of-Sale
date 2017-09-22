@@ -5,30 +5,29 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #EFFFE9;" stylesheets="@../../../../CSS/JMetroLightTheme.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="PointOfView.Order.View.TableOverviewLayoutController">
+<BorderPane prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #EFFFE9; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-border-radius: 15; -fx-background-radius: 16.4, 5;" stylesheets="@../../../../CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.Order.View.TableOverviewLayoutController">
    <top>
-      <Label text="TableNumberLabel" BorderPane.alignment="CENTER_LEFT">
+      <Label fx:id="tableNumber" alignment="CENTER" text="TableNumberLabel" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="5.0" top="2.0" />
          </BorderPane.margin>
          <font>
-            <Font name="Malgun Gothic Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
    </top>
    <bottom>
-      <Label text="TablePriceLabel" BorderPane.alignment="CENTER_RIGHT">
+      <Label fx:id="tableSumPrice" text="TablePriceLabel" BorderPane.alignment="CENTER_RIGHT">
          <BorderPane.margin>
             <Insets bottom="2.0" right="5.0" />
          </BorderPane.margin>
          <font>
-            <Font name="Malgun Gothic" size="12.0" />
+            <Font name="System Bold" size="12.0" />
          </font>
       </Label>
    </bottom>
    <center>
-      <Label text="Order Resipe List" BorderPane.alignment="TOP_LEFT">
+      <Label fx:id="tableMenuList" text="Order Resipe List" BorderPane.alignment="TOP_LEFT">
          <BorderPane.margin>
             <Insets left="5.0" top="2.0" />
          </BorderPane.margin>
