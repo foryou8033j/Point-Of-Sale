@@ -44,7 +44,7 @@ public class MainApp extends Application {
 		double width = screenSize.getWidth();
 		double height = screenSize.getHeight();
 		
-		primaryStage.setAlwaysOnTop(true);
+		//primaryStage.setAlwaysOnTop(true);
 		primaryStage.setFocused(true);
 		primaryStage.setWidth(800);
 		primaryStage.setHeight(670);

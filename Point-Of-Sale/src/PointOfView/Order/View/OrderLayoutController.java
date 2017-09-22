@@ -12,10 +12,14 @@ import PointOfView.MainApp;
 import PointOfView.Order.Model.TableData;
 import PointOfView.Util.View.PasswordInputDialog;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.Glow;
@@ -25,6 +29,8 @@ import javafx.scene.layout.GridPane;
 
 public class OrderLayoutController implements Initializable {
 	
+	private enum TableMode {NOMAL, EDIT, MOVE, SHARE};
+	
 	private boolean tableEditMode;
 	private boolean tableAddMode;
 	private boolean tableMoveMode;
@@ -33,6 +39,7 @@ public class OrderLayoutController implements Initializable {
 	private MainApp mainApp = null;
 	private BorderPane ground = null;
 	
+	private ObservableList<TableData> removeTableList = FXCollections.observableArrayList(); 
 	
 	/** 컴포넌트 정의 **/
 	@FXML Button btnPrevToTitle;
@@ -62,7 +69,7 @@ public class OrderLayoutController implements Initializable {
 				btnTableManagement.setEffect(sepiaTone);
 				tableEditMode = true;
 				
-				btnMenuManagement.setText("추가");
+				btnMenuManagement.setText("편집");
 				btnReceptionManagement.setText("이동");
 				btnStasticsManagement.setText("합석");
 			
@@ -86,6 +93,7 @@ public class OrderLayoutController implements Initializable {
 				
 				if(!new PasswordInputDialog(mainApp).isPass()) return;
 					
+				tableField.getChildren().clear();
 					
 				tableAddMode = true;
 				
@@ -104,7 +112,7 @@ public class OrderLayoutController implements Initializable {
 							
 							btn.setOnAction(e -> {
 								mainApp.getTables().addTable(_i, _j);
-								loadTablesOnTheGround();
+								loadTablesOnTheGround(TableMode.EDIT);
 							});
 							
 							tableField.add(btn, i, j);
@@ -117,11 +125,20 @@ public class OrderLayoutController implements Initializable {
 			}else{
 				
 				tableField.getChildren().clear();
-				loadTablesOnTheGround();
+				
+				if(removeTableList.size() > 0) {
+					
+					for(TableData data:removeTableList)
+						mainApp.getTables().removeTable(data);
+					
+					removeTableList.clear();
+				}
+				
+				loadTablesOnTheGround(TableMode.NOMAL);
 				
 				
 				tableAddMode = false;
-				btnMenuManagement.setText("추가");
+				btnMenuManagement.setText("편집");
 				btnReceptionManagement.setDisable(false);
 				btnStasticsManagement.setDisable(false);
 			}
@@ -149,7 +166,7 @@ public class OrderLayoutController implements Initializable {
 				tableMoveMode = false;
 				
 				tableField.getChildren().clear();
-				loadTablesOnTheGround();
+				loadTablesOnTheGround(TableMode.MOVE);
 				
 				
 				btnReceptionManagement.setText("이동");
@@ -182,7 +199,7 @@ public class OrderLayoutController implements Initializable {
 				tableShareMode = false;
 				
 				tableField.getChildren().clear();
-				loadTablesOnTheGround();
+				loadTablesOnTheGround(TableMode.SHARE);
 				
 				
 				btnStasticsManagement.setText("합석");
@@ -201,50 +218,93 @@ public class OrderLayoutController implements Initializable {
 	/**
 	 * 테이블을 Ground 에 출력한다.
 	 */
-	private void loadTablesOnTheGround(){
-		
+	private void loadTablesOnTheGround(TableMode tableMode){
 		
 		int size = mainApp.getTables().getSize();
 		
-		TableData[] tables = mainApp.getTables().getTableDatas();
+		ObservableList<TableData> tables = mainApp.getTables().getTableDatas();
 		TableOverviewLayoutController[] tableOverviewLayoutControllers= new TableOverviewLayoutController[size];
 		
 		for(int i=0; i<size; i++){
-			if(tables[i].isShow()){
+			if(tables.get(i).isShow()){
+				
+				final int index = i;
 				
 				//여기다가 간이 정보를 연결한다.
-				BorderPane pane = drawTablesOnTheGround(i, tableOverviewLayoutControllers[i]);
-				final int column = tables[i].getColumn();
-				final int row = tables[i].getRow();
+				BorderPane pane = drawTablesOnTheGround(i, tableOverviewLayoutControllers[i], tables.get(i));
+				final int column = tables.get(i).getColumn();
+				final int row = tables.get(i).getRow();
+				
 				
 				pane.setOnMouseClicked(e -> {
 					
 					if(tableMoveMode || tableShareMode)
-						pane.setStyle("-fx-border-color: #000000; -fx-border-width: 3;");
+						pane.setStyle("-fx-border-color: #000000; "
+								+ "-fx-border-width: 3;"
+								+ "-fx-border-radius: 15;"
+								+ "-fx-background-radius: 16.4, 15;");
 					
+					switch(tableMode) {
+					
+					case NOMAL:
+						//테이블 관리 메뉴를 보여준다.
+						break;
 						
+					case EDIT:
+						//수정 모드에서 선택 될 경우는 삭제라고 가정한다.
+						if(removeTableList.contains(tables.get(index))) {
+							removeTableList.remove(tables.get(index));
+							pane.setStyle("-fx-border-color: #000000; "
+									+ "-fx-border-width: 3;"
+									+ "-fx-border-radius: 15;"
+									+ "-fx-background-radius: 16.4, 15;");
+						}else {
+							removeTableList.add(tables.get(index));
+							pane.setStyle("-fx-border-color: #FF0000; "
+									+ "-fx-border-width: 3;"
+									+ "-fx-border-radius: 15;"
+									+ "-fx-background-radius: 16.4, 15;");
+						}
+							
+						
+						break;
+						
+					case MOVE:
+						break;
+						
+					case SHARE:
+						break;
+						
+					}
 					
 				});
 				
-				tableField.add(pane, tables[i].getColumn(), tables[i].getRow());
+				tableField.add(pane, tables.get(i).getColumn(), tables.get(i).getRow());
 			}
 				
 		}
 		
 	}
 	
-	private BorderPane drawTablesOnTheGround(int tableNumber, TableOverviewLayoutController controller){
+	private BorderPane drawTablesOnTheGround(int tableNumber, TableOverviewLayoutController controller, TableData tableData){
 		try{
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("TableOverviewLayout.fxml"));
 			BorderPane pane = loader.load();
 
 			controller = loader.getController();
-			//controller.setMainApp(mainApp, pane);
+			
+			//디버그를 위한 메뉴 추가
+			/*tableData.addMenu(mainApp.getDataManagement().getMenues().getMenuItems().get(0));
+			tableData.addMenu(mainApp.getDataManagement().getMenues().getMenuItems().get(1));
+			tableData.addMenu(mainApp.getDataManagement().getMenues().getMenuItems().get(2));*/
+			
+			
+			controller.setMainApp(mainApp, tableData);
 			
 			return pane;
 			
 		}catch (Exception e){
-			
+			e.printStackTrace();
 		}
 		
 		return null;
@@ -340,7 +400,7 @@ public class OrderLayoutController implements Initializable {
 		lbnRestaurant.setText(mainApp.getDataManagement().getPOSTitle());
 		
 		//테이블을 Ground 에 출력한다.
-		loadTablesOnTheGround();
+		loadTablesOnTheGround(TableMode.NOMAL);
 		printCurrentTime();
 	}
 	
