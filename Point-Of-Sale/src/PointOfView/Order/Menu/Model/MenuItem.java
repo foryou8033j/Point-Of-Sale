@@ -1,12 +1,17 @@
 package PointOfView.Order.Menu.Model;
 
-public class MenuItem {
+import PointOfView.Order.Table.Model.GridPositionModel;
+
+public class MenuItem extends GridPositionModel{
 
 	private String name = null;
 	private String category = null;
 	private int price;
 	
 	public MenuItem(String name, String category, int price) {
+		
+		super(false);
+		
 		this.name = new String(name);
 		this.category = new String(category);
 		this.price = price;

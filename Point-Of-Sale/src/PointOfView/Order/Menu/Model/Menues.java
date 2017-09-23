@@ -19,6 +19,13 @@ public class Menues {
 				new MenuItem("공기밥", "주메뉴", 1000),
 				new MenuItem("탕수육", "주메뉴", 14000),
 				new MenuItem("자장면", "주메뉴", 5000),
+				new MenuItem("자장면", "주메뉴", 5000),
+				new MenuItem("자장면", "주메뉴", 5000),
+				new MenuItem("자장면", "주메뉴", 5000),
+				new MenuItem("자장면", "주메뉴", 5000),
+				new MenuItem("자장면", "주메뉴", 5000),
+				new MenuItem("자장면", "주메뉴", 5000),
+				new MenuItem("자장면", "주메뉴", 5000),
 				new MenuItem("짬뽕", "주메뉴", 6000));
 	}
 	
