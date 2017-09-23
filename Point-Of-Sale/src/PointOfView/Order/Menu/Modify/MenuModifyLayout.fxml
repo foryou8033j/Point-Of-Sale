@@ -42,8 +42,8 @@
    <bottom>
       <FlowPane alignment="CENTER_RIGHT" hgap="10.0" prefHeight="50.0" prefWidth="685.0" BorderPane.alignment="CENTER">
          <children>
-            <Button defaultButton="true" mnemonicParsing="false" onAction="#handleMenuAdd" prefHeight="46.0" prefWidth="161.0" text="메뉴 추가" />
-            <Button defaultButton="true" mnemonicParsing="false" onAction="#handleSave" prefHeight="46.0" prefWidth="74.0" text="닫기" />
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#handleMenuAdd" prefHeight="46.0" prefWidth="161.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-size: 20; -fx-font-weight: bold;" text="메뉴 추가" />
+            <Button mnemonicParsing="false" onAction="#handleSave" prefHeight="46.0" prefWidth="74.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-size: 14; -fx-font-weight: bold;" text="닫기" />
          </children>
          <BorderPane.margin>
             <Insets top="5.0" />

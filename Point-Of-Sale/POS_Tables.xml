@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Tables>
+    <table index="0" column="1" row="1" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="1" column="1" row="2" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="2" column="2" row="1" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="3" column="2" row="2" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="4" column="4" row="3" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="5" column="4" row="4" show="true">
+        <discount>5000</discount>
+    </table>
+    <table index="6" column="5" row="4" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="7" column="5" row="3" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="8" column="2" row="6" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="9" column="2" row="7" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="10" column="1" row="7" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="11" column="1" row="6" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="12" column="6" row="6" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="13" column="6" row="7" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="14" column="7" row="6" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="15" column="7" row="7" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="16" column="6" row="0" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="17" column="6" row="1" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="18" column="7" row="0" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="19" column="7" row="1" show="true">
+        <discount>0</discount>
+    </table>
+</Tables>

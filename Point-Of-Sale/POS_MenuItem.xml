@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Menuitems>
+    <menuitem category="주메뉴" name="정통육개장" price="8000" column="0" row="0" show="true"/>
+    <menuitem category="주메뉴" name="맑은육개장" price="8000" column="1" row="0" show="true"/>
+    <menuitem category="주메뉴" name="육개장칼국수" price="8000" column="2" row="0" show="true"/>
+    <menuitem category="주메뉴" name="떡만두국" price="8000" column="3" row="0" show="true"/>
+    <menuitem category="어린이메뉴" name="어린이맑은육개장" price="5000" column="1" row="1" show="true"/>
+    <menuitem category="어린이메뉴" name="어린이떡만두국" price="5000" column="3" row="1" show="true"/>
+    <menuitem category="주메뉴" name="양지육개장전골(소)" price="21000" column="0" row="3" show="true"/>
+    <menuitem category="주메뉴" name="양지육개장전골(중)" price="26000" column="1" row="3" show="true"/>
+    <menuitem category="주메뉴" name="양지육개장전골(대)" price="32000" column="2" row="3" show="true"/>
+    <menuitem category="주메뉴" name="모듬육개장전골(소)" price="21000" column="0" row="4" show="true"/>
+    <menuitem category="주메뉴" name="모듬육개장전골(중)" price="26000" column="1" row="4" show="true"/>
+    <menuitem category="주메뉴" name="모듬육개장전골(대)" price="32000" column="2" row="4" show="true"/>
+    <menuitem category="주류" name="맛있는 참" price="4000" column="0" row="6" show="true"/>
+    <menuitem category="주류" name="참이슬" price="4000" column="1" row="6" show="true"/>
+    <menuitem category="주류" name="하이트" price="4500" column="0" row="7" show="true"/>
+    <menuitem category="주류" name="카스" price="4500" column="1" row="7" show="true"/>
+    <menuitem category="음료수" name="콜라" price="1000" column="5" row="5" show="true"/>
+    <menuitem category="음료수" name="사이다" price="1000" column="5" row="6" show="true"/>
+    <menuitem category="음료수" name="환타" price="1000" column="5" row="7" show="true"/>
+    <menuitem category="주류" name="매화수" price="5000" column="2" row="6" show="true"/>
+    <menuitem category="주류" name="청하" price="4500" column="2" row="7" show="true"/>
+    <menuitem category="주류" name="막걸리" price="4000" column="3" row="7" show="true"/>
+    <menuitem category="부매뉴" name="메밀전병" price="5000" column="4" row="4" show="true"/>
+    <menuitem category="부매뉴" name="만두반접시" price="3500" column="4" row="3" show="true"/>
+    <menuitem category="부매뉴" name="한판보쌈" price="10000" column="5" row="4" show="true"/>
+    <menuitem category="부매뉴" name="만두한접시" price="7000" column="5" row="3" show="true"/>
+</Menuitems>

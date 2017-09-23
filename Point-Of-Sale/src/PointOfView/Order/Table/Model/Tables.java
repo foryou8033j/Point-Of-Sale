@@ -1,24 +1,29 @@
 package PointOfView.Order.Table.Model;
 
-import PointOfView.Order.Menu.Model.MenuItem;
+import java.io.File;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class Tables {
-
 	
+	private File file = new File("POS_Tables.xml");
 	private ObservableList<TableData> tableDatas;
 
 	public Tables() {
 		tableDatas = FXCollections.observableArrayList();
 		
-		//기본으로 데이터를 가져올 경우 여기 추가한다.
-		addTable(2, 2);
-		addTable(2, 3);
-		addTable(3, 4);
-		addTable(3, 5);
+		loadDataFromFile();
 		
-		
+		//TODO : 파일 저장 시에 할인율까지 저장되는 문제로 인해 로드 할 때 할인율 초기화
+		for(TableData data :tableDatas)
+			data.clearDiscount();
 		
 	}
 	
@@ -60,6 +65,54 @@ public class Tables {
 		for(int i=0; i<getSize(); i++) {
 			tableDatas.get(i).setTableIndex(i);
 		}
+	}
+	
+	
+public void loadDataFromFile() {
+	    
+		
+		try {
+			
+	        JAXBContext context = JAXBContext.newInstance(TableDataWrapper.class);
+	        Unmarshaller um = context.createUnmarshaller();
+
+	        // 파일로부터 XML을 읽은 다음 역 마샬링한다.
+	        TableDataWrapper wrapper = new TableDataWrapper();
+	        wrapper = (TableDataWrapper) um.unmarshal(file);
+
+	        tableDatas.clear();
+	        tableDatas.addAll(wrapper.getDatas());
+
+
+	    } catch (Exception e) { // 예외를 잡는다
+	    	e.printStackTrace();
+	    }
+	}
+	
+	
+	public void saveDataToFile() {
+	    try {
+
+	        JAXBContext context = JAXBContext.newInstance(TableDataWrapper.class);
+	        Marshaller m = context.createMarshaller();
+	        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+	        // 연락처 데이터를 감싼다.
+	        TableDataWrapper wrapper = new TableDataWrapper();
+	        wrapper.setDatas(tableDatas);
+
+	        // 마샬링 후 XML을 파일에 저장한다.
+	        m.marshal(wrapper, file);
+
+	    } catch (Exception e) { // 예외를 잡는다.
+	    	e.printStackTrace();
+	        Alert alert = new Alert(AlertType.ERROR);
+	        alert.setTitle("Error");
+	        alert.setHeaderText("Could not save data");
+	        alert.setContentText("Could not save data to file:\n" + file.getPath());
+
+	        alert.showAndWait();
+	    }
 	}
 	
 }

@@ -141,6 +141,7 @@ public class OrderLayoutController implements Initializable {
 				btnMenuManagement.setText("편집");
 				btnReceptionManagement.setDisable(false);
 				btnStasticsManagement.setDisable(false);
+				
 			}
 			
 			
@@ -173,6 +174,7 @@ public class OrderLayoutController implements Initializable {
 				btnStasticsManagement.setDisable(false);
 				
 				loadTablesOnTheGround(TableMode.NOMAL, true);
+				
 			}
 			
 			
@@ -228,6 +230,9 @@ public class OrderLayoutController implements Initializable {
 		
 		ObservableList<TableData> tables = mainApp.getTables().getTableDatas();
 		TableOverviewLayoutController[] tableOverviewLayoutControllers= new TableOverviewLayoutController[size];
+		
+		mainApp.getTables().saveDataToFile();
+		
 		
 		for(int i=0; i<size; i++){
 			if(tables.get(i).isShow()){
@@ -322,6 +327,7 @@ public class OrderLayoutController implements Initializable {
 										btn.setOnAction(ee -> {
 											tables.get(index).setColumnAndRow(_i, _j);
 											originalTableData = null;
+											
 											loadTablesOnTheGround(TableMode.MOVE, true);
 										});
 										

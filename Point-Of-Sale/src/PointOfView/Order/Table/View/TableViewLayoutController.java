@@ -4,13 +4,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
-import PointOfView.Model.Hbox_MenuItem;
 import PointOfView.Order.Menu.Model.MenuItem;
 import PointOfView.Order.Menu.Modify.MenuModifier;
 import PointOfView.Order.Table.Model.OrderList;
 import PointOfView.Order.Table.Model.TableData;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import PointOfView.Util.View.NumberInputDialog;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -19,7 +17,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -31,11 +30,13 @@ public class TableViewLayoutController implements Initializable{
 	private TableData tableData = null;
 	private TableData thisTableData = null;
 	
-	private ObservableList<Hbox_MenuItem> orderMenuList = FXCollections.observableArrayList();
-	
 	/** 컴포넌트 정의 **/
 	@FXML private GridPane menuPane;
-	@FXML private ListView<Hbox_MenuItem> orderList;
+	
+	@FXML private TableView<OrderList> tableView;
+	@FXML private TableColumn<OrderList, String> nameColumn;
+    @FXML private TableColumn<OrderList, String> countColumn;
+    @FXML private TableColumn<OrderList, String> priceColumn;
 	
 	@FXML private Button btnPrevToTitle;
 	
@@ -63,18 +64,21 @@ public class TableViewLayoutController implements Initializable{
 	
 	@FXML
 	private void handleMinusButton() {
-		thisTableData.removeMenu(mainApp.getDataManagement().getMenues().getMenuItems().get(1));
+		tableView.getSelectionModel().getSelectedItem().minusCount();
+		
 		printCurrentPrice();
 	}
 	
 	@FXML
 	private void handlePlusButton() {
-		thisTableData.addMenu(mainApp.getDataManagement().getMenues().getMenuItems().get(1));
+		tableView.getSelectionModel().getSelectedItem().plusCount();
 		printCurrentPrice();
 	}
 	
 	@FXML
 	private void handleDeleteButton() {
+		
+		tableView.getSelectionModel().getSelectedItem().clearCount();
 		printCurrentPrice();
 	}
 	
@@ -94,6 +98,14 @@ public class TableViewLayoutController implements Initializable{
 	@FXML
 	private void handleDiscountButton() {
 		
+		try {
+			thisTableData.setDiscount(new NumberInputDialog(mainApp, "할인 금액을 입력하세요.", false).getInputValue());
+		}catch (Exception e) {
+			//ignore
+		}
+		
+		
+		printCurrentPrice();
 	}
 	
 	@FXML
@@ -109,33 +121,17 @@ public class TableViewLayoutController implements Initializable{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+		
+		nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+		countColumn.setCellValueFactory(cellData -> cellData.getValue().countProperty().asString());
+		priceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty());
 		
 	}
 
-	private void drawOrderList() {
-		
-		
-		orderMenuList.clear();
-		
-		for(OrderList item:thisTableData.getOrderList()) {
-
-			Hbox_MenuItem pane = new Hbox_MenuItem(15, item.getMenuItem());
-			pane.setPrefHeight(50);
-			pane.setAlignment(Pos.CENTER_RIGHT);
-			
-			Label name = new Label(String.format("%30s%30d%,30d 원", item.getName(),item.getCount(),item.getPrice() ));
-			name.setFont(Font.font( "Malgun Gothic", FontWeight.BOLD, 24));
-			
-			pane.getChildren().addAll(name);
-			
-			orderMenuList.add(pane);
-			
-		}
-		
-	}
 	
 	private void drawMenuPane() {
+		
+		
 		
 		int showMenus = 0;
 		
@@ -148,10 +144,12 @@ public class TableViewLayoutController implements Initializable{
 			pane.setAlignment(Pos.CENTER);
 			
 			Label name = new Label(item.getName());
-			name.setFont(Font.font("맑은 고딕", FontWeight.BOLD, 24));
+			name.setFont(Font.font("Malgun Gothic", FontWeight.BOLD, 20));
+			if(name.getText().length()>5)
+				name.setFont(Font.font("Malgun Gothic", FontWeight.BOLD, 20 - name.getText().length()));
 			
 			Label price = new Label(String.format("%,10d 원", item.getPrice()));
-			name.setFont(Font.font("맑은 고딕", FontWeight.BOLD, 18));
+			price.setFont(Font.font("Malgun Gothic", FontWeight.BOLD, 14));
 			
 			pane.getChildren().add(name);
 			pane.getChildren().add(price);
@@ -182,7 +180,6 @@ public class TableViewLayoutController implements Initializable{
 			pane.setOnMouseClicked(e -> {
 				
 				thisTableData.addMenu(item);
-				drawOrderList();
 				printCurrentPrice();
 				
 			});
@@ -211,23 +208,23 @@ public class TableViewLayoutController implements Initializable{
 	
 	private void printCurrentPrice() {
 		lbnWholePrice.setText(String.format("%,20d 원", thisTableData.getSumPrice()));
+		lbnDiscountPrice.setText(String.format("- %,20d 원", thisTableData.getDiscount()));
+		lbnResultPrice.setText(String.format("%,20d 원", thisTableData.getSumPrice()-thisTableData.getDiscount()));
 	}
 	
 	public void setMainApp(MainApp mainApp, TableData tableData){
 		this.mainApp = mainApp;
 		this.tableData = tableData;
 		
+		
+		
 		thisTableData = new TableData();
 		thisTableData.copyData(tableData);
 		
-		orderList.setItems(orderMenuList);
-		
-		
+		tableView.setItems(thisTableData.getOrderList());
 		
 		lbnTableTitle.setText(String.valueOf(tableData.getTableIndex()+1 + " 번 테이블"));
 		printCurrentPrice();
-		
-		drawOrderList();
 
 		drawMenuPane();
 	}

@@ -56,7 +56,13 @@ public class TableOverviewLayoutController implements Initializable{
 		tableMenuList.setText(menus);
 		
 		
-		tableSumPrice.setText(String.format("%,20d 원", tableData.getSumPrice()));
+		tableSumPrice.setText(String.format(""
+				+ "%,20d 원\n"
+				+ "-%,18d 원\n"
+				+ "%,20d 원",
+				tableData.getSumPrice(), 
+				tableData.getDiscount(),
+				tableData.getSumPrice() - tableData.getDiscount()));
 		
 	}
 }

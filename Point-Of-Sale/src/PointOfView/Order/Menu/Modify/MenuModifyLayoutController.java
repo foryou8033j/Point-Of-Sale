@@ -46,6 +46,7 @@ public class MenuModifyLayoutController {
 	
 	@FXML
 	private void handleSave() {
+		mainApp.getDataManagement().getMenues().saveDataToFile();
 		stage.close();
 	}
 	
@@ -112,6 +113,9 @@ public class MenuModifyLayoutController {
 			}
 			
 			mainApp.getDataManagement().getMenues().getMenuItems().add(new MenuItem(name.getText(), category.getText(), Integer.valueOf(price.getText())));
+			
+			mainApp.getDataManagement().getMenues().saveDataToFile();
+			
 			addDialog.close();
 		});
 		
@@ -178,12 +182,12 @@ public class MenuModifyLayoutController {
 			pane.setAlignment(Pos.CENTER);
 			
 			Label name = new Label(item.getName());
-			name.setFont(Font.font("맑은 고딕", FontWeight.BOLD, 24));
+			name.setFont(Font.font("Malgun Gothic", FontWeight.BOLD, 18));
+			if(name.getText().length()>3)
+				name.setFont(Font.font("Malgun Gothic", FontWeight.BOLD, 18 - name.getText().length()));
 			
-			
-			
-			Label price = new Label(String.format("%,d 원", item.getPrice()));
-			name.setFont(Font.font("맑은 고딕", FontWeight.BOLD, 18));
+			Label price = new Label(String.format("%,10d 원", item.getPrice()));
+			price.setFont(Font.font("Malgun Gothic", FontWeight.BOLD, 13));
 			
 			pane.getChildren().add(name);
 			pane.getChildren().add(price);
@@ -269,6 +273,8 @@ public class MenuModifyLayoutController {
 			drawMenuToGridPane();
 			
 			int index = menuList.getSelectionModel().getSelectedIndex();
+			if(index == -1)
+				return;
 			
 			for(int i=0; i<6; i++){
 				for(int j=0; j<8; j++){
@@ -285,8 +291,6 @@ public class MenuModifyLayoutController {
 							
 							menuList.getSelectionModel().clearSelection();
 							gridPane.getChildren().clear();
-							
-							//TODO 데이터 인덱스 잘못 가져옴
 							
 							observableMenuList.get(index).getMenuItem().setColumnAndRow(_i, _j);
 							

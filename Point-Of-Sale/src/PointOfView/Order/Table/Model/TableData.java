@@ -1,16 +1,20 @@
 package PointOfView.Order.Table.Model;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
+
 import PointOfView.Order.Menu.Model.MenuItem;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 
+@XmlType( name = "table")
 public class TableData extends GridPositionModel{
 
 	private int index;
+	private int discount;
 	private ObservableList<OrderList> orderList = null;
 	private int sumPrice;
-	
 
 	public TableData(int index, int column, int row) {
 		super(true);
@@ -18,6 +22,7 @@ public class TableData extends GridPositionModel{
 		setColumnAndRow(column, row);
 		orderList = FXCollections.observableArrayList();
 		sumPrice = 0;
+		discount = 0;
 		calSumPrice();
 		
 		orderList.addListener(new ListChangeListener<OrderList>() {
@@ -36,6 +41,7 @@ public class TableData extends GridPositionModel{
 		orderList.clear();
 		orderList.addAll(data.getOrderList());
 		sumPrice = data.getSumPrice();
+		discount =data.getDiscount();
 		
 	}
 	
@@ -48,6 +54,7 @@ public class TableData extends GridPositionModel{
 		this.index = index; 
 	}
 	
+	@XmlAttribute(name ="index", required = true)
 	public int getTableIndex() {
 		return index;
 	}
@@ -81,18 +88,32 @@ public class TableData extends GridPositionModel{
 			}
 		}
 	}
-	
+
 	public ObservableList<OrderList> getOrderList(){
 		return orderList;
+	}
+	
+	public void setDiscount(int dis) {
+		discount = dis;
+	}
+	
+	public int getDiscount() {
+		return discount;
+	}
+	
+	public void clearDiscount() {
+		discount = 0;
 	}
 	
 	private void calSumPrice() {
 		
 		sumPrice = 0;
 		
-		for(OrderList item:orderList) {
-			if(item == null)
-				break;
+		for(OrderList item:orderList) {{
+			if(item.getCount() == 0)
+				orderList.remove(item);
+		}
+			
 			
 			sumPrice += item.getPrice();
 			
