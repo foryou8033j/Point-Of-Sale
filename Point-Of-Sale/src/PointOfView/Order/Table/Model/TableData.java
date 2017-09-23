@@ -5,10 +5,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 
-public class TableData extends TableDataModel{
+public class TableData extends GridPositionModel{
 
 	private int index;
-	private ObservableList<MenuItem> menuItems = null;
+	private ObservableList<OrderList> orderList = null;
 	private int sumPrice;
 	
 
@@ -16,21 +16,32 @@ public class TableData extends TableDataModel{
 		super(true);
 		setTableIndex(index);
 		setColumnAndRow(column, row);
-		menuItems = FXCollections.observableArrayList();
+		orderList = FXCollections.observableArrayList();
 		sumPrice = 0;
 		calSumPrice();
 		
-		menuItems.addListener(new ListChangeListener<MenuItem>() {
+		orderList.addListener(new ListChangeListener<OrderList>() {
 			@Override
-			public void onChanged(Change<? extends MenuItem> c) {
+			public void onChanged(Change<? extends OrderList> c) {
 				calSumPrice();
 			}
 		});
 	}
 	
+	public void copyData(TableData data) {
+		
+		sumPrice = 0;
+		
+		index = data.getTableIndex();
+		orderList.clear();
+		orderList.addAll(data.getOrderList());
+		sumPrice = data.getSumPrice();
+		
+	}
+	
 	public TableData(){
 		super(false);
-		menuItems = FXCollections.observableArrayList();
+		orderList = FXCollections.observableArrayList();
 	}
 	
 	public void setTableIndex(int index) {
@@ -47,23 +58,39 @@ public class TableData extends TableDataModel{
 	}
 	
 	public void addMenu(MenuItem menuItem) {
-		menuItems.add(menuItem);
+		
+		for(OrderList item:orderList) {
+			if(item.getName() == menuItem.getName()) {
+				item.plusCount();
+				return;
+			}
+		}
+		
+		orderList.add(new OrderList(menuItem));
+		
 	}
 	
 	public void removeMenu(MenuItem menuItem)
 	{
-		menuItems.remove(menuItem);
+		for(OrderList item:orderList) {
+			if(item.getMenuItem().getName().equals(menuItem.getName())) {
+				if(item.minusCount() == 0) {
+					orderList.remove(item);
+					break;
+				}
+			}
+		}
 	}
 	
-	public ObservableList<MenuItem> getMenuItems(){
-		return menuItems;
+	public ObservableList<OrderList> getOrderList(){
+		return orderList;
 	}
 	
 	private void calSumPrice() {
 		
 		sumPrice = 0;
 		
-		for(MenuItem item:menuItems) {
+		for(OrderList item:orderList) {
 			if(item == null)
 				break;
 			

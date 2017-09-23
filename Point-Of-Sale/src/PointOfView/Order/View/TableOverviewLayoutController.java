@@ -44,13 +44,13 @@ public class TableOverviewLayoutController implements Initializable{
 		
 		//TODD 테이블 간략하게 보여주는 부분 수정 필요
 		String menus = "";
-		for(int i=0; i<tableData.getMenuItems().size(); i++) {
+		for(int i=0; i<tableData.getOrderList().size(); i++) {
 			if(i==2) break;
-			menus = tableData.getMenuItems().get(i).getName() + "\n";
+			menus = tableData.getOrderList().get(i).getMenuItem().getName() + "\n";
 		}
 		
-		if(tableData.getMenuItems().size() > 2)
-			menus = menus.concat("등 " + (tableData.getMenuItems().size()-3) + "개");
+		if(tableData.getOrderList().size() > 2)
+			menus = menus.concat("등 " + (tableData.getOrderList().size()-3) + "개");
 		
 		tableMenuList.setText(menus);
 		
