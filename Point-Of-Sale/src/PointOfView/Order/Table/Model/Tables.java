@@ -18,6 +18,8 @@ public class Tables {
 		addTable(3, 4);
 		addTable(3, 5);
 		
+		
+		
 	}
 	
 	public ObservableList<TableData> getTableDatas(){
