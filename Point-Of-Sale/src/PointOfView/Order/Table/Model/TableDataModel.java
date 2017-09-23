@@ -1,4 +1,4 @@
-package PointOfView.Order.Model;
+package PointOfView.Order.Table.Model;
 
 public class TableDataModel {
 

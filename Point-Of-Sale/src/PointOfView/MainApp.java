@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import PointOfView.Model.DataManagement;
-import PointOfView.Order.Model.Tables;
+import PointOfView.Order.Table.Model.Tables;
 import PointOfView.View.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

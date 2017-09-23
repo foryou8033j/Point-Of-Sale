@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
-import PointOfView.Order.Model.TableData;
+import PointOfView.Order.Table.Model.TableData;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -39,7 +39,7 @@ public class TableOverviewLayoutController implements Initializable{
 		this.mainApp = mainApp;
 		this.tableData = tableData;
 		
-		tableNumber.setText("[ " + String.valueOf(tableData.getTableIndex()) + " ]");
+		tableNumber.setText("[ " + String.valueOf(tableData.getTableIndex()+1) + " ]");
 		
 		
 		//TODD 테이블 간략하게 보여주는 부분 수정 필요

@@ -1,4 +1,4 @@
-package PointOfView.Order.Model;
+package PointOfView.Order.Table.Model;
 
 import PointOfView.Order.Menu.Model.MenuItem;
 import javafx.collections.FXCollections;

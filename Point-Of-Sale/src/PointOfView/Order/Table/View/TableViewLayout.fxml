@@ -20,7 +20,7 @@
             <Button fx:id="btnPrevToTitle" defaultButton="true" mnemonicParsing="false" onAction="#handlePrevToTitleButton" prefHeight="80.0" prefWidth="80.0" text="◀" BorderPane.alignment="CENTER" />
          </right>
          <center>
-            <Label text="Table Number" BorderPane.alignment="CENTER">
+            <Label fx:id="lbnTableTitle" text="Table Number" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Malgun Gothic Bold" size="24.0" />
                </font>
@@ -33,9 +33,9 @@
          <right>
             <FlowPane alignment="CENTER_RIGHT" hgap="10.0" prefWidth="650.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btnDiscount" defaultButton="true" mnemonicParsing="false" prefHeight="160.0" prefWidth="200.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 18;" text="할인 처리" />
-                  <Button fx:id="btnCardPayment" defaultButton="true" mnemonicParsing="false" prefHeight="160.0" prefWidth="200.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 18;" text="카드 결제" />
-                  <Button fx:id="btnCashPayment" defaultButton="true" mnemonicParsing="false" prefHeight="160.0" prefWidth="200.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 18;" text="현금 결제" />
+                  <Button fx:id="btnDiscount" defaultButton="true" mnemonicParsing="false" onAction="#handleDiscountButton" prefHeight="160.0" prefWidth="200.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 18;" text="할인 처리" />
+                  <Button fx:id="btnCardPayment" defaultButton="true" mnemonicParsing="false" onAction="#handleCardPaymentButton" prefHeight="160.0" prefWidth="200.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 18;" text="카드 결제" />
+                  <Button fx:id="btnCashPayment" defaultButton="true" mnemonicParsing="false" onAction="#handleCashPaymentButton" prefHeight="160.0" prefWidth="200.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 18;" text="현금 결제" />
                </children>
                <BorderPane.margin>
                   <Insets right="10.0" />
@@ -72,17 +72,17 @@
                               <Font name="Malgun Gothic Bold" size="25.0" />
                            </font>
                         </Label>
-                        <Label text="#,###,### 원" GridPane.columnIndex="1">
+                        <Label fx:id="lbnWholePrice" alignment="CENTER_RIGHT" prefWidth="200.0" text="#,###,### 원" textAlignment="RIGHT" GridPane.columnIndex="1">
                            <font>
                               <Font name="Malgun Gothic Bold" size="19.0" />
                            </font>
                         </Label>
-                        <Label text="#,###,### 원" textFill="#b50000" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label fx:id="lbnDiscountPrice" alignment="CENTER_RIGHT" prefWidth="200.0" text="#,###,### 원" textAlignment="RIGHT" textFill="#b50000" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
                               <Font name="Malgun Gothic Bold" size="19.0" />
                            </font>
                         </Label>
-                        <Label text="#,###,### 원" textFill="#6f00ff" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Label fx:id="lbnResultPrice" alignment="CENTER_RIGHT" prefWidth="200.0" text="#,###,### 원" textAlignment="RIGHT" textFill="#6f00ff" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
                               <Font name="Malgun Gothic Bold" size="19.0" />
                            </font>
@@ -102,7 +102,7 @@
    <center>
       <BorderPane prefHeight="550.0" prefWidth="602.0" BorderPane.alignment="CENTER">
          <right>
-            <GridPane gridLinesVisible="true" hgap="5.0" prefHeight="550.0" prefWidth="650.0" vgap="5.0" BorderPane.alignment="CENTER">
+            <GridPane fx:id="menuPane" gridLinesVisible="true" hgap="5.0" prefHeight="550.0" prefWidth="650.0" vgap="5.0" BorderPane.alignment="CENTER">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -127,7 +127,7 @@
             </GridPane>
          </right>
          <center>
-            <ListView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <ListView fx:id="orderList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="10.0" left="15.0" top="10.0" />
                </BorderPane.margin>
@@ -136,11 +136,11 @@
          <bottom>
             <FlowPane alignment="CENTER_LEFT" hgap="10.0" prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btnMinus" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 28;" text="-" />
-                  <Button fx:id="btnPlus" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 28;" text="+" />
-                  <Button fx:id="btnDelete" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 18;" text="X" />
-                  <Button fx:id="btnOrder" defaultButton="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 18;" text="주문" />
-                  <Button fx:id="btnCancle" defaultButton="true" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 18;" text="취소" />
+                  <Button fx:id="btnMinus" mnemonicParsing="false" onAction="#handleMinusButton" prefHeight="50.0" prefWidth="100.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 28;" text="-" />
+                  <Button fx:id="btnPlus" mnemonicParsing="false" onAction="#handlePlusButton" prefHeight="50.0" prefWidth="100.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 28;" text="+" />
+                  <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="50.0" prefWidth="100.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 18;" text="X" />
+                  <Button fx:id="btnOrder" defaultButton="true" mnemonicParsing="false" onAction="#handleOrderButton" prefHeight="50.0" prefWidth="130.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 18;" text="주문" />
+                  <Button fx:id="btnCancle" defaultButton="true" mnemonicParsing="false" onAction="#handleCancleButton" prefHeight="50.0" prefWidth="130.0" style="-fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold; -fx-font-size: 18;" text="취소" />
                </children>
                <BorderPane.margin>
                   <Insets left="20.0" />

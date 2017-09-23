@@ -9,7 +9,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
-import PointOfView.Order.Model.TableData;
+import PointOfView.Order.Table.Model.TableData;
 import PointOfView.Order.Table.View.TableViewLayoutController;
 import PointOfView.Util.View.PasswordInputDialog;
 import javafx.application.Platform;
@@ -388,7 +388,7 @@ public class OrderLayoutController implements Initializable {
 
 			
 			TableViewLayoutController controller = loader.getController();
-			controller.setMainApp(mainApp);
+			controller.setMainApp(mainApp, tableData);
 			
 			mainApp.getRootLayoutController().showThisPane(pane);
 			
