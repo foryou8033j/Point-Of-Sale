@@ -1,13 +1,13 @@
 package PointOfView.Order.Table.Model;
 
-public class TableDataModel {
+public class GridPositionModel {
 
 	private boolean showTable; //등록한 테이블인지 확인
 	
 	private int column;	//테이블 간략정보가 보여질 셀 가로축
 	private int row;	//테이블 간략정보가 보여질 셀 세로축
 	
-	public TableDataModel(boolean showStat) {
+	public GridPositionModel(boolean showStat) {
 		this.showTable = showStat;
 	}
 	
