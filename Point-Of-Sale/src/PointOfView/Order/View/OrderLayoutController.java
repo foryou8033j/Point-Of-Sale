@@ -9,6 +9,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
+import PointOfView.Order.Menu.Modify.MenuModifier;
 import PointOfView.Order.Table.Model.TableData;
 import PointOfView.Order.Table.View.TableViewLayoutController;
 import PointOfView.Util.View.PasswordInputDialog;
@@ -146,7 +147,7 @@ public class OrderLayoutController implements Initializable {
 		}else{
 			if(new PasswordInputDialog(mainApp).isPass()){
 				
-				//여기에 메뉴 관리 화면을 보여준다.
+				new MenuModifier(mainApp).show();
 				
 			}
 		}

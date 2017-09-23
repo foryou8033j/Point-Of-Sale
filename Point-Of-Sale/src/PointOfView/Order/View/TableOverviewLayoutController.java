@@ -44,18 +44,19 @@ public class TableOverviewLayoutController implements Initializable{
 		
 		//TODD 테이블 간략하게 보여주는 부분 수정 필요
 		String menus = "";
-		for(int i=0; i<tableData.getOrderList().size(); i++) {
-			if(i==2) break;
-			menus = tableData.getOrderList().get(i).getMenuItem().getName() + "\n";
-		}
-		
-		if(tableData.getOrderList().size() > 2)
-			menus = menus.concat("등 " + (tableData.getOrderList().size()-3) + "개");
+		int count = tableData.getOrderList().size();
+
+		if(count == 0)
+			menus = "";
+		else if(count == 1)
+			menus = tableData.getOrderList().get(0).getName();
+		else
+			menus = tableData.getOrderList().get(0).getName() + " 등 " + count + "개";
 		
 		tableMenuList.setText(menus);
 		
 		
-		tableSumPrice.setText(String.valueOf(tableData.getSumPrice()) + " 원");
+		tableSumPrice.setText(String.format("%,20d 원", tableData.getSumPrice()));
 		
 	}
 }

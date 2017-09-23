@@ -21,12 +21,17 @@ public class GridPositionModel {
 		return showTable;
 	}
 	
+	public void clearShow() {
+		showTable = false;
+		column = -1;
+		row = -1;
+	}
+	
 	public void setShow(boolean set)
 	{
 		showTable = set;
 		if(!showTable){
-			column = -1;
-			row = -1;
+			clearShow();
 		}
 	}
 	
