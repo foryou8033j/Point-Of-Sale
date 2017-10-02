@@ -24,6 +24,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
+/**
+ * 선택 된 테이블의 메뉴를 주문 하는 화면의 컨트롤러 클래스
+ * @author Jeongsam
+ */
 public class OrderViewLayoutController implements Initializable{
 	
 	private MainApp mainApp = null;
@@ -56,12 +60,19 @@ public class OrderViewLayoutController implements Initializable{
 	@FXML private Label lbnResultPrice;
 	
 	/** 핸들 정의 **/
+	
+	/**
+	 * 이전 메뉴로 이동하는 핸들
+	 */
 	@FXML
 	private void handlePrevToTitleButton(){
 		//변경 검사를 한다.
 		mainApp.getRootLayoutController().showOrderMenu();
 	}
 	
+	/**
+	 * 선택 된 메뉴의 개수를 감소 시키는 핸들
+	 */
 	@FXML
 	private void handleMinusButton() {
 		tableView.getSelectionModel().getSelectedItem().minusCount();
@@ -69,12 +80,18 @@ public class OrderViewLayoutController implements Initializable{
 		printCurrentPrice();
 	}
 	
+	/**
+	 * 선택 된 메뉴의 개수를 증가 시키는 핸들
+	 */
 	@FXML
 	private void handlePlusButton() {
 		tableView.getSelectionModel().getSelectedItem().plusCount();
 		printCurrentPrice();
 	}
 	
+	/**
+	 * 선택 된 메뉴를 제거 시키는 핸들
+	 */
 	@FXML
 	private void handleDeleteButton() {
 		
@@ -83,6 +100,9 @@ public class OrderViewLayoutController implements Initializable{
 	}
 	
 	
+	/**
+	 * 현재 주문된 메뉴를 등록 시킨다.
+	 */
 	@FXML
 	private void handleOrderButton() {
 		
@@ -90,11 +110,17 @@ public class OrderViewLayoutController implements Initializable{
 		mainApp.getRootLayoutController().showOrderMenu();
 	}
 	
+	/**
+	 * 현재 주문 된 메뉴를 등록하지 않고 이전 화면으로 이동한다.
+	 */
 	@FXML
 	private void handleCancleButton() {
 		mainApp.getRootLayoutController().showOrderMenu();
 	}
 	
+	/**
+	 * 할인 금액을 지정 할 수 있다.
+	 */
 	@FXML
 	private void handleDiscountButton() {
 		
@@ -107,6 +133,8 @@ public class OrderViewLayoutController implements Initializable{
 		
 		printCurrentPrice();
 	}
+	
+	
 	
 	@FXML
 	private void handleCardPaymentButton() {
