@@ -508,6 +508,7 @@ public class TableLayoutController implements Initializable {
 		
 		//테이블을 Ground 에 출력한다.
 		loadTablesOnTheGround(TableMode.NOMAL, true);
+		
 		printCurrentTime();
 	}
 	

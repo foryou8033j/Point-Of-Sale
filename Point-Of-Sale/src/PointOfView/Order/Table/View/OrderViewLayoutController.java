@@ -1,6 +1,7 @@
 package PointOfView.Order.Table.View;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
@@ -8,10 +9,18 @@ import PointOfView.Order.Menu.Model.MenuItem;
 import PointOfView.Order.Menu.Modify.MenuModifier;
 import PointOfView.Order.Table.Model.OrderList;
 import PointOfView.Order.Table.Model.TableData;
+import PointOfView.Order.Table.View.Payment.Card.CardPaymentLayoutController;
+import PointOfView.Order.Table.View.Payment.Cash.CashPaymentLayoutController;
 import PointOfView.Util.View.NumberInputDialog;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -19,10 +28,14 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * 선택 된 테이블의 메뉴를 주문 하는 화면의 컨트롤러 클래스
@@ -75,6 +88,10 @@ public class OrderViewLayoutController implements Initializable{
 	 */
 	@FXML
 	private void handleMinusButton() {
+		
+		if(tableView.getSelectionModel().getSelectedItem() == null)
+			return;
+		
 		tableView.getSelectionModel().getSelectedItem().minusCount();
 		
 		printCurrentPrice();
@@ -85,6 +102,10 @@ public class OrderViewLayoutController implements Initializable{
 	 */
 	@FXML
 	private void handlePlusButton() {
+		
+		if(tableView.getSelectionModel().getSelectedItem() == null)
+			return;
+		
 		tableView.getSelectionModel().getSelectedItem().plusCount();
 		printCurrentPrice();
 	}
@@ -94,6 +115,9 @@ public class OrderViewLayoutController implements Initializable{
 	 */
 	@FXML
 	private void handleDeleteButton() {
+		
+		if(tableView.getSelectionModel().getSelectedItem() == null)
+			return;
 		
 		tableView.getSelectionModel().getSelectedItem().clearCount();
 		printCurrentPrice();
@@ -139,11 +163,106 @@ public class OrderViewLayoutController implements Initializable{
 	@FXML
 	private void handleCardPaymentButton() {
 		
+		if(!tableData.getOrderList().equals(thisTableData.getOrderList())  
+				|| tableData.getSumPrice() != thisTableData.getSumPrice()) {
+			
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.initOwner(mainApp.getPrimaryStage());
+			alert.setTitle("카드 결제");
+			alert.setHeaderText("주문 정보가 저장 되지 않았습니니다.");
+			alert.setContentText("저장 후 계속 진행 하시겠습니까?");
+			alert.getButtonTypes().clear();
+			alert.getButtonTypes().addAll(ButtonType.YES, ButtonType.NO);
+			
+			Optional<ButtonType> result = alert.showAndWait();
+			
+			if(result.get().equals(ButtonType.NO)) 
+				return;
+			
+		}
+		
+		
+		//주문된 정보를 저장한다.
+		tableData.copyData(thisTableData);
+		
+		try{
+			
+			
+			Stage stage = new Stage();
+			stage.setTitle("카드 결제");
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.initOwner(mainApp.getPrimaryStage());
+			stage.initStyle(StageStyle.UNDECORATED);
+			
+			
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Payment/Card/CardPaymentLayout.fxml"));
+			BorderPane pane = loader.load();
+			
+			CardPaymentLayoutController controller = loader.getController();
+			controller.setPaymentObject(mainApp, tableData, stage);
+			
+			
+			Scene scene = new Scene(pane);
+			stage.setScene(scene);
+			
+			stage.showAndWait();
+			
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		
+		
 	}
 	
 	@FXML
 	private void handleCashPaymentButton() {
+		if(!tableData.getOrderList().equals(thisTableData.getOrderList())  
+				|| tableData.getSumPrice() != thisTableData.getSumPrice()) {
+			
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.initOwner(mainApp.getPrimaryStage());
+			alert.setTitle("카드 결제");
+			alert.setHeaderText("주문 정보가 저장 되지 않았습니니다.");
+			alert.setContentText("저장 후 계속 진행 하시겠습니까?");
+			alert.getButtonTypes().clear();
+			alert.getButtonTypes().addAll(ButtonType.YES, ButtonType.NO);
+			
+			Optional<ButtonType> result = alert.showAndWait();
+			
+			if(result.get().equals(ButtonType.NO)) 
+				return;
+			
+		}
 		
+		
+		//주문된 정보를 저장한다.
+		tableData.copyData(thisTableData);
+		
+		try{
+			
+			
+			Stage stage = new Stage();
+			stage.setTitle("현금 결제");
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.initOwner(mainApp.getPrimaryStage());
+			stage.initStyle(StageStyle.UNDECORATED);
+			
+			
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Payment/Cash/CashPaymentLayout.fxml"));
+			BorderPane pane = loader.load();
+			
+			CashPaymentLayoutController controller = loader.getController();
+			controller.setPaymentObject(mainApp, tableData, stage);
+			
+			
+			Scene scene = new Scene(pane);
+			stage.setScene(scene);
+			
+			stage.showAndWait();
+			
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	
@@ -240,16 +359,37 @@ public class OrderViewLayoutController implements Initializable{
 		lbnResultPrice.setText(String.format("%,20d 원", thisTableData.getSumPrice()-thisTableData.getDiscount()));
 	}
 	
+	private void checkItemListToButton() {
+		if(thisTableData.getOrderList().size() == 0) {
+			btnCardPayment.setDisable(true);
+			btnCashPayment.setDisable(true);
+		}else {
+			btnCardPayment.setDisable(false);
+			btnCashPayment.setDisable(false);
+		}
+	}
+	
 	public void setMainApp(MainApp mainApp, TableData tableData){
 		this.mainApp = mainApp;
 		this.tableData = tableData;
-		
-		
 		
 		thisTableData = new TableData();
 		thisTableData.copyData(tableData);
 		
 		tableView.setItems(thisTableData.getOrderList());
+		
+		
+		checkItemListToButton();
+		thisTableData.getOrderList().addListener(new ListChangeListener<OrderList>() {
+			@Override
+			public void onChanged(Change<? extends OrderList> c) {
+
+				checkItemListToButton();
+				
+			}
+		});
+		
+		
 		
 		lbnTableTitle.setText(String.valueOf(tableData.getTableIndex()+1 + " 번 테이블"));
 		printCurrentPrice();

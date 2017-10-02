@@ -5,6 +5,7 @@ import java.awt.Toolkit;
 
 import PointOfView.Model.DataManagement;
 import PointOfView.Order.Table.Model.Tables;
+import PointOfView.Order.Table.View.Payment.Model.Receipt;
 import PointOfView.View.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -27,12 +28,15 @@ public class MainApp extends Application {
 	private DataManagement managementData = new DataManagement();
 	
 	private Tables tables;
+	private Receipt receipts;
 	
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
 		this.tables = new Tables();
+		this.receipts = new Receipt();
+		
 		initStage();
 		showTitleMenu();
 	}
@@ -117,6 +121,14 @@ public class MainApp extends Application {
 	 */
 	public Tables getTables(){
 		return tables;
+	}
+	
+	/**
+	 * 영수증 정보를 반환한다.
+	 * @return
+	 */
+	public Receipt getReceipts() {
+		return receipts;
 	}
 	
 	public static void main(String[] args) {

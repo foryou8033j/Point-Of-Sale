@@ -98,6 +98,8 @@ public class TableData extends GridPositionModel{
 	}
 	
 	public void removeAll() {
+		sumPrice = 0;
+		discount = 0;
 		orderList.clear();
 	}
 

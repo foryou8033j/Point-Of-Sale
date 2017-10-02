@@ -60,4 +60,10 @@
     <table index="19" column="7" row="1" show="true">
         <discount>0</discount>
     </table>
+    <table index="20" column="5" row="2" show="true">
+        <discount>0</discount>
+    </table>
+    <table index="21" column="4" row="2" show="true">
+        <discount>0</discount>
+    </table>
 </Tables>

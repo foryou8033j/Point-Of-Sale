@@ -8,6 +8,7 @@ public class DataManagement {
 	private String adminPassword = "1234";
 	
 	private Menues menues = new Menues();
+
 	
 	public String getPOSTitle() {
 		return posTitle;
