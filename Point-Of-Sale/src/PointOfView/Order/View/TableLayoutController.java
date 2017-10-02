@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 import PointOfView.MainApp;
 import PointOfView.Order.Menu.Modify.MenuModifier;
 import PointOfView.Order.Table.Model.TableData;
-import PointOfView.Order.Table.View.TableViewLayoutController;
+import PointOfView.Order.Table.View.OrderViewLayoutController;
 import PointOfView.Util.View.PasswordInputDialog;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -29,7 +29,7 @@ import javafx.scene.effect.SepiaTone;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
-public class OrderLayoutController implements Initializable {
+public class TableLayoutController implements Initializable {
 	
 	private enum TableMode {NOMAL, EDIT, MOVE, SHARE};
 	
@@ -118,7 +118,7 @@ public class OrderLayoutController implements Initializable {
 							});
 							
 							tableField.add(btn, i, j);
-						}	
+						}
 					}
 				}
 				loadTablesOnTheGround(TableMode.EDIT, false);
@@ -198,16 +198,15 @@ public class OrderLayoutController implements Initializable {
 				btnStasticsManagement.setText("완료");
 				btnReceptionManagement.setDisable(true);
 				btnMenuManagement.setDisable(true);
-			}else{
-				tableShareMode = false;
-				
-				
 				loadTablesOnTheGround(TableMode.SHARE, true);
 				
+			}else{
+				tableShareMode = false;
 				
 				btnStasticsManagement.setText("합석");
 				btnReceptionManagement.setDisable(false);
 				btnMenuManagement.setDisable(false);
+				loadTablesOnTheGround(TableMode.NOMAL, true);
 			}
 		}else{
 			if(!new PasswordInputDialog(mainApp).isPass()) return;
@@ -341,6 +340,21 @@ public class OrderLayoutController implements Initializable {
 						break;
 						
 					case SHARE:
+						//합석모드에서 선택 될 경우 복사 될 대상이 된다.
+						if(originalTableData != null && originalTableData.equals(tables.get(index))){
+							originalTableData = null;
+							loadTablesOnTheGround(TableMode.SHARE, true);
+							break;
+						}else if(originalTableData != null && !originalTableData.equals(tables.get(index))) {
+							tables.get(index).addMenu(originalTableData.getOrderList());
+							originalTableData.removeAll();
+							originalTableData = null;
+							loadTablesOnTheGround(TableMode.NOMAL, true);
+						}
+						
+						originalTableData = tables.get(index);
+						loadTablesOnTheGround(TableMode.SHARE, true);
+						
 						break;
 						
 					}
@@ -390,11 +404,11 @@ public class OrderLayoutController implements Initializable {
 			mainApp.getRootLayoutController().getRootPane().setStyle("");
 			
 			
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Table/View/TableViewLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Table/View/OrderViewLayout.fxml"));
 			BorderPane pane = loader.load();
 
 			
-			TableViewLayoutController controller = loader.getController();
+			OrderViewLayoutController controller = loader.getController();
 			controller.setMainApp(mainApp, tableData);
 			
 			mainApp.getRootLayoutController().showThisPane(pane);
@@ -430,7 +444,7 @@ public class OrderLayoutController implements Initializable {
 		
 	}
 
-	public OrderLayoutController() {
+	public TableLayoutController() {
 		// TODO Auto-generated constructor stub
 	}
 	

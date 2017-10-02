@@ -16,7 +16,7 @@
         <discount>0</discount>
     </table>
     <table index="5" column="4" row="4" show="true">
-        <discount>5000</discount>
+        <discount>0</discount>
     </table>
     <table index="6" column="5" row="4" show="true">
         <discount>0</discount>

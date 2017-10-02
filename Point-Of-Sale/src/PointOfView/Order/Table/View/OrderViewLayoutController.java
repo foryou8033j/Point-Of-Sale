@@ -24,7 +24,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
-public class TableViewLayoutController implements Initializable{
+public class OrderViewLayoutController implements Initializable{
 	
 	private MainApp mainApp = null;
 	private TableData tableData = null;

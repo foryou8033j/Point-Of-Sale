@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
-import PointOfView.Order.View.OrderLayoutController;
+import PointOfView.Order.View.TableLayoutController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -45,11 +45,11 @@ public class TitleLayoutController implements Initializable{
 			mainApp.getRootLayoutController().getRootPane().setStyle("");
 			
 			
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../../Order/View/OrderLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../../Order/View/TableLayout.fxml"));
 			BorderPane pane = loader.load();
 
 			
-			OrderLayoutController controller = loader.getController();
+			TableLayoutController controller = loader.getController();
 			controller.setMainApp(mainApp, pane);
 			
 			mainApp.getRootLayoutController().showThisPane(pane);

@@ -77,6 +77,14 @@ public class TableData extends GridPositionModel{
 		
 	}
 	
+	public void addMenu(ObservableList<OrderList> menuItem) {
+		
+		for(OrderList item:menuItem) {
+			addMenu(item.getMenuItem());
+		}
+		
+	}
+	
 	public void removeMenu(MenuItem menuItem)
 	{
 		for(OrderList item:orderList) {
@@ -87,6 +95,10 @@ public class TableData extends GridPositionModel{
 				}
 			}
 		}
+	}
+	
+	public void removeAll() {
+		orderList.clear();
 	}
 
 	public ObservableList<OrderList> getOrderList(){

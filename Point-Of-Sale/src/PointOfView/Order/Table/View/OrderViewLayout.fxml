@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../../../../../CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.Order.Table.View.TableViewLayoutController">
+<BorderPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../../../../../CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.Order.Table.View.OrderViewLayoutController">
    <top>
       <BorderPane prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #FFFFF3; -fx-border-color: #000000; -fx-border-width: 1.5;" BorderPane.alignment="CENTER">
          <right>
