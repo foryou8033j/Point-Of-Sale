@@ -26,6 +26,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.Glow;
 import javafx.scene.effect.SepiaTone;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
@@ -421,11 +422,11 @@ public class TableLayoutController implements Initializable {
 
 	
 	/**
-	 * GridPane으로부터 해당 col, row의 노드를 반환한다.
-	 * @param gridPane
-	 * @param col
-	 * @param row
-	 * @return
+	 * GridPane으로부터 해당 column, row의 노드를 반환한다.
+	 * @param gridPane {@link GridPane}
+	 * @param col Column of GridPane
+	 * @param row Row of GridPane
+	 * @return Node in GridPane by Column and Row Index{@link Node} 
 	 */
 	private Node getNodeFromGridPane(GridPane gridPane, int col, int row) {
 	    for (Node node : gridPane.getChildren()) {
@@ -434,6 +435,7 @@ public class TableLayoutController implements Initializable {
 	        }
 	    }
 	    return null;
+	    
 	}
 	
 	
