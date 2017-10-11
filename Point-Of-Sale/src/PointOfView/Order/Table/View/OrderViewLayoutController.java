@@ -252,6 +252,10 @@ public class OrderViewLayoutController implements Initializable{
 		//주문된 정보를 저장한다.
 		tableData.copyData(thisTableData);
 		
+		int payMoney = new NumberInputDialog(mainApp, "지불 금액을 입력하세요.", false).getInputValue();
+		
+		if(payMoney == -1) return;
+		
 		try{
 			
 			
@@ -266,7 +270,7 @@ public class OrderViewLayoutController implements Initializable{
 			BorderPane pane = loader.load();
 			
 			CashPaymentLayoutController controller = loader.getController();
-			controller.setPaymentObject(mainApp, tableData, stage);
+			controller.setPaymentObject(mainApp, tableData, stage, payMoney);
 			
 			
 			Scene scene = new Scene(pane);
@@ -274,10 +278,14 @@ public class OrderViewLayoutController implements Initializable{
 			
 			stage.showAndWait();
 			
+			//주문된 정보를 저장한다.
+			thisTableData.copyData(controller.getTableData());
+			tableData.copyData(thisTableData);
+			
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		
+		printCurrentPrice();
 	}
 	
 	

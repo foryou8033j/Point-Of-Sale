@@ -51,8 +51,10 @@ public class CardPaymentLayoutController {
     		stage.close();
     		return;
     	}else {
+    		
+    		
+    		tableData.setPayMoney(tableData.getPayMoney() + payMoney + tableData.getDiscount());
     		tableData.setDiscount(0);
-    		tableData.setPayMoney(tableData.getPayMoney() + payMoney);
     		
     		if(tableData.getResultPay() <= 0) {
     			//영수증 기록을 남긴다.

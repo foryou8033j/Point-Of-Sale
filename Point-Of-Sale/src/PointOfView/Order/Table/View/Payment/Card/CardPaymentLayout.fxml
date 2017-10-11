@@ -66,7 +66,7 @@
                   <Font name="Malgun Gothic Bold" size="20.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="할인 금액" GridPane.rowIndex="1">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="차감 금액" GridPane.rowIndex="1">
                <font>
                   <Font name="Malgun Gothic Bold" size="20.0" />
                </font>
