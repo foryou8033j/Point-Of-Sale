@@ -1,4 +1,4 @@
-package PointOfView.Order.Table.Model;
+package PointOfView.Model.OderList;
 
 import java.util.LinkedList;
 

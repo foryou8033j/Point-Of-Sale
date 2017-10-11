@@ -3,7 +3,7 @@ package PointOfView.Model.Menu;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
-import PointOfView.Order.Table.Model.GridPositionModel;
+import PointOfView.Model.OderList.GridPositionModel;
 
 @XmlType( name = "menuitem")
 public class MenuItem extends GridPositionModel{

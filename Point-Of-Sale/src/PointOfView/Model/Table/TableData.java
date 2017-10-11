@@ -5,8 +5,8 @@ import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 import PointOfView.Model.Menu.MenuItem;
-import PointOfView.Order.Table.Model.GridPositionModel;
-import PointOfView.Order.Table.Model.OrderList;
+import PointOfView.Model.OderList.GridPositionModel;
+import PointOfView.Model.OderList.OrderList;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;

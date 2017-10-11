@@ -1,4 +1,4 @@
-package PointOfView.Order.Table.Model;
+package PointOfView.Model.OderList;
 
 import javax.xml.bind.annotation.XmlAttribute;
 
