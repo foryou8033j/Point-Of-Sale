@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #000000; -fx-border-width: 3; -fx-background-color: #FFFFF3;" stylesheets="@../../../../../../../CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.Order.Table.View.Payment.Cash.CashPaymentLayoutController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #000000; -fx-border-width: 3; -fx-background-color: #FFFFF3;" stylesheets="@../../../../../../../CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Table.Payment.Cash.CashPaymentLayoutController">
    <top>
       <Text fill="#e100ce" strokeType="OUTSIDE" strokeWidth="0.0" text="현금 결제" BorderPane.alignment="CENTER">
          <font>

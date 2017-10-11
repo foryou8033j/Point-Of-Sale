@@ -3,8 +3,8 @@ package PointOfView.View.Table.MenuModifiy;
 import java.util.regex.Pattern;
 
 import PointOfView.MainApp;
-import PointOfView.Model.Hbox_MenuItem;
-import PointOfView.Model.Menu.MenuItem;
+import PointOfView.Models.Hbox_MenuItem;
+import PointOfView.Models.Menu.MenuItem;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;

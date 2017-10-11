@@ -9,8 +9,8 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
-import PointOfView.Model.Table.TableData;
-import PointOfView.Util.View.PasswordInputDialog;
+import PointOfView.Models.Table.TableData;
+import PointOfView.Util.Dialog.PasswordInputDialog;
 import PointOfView.View.Table.MenuModifiy.MenuModifier;
 import PointOfView.View.Table.Order.OrderViewLayoutController;
 import PointOfView.View.Table.Overview.TableOverviewLayoutController;
@@ -372,7 +372,7 @@ public class TableLayoutController implements Initializable {
 	
 	private BorderPane drawTablesOnTheGround(int tableNumber, TableOverviewLayoutController controller, TableData tableData){
 		try{
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("TableOverviewLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Overview/TableOverviewLayout.fxml"));
 			BorderPane pane = loader.load();
 
 			controller = loader.getController();
@@ -406,7 +406,7 @@ public class TableLayoutController implements Initializable {
 			mainApp.getRootLayoutController().getRootPane().setStyle("");
 			
 			
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Table/View/OrderViewLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Order/OrderViewLayout.fxml"));
 			BorderPane pane = loader.load();
 
 			

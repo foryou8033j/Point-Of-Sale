@@ -1,4 +1,4 @@
-package PointOfView.Model.Table;
+package PointOfView.Models.Table;
 
 import java.io.File;
 

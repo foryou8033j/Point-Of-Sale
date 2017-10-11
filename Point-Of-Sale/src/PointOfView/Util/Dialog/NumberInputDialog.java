@@ -1,4 +1,4 @@
-package PointOfView.Util.View;
+package PointOfView.Util.Dialog;
 import PointOfView.MainApp;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -8,6 +8,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
@@ -20,14 +21,14 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class PasswordInputDialog extends Stage{
+public class NumberInputDialog extends Stage{
 
 	VBox vb = new VBox(10);
 	
 	private MainApp mainApp;
 	
-	private PasswordField password = new PasswordField();
-	private Text title = new Text("관리자 패스워드를 입력하세요.");
+	private TextField inputBox = new TextField();
+	private Text title;
 	private Text text = new Text("");
 	
 	private Button btnCancle = new Button("취소");
@@ -37,12 +38,14 @@ public class PasswordInputDialog extends Stage{
 	private int maxLength = 13;
 	private boolean pass = false;
 	
-	public PasswordInputDialog(MainApp mainApp) {
+	public NumberInputDialog(MainApp mainApp, String title, boolean editable) {
 		this.mainApp = mainApp;
+		this.title = new Text(title);
 		
 		vb.getStylesheets().add("JMetroLightTheme.css");
 		vb.setStyle("-fx-border-width: 3; -fx-border-color: #F68657;");
 		
+		inputBox.setEditable(editable);
 
 		
 		vb.setPadding(new Insets(10, 10, 10, 10));
@@ -53,16 +56,16 @@ public class PasswordInputDialog extends Stage{
 			button[i] = new Button(String.valueOf(i));
 			button[i].setPrefSize(100, 100);
 			button[i].setOnAction(e -> {
-				password.setText(password.getText() + String.valueOf(j));
+				inputBox.setText(inputBox.getText() + String.valueOf(j));
 			});
 		}
 		
 		button[10] = new Button("<");
 		button[10].setPrefSize(100, 100);
 		button[10].setOnAction(e -> {
-			if(password.getText().equals(""))
+			if(inputBox.getText().equals(""))
 				return;
-			password.setText(password.getText(0, password.getText().length()-1));
+			inputBox.setText(inputBox.getText(0, inputBox.getText().length()-1));
 		});
 		
 		
@@ -70,7 +73,7 @@ public class PasswordInputDialog extends Stage{
 		button[11].setDefaultButton(true);
 		button[11].setPrefSize(100, 100);
 		button[11].setOnAction(e -> {
-			checkPassword();
+			close();
 		});
 		
 		numberPane.setHgap(5);
@@ -89,8 +92,8 @@ public class PasswordInputDialog extends Stage{
 		numberPane.add(button[10], 1, 3);
 		numberPane.add(button[11], 2, 3);
 		
-		vb.getChildren().add(title);
-		vb.getChildren().add(password);
+		vb.getChildren().add(this.title);
+		vb.getChildren().add(inputBox);
 		vb.getChildren().add(text);
 		
 		vb.getChildren().add(btnCancle);
@@ -98,12 +101,12 @@ public class PasswordInputDialog extends Stage{
 		
 		vb.setAlignment(Pos.CENTER);
 		
-		title.setFont(Font.font(14));
-		title.setTextAlignment(TextAlignment.CENTER);
+		this.title.setFont(Font.font(14));
+		this.title.setTextAlignment(TextAlignment.CENTER);
 		
 		text.setTextAlignment(TextAlignment.CENTER);
 		
-		password.setFont(Font.font("Malgun Gothic"));
+		inputBox.setFont(Font.font("Malgun Gothic"));
 		
 		btnCancle.setCancelButton(true);
 		btnCancle.setPrefSize(150, 300);
@@ -129,13 +132,13 @@ public class PasswordInputDialog extends Stage{
 		
 		
 		
-		password.textProperty().addListener(new ChangeListener<String>() {
+		inputBox.textProperty().addListener(new ChangeListener<String>() {
 			@Override
 			public void changed(ObservableValue<? extends String> obersvable, String oldValue, String newValue) {
 				
 				if(newValue.length() > maxLength){
 					String s = newValue.substring(0, maxLength);
-					password.setText(s);
+					inputBox.setText(s);
 					return;
 				}
 				
@@ -149,11 +152,11 @@ public class PasswordInputDialog extends Stage{
 			}
 		});
 		
-		password.setOnKeyPressed(new EventHandler<KeyEvent>() {
+		inputBox.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent arg0) {
 				
 				if(arg0.getCode() == KeyCode.ENTER){
-					checkPassword();
+					close();
 				}
 				
 			};
@@ -162,24 +165,17 @@ public class PasswordInputDialog extends Stage{
 		showAndWait();
 		
 	}
-	
-	private void checkPassword(){
-		if(mainApp.getDataManagement().getAdminAuthority(password.getText()))
-		{
-			close();
-			pass = true;
-		}
-		else{
-			password.setText("");
-			text.setFill(Color.RED);
-			text.setText("패스워드가 올바르지 않습니다.");
-			pass = false;
-		}
+
+	/**
+	 * 입력 금액을 반환한다, 취소버튼의 경우 -1을 반환한다.
+	 * @return int
+	 */
+	public int getInputValue() {
+		
+		if(inputBox.getText().equals(""))
+			return -1;
+		
+		return Integer.valueOf(inputBox.getText());
 	}
-	
-	public boolean isPass(){
-		return pass;
-	}
-	
 	
 }

@@ -1,4 +1,4 @@
-package PointOfView.Util.View;
+package PointOfView.Util.Dialog;
 
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;

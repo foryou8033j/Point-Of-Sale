@@ -3,9 +3,9 @@ package PointOfView;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
-import PointOfView.Model.DataManagement;
-import PointOfView.Model.Receipt.Receipt;
-import PointOfView.Model.Table.Tables;
+import PointOfView.Models.DataManagement;
+import PointOfView.Models.Receipt.Receipt;
+import PointOfView.Models.Table.Tables;
 import PointOfView.View.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -45,7 +45,7 @@ public class TitleLayoutController implements Initializable{
 			mainApp.getRootLayoutController().getRootPane().setStyle("");
 			
 			
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../../Order/View/TableLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Table/TableLayout.fxml"));
 			BorderPane pane = loader.load();
 
 			

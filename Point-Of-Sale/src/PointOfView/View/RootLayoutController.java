@@ -38,7 +38,7 @@ public class RootLayoutController implements Initializable{
 	 */
 	private void loadTitleMenu(){
 		try{
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Title/View/TitleLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Title/TitleLayout.fxml"));
 			BorderPane pane = loader.load();
 
 			

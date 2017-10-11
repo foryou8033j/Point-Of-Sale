@@ -1,9 +1,9 @@
 package PointOfView.View.Table.Payment.Cash;
 
 import PointOfView.MainApp;
-import PointOfView.Model.Receipt.ReceiptModel.PAY;
-import PointOfView.Model.Table.TableData;
-import PointOfView.Util.View.SimpleAlert;
+import PointOfView.Models.Receipt.ReceiptModel.PAY;
+import PointOfView.Models.Table.TableData;
+import PointOfView.Util.Dialog.SimpleAlert;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert.AlertType;

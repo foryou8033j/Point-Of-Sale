@@ -1,4 +1,4 @@
-package PointOfView.Model.Menu;
+package PointOfView.Models.Menu;
 
 import java.util.List;
 

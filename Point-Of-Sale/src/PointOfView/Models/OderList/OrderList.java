@@ -1,9 +1,9 @@
-package PointOfView.Model.OderList;
+package PointOfView.Models.OderList;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
-import PointOfView.Model.Menu.MenuItem;
+import PointOfView.Models.Menu.MenuItem;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;

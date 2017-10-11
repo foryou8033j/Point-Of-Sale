@@ -1,4 +1,4 @@
-package PointOfView.Util;
+package PointOfView.Util.Dialog;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;

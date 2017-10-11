@@ -5,10 +5,10 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
-import PointOfView.Model.Menu.MenuItem;
-import PointOfView.Model.OderList.OrderList;
-import PointOfView.Model.Table.TableData;
-import PointOfView.Util.View.NumberInputDialog;
+import PointOfView.Models.Menu.MenuItem;
+import PointOfView.Models.OderList.OrderList;
+import PointOfView.Models.Table.TableData;
+import PointOfView.Util.Dialog.NumberInputDialog;
 import PointOfView.View.Table.MenuModifiy.MenuModifier;
 import PointOfView.View.Table.Payment.Card.CardPaymentLayoutController;
 import PointOfView.View.Table.Payment.Cash.CashPaymentLayoutController;
@@ -205,7 +205,7 @@ public class OrderViewLayoutController implements Initializable{
 			stage.initStyle(StageStyle.UNDECORATED);
 			
 			
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("Payment/Card/CardPaymentLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Payment/Card/CardPaymentLayout.fxml"));
 			BorderPane pane = loader.load();
 			
 			CardPaymentLayoutController controller = loader.getController();
@@ -266,7 +266,7 @@ public class OrderViewLayoutController implements Initializable{
 			stage.initStyle(StageStyle.UNDECORATED);
 			
 			
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("Payment/Cash/CashPaymentLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Payment/Cash/CashPaymentLayout.fxml"));
 			BorderPane pane = loader.load();
 			
 			CashPaymentLayoutController controller = loader.getController();

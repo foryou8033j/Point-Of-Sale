@@ -1,8 +1,8 @@
-package PointOfView.Model.Receipt;
+package PointOfView.Models.Receipt;
 
 import java.util.Calendar;
 
-import PointOfView.Model.Table.TableData;
+import PointOfView.Models.Table.TableData;
 
 public class ReceiptModel {
 
