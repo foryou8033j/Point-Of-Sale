@@ -1,6 +1,7 @@
 package PointOfView.Order.Table.Model;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 import PointOfView.Order.Menu.Model.MenuItem;
@@ -8,11 +9,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 
-@XmlType( name = "table")
+@XmlType(name = "TableData")
 public class TableData extends GridPositionModel{
 
 	private int index;
 	private int discount;
+	private int payMoney;
 	private ObservableList<OrderList> orderList = null;
 	private int sumPrice;
 
@@ -23,6 +25,7 @@ public class TableData extends GridPositionModel{
 		orderList = FXCollections.observableArrayList();
 		sumPrice = 0;
 		discount = 0;
+		payMoney = 0;
 		calSumPrice();
 		
 		orderList.addListener(new ListChangeListener<OrderList>() {
@@ -41,6 +44,7 @@ public class TableData extends GridPositionModel{
 		orderList.clear();
 		orderList.addAll(data.getOrderList());
 		sumPrice = data.getSumPrice();
+		payMoney = data.getPayMoney();
 		discount =data.getDiscount();
 		
 	}
@@ -100,9 +104,11 @@ public class TableData extends GridPositionModel{
 	public void removeAll() {
 		sumPrice = 0;
 		discount = 0;
+		payMoney = 0;
 		orderList.clear();
 	}
 
+	
 	public ObservableList<OrderList> getOrderList(){
 		return orderList;
 	}
@@ -111,15 +117,30 @@ public class TableData extends GridPositionModel{
 		discount = dis;
 	}
 	
+	@XmlTransient
 	public int getDiscount() {
 		return discount;
+	}
+	
+	public void setPayMoney(int pay) {
+		payMoney = pay;
+	}
+	
+	@XmlTransient
+	public int getPayMoney() {
+		return payMoney;
+	}
+	
+	public int getResultPay() {
+		
+		return (calSumPrice() - discount - payMoney);
 	}
 	
 	public void clearDiscount() {
 		discount = 0;
 	}
 	
-	private void calSumPrice() {
+	private int calSumPrice() {
 		
 		sumPrice = 0;
 		
@@ -133,6 +154,7 @@ public class TableData extends GridPositionModel{
 			
 		}
 		
+		return sumPrice;
 		
 	}
 	

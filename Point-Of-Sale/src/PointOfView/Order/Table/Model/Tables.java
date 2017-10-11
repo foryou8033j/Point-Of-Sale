@@ -81,7 +81,7 @@ public void loadDataFromFile() {
 	        wrapper = (TableDataWrapper) um.unmarshal(file);
 
 	        tableDatas.clear();
-	        tableDatas.addAll(wrapper.getDatas());
+	        tableDatas.addAll(wrapper.getTableDatas());
 
 
 	    } catch (Exception e) { // 예외를 잡는다

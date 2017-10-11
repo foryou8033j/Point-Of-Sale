@@ -10,6 +10,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 
+
 public class OrderList {
 
 	private MenuItem menuItem;
@@ -41,20 +42,24 @@ public class OrderList {
 		count.set(0);
 	}
 	
+	
 	public String getName() {
 		return menuItem.getName();
 	}
 	
 
+	
 	public int getPrice() {
 		return menuItem.getPrice() * count.get();
 	}
 	
 
+
 	public int getCount() {
 		return count.get();
 	}
 	
+
 	public MenuItem getMenuItem() {
 		return menuItem;
 	}
@@ -65,6 +70,10 @@ public class OrderList {
 	
 	public IntegerProperty countProperty() {
 		return count;
+	}
+	
+	public String getPriceNaive() {
+		return price.get();
 	}
 	
 	public StringProperty priceProperty() {

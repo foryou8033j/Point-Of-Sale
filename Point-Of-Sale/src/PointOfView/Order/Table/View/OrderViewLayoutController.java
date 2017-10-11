@@ -70,6 +70,7 @@ public class OrderViewLayoutController implements Initializable{
 	@FXML private Label lbnTableTitle;
 	@FXML private Label lbnWholePrice;
 	@FXML private Label lbnDiscountPrice;
+    @FXML private Label lbnPayPrice;
 	@FXML private Label lbnResultPrice;
 	
 	/** 핸들 정의 **/
@@ -149,7 +150,12 @@ public class OrderViewLayoutController implements Initializable{
 	private void handleDiscountButton() {
 		
 		try {
-			thisTableData.setDiscount(new NumberInputDialog(mainApp, "할인 금액을 입력하세요.", false).getInputValue());
+			
+			int var = new NumberInputDialog(mainApp, "할인 금액을 입력하세요.", false).getInputValue();
+			
+			if (var >= 0)
+				thisTableData.setDiscount(var);
+			
 		}catch (Exception e) {
 			//ignore
 		}
@@ -185,6 +191,10 @@ public class OrderViewLayoutController implements Initializable{
 		//주문된 정보를 저장한다.
 		tableData.copyData(thisTableData);
 		
+		int payMoney = new NumberInputDialog(mainApp, "지불 금액을 입력하세요.", false).getInputValue();
+		
+		if(payMoney == -1) return;
+		
 		try{
 			
 			
@@ -199,7 +209,7 @@ public class OrderViewLayoutController implements Initializable{
 			BorderPane pane = loader.load();
 			
 			CardPaymentLayoutController controller = loader.getController();
-			controller.setPaymentObject(mainApp, tableData, stage);
+			controller.setPaymentObject(mainApp, tableData, stage, payMoney);
 			
 			
 			Scene scene = new Scene(pane);
@@ -207,11 +217,15 @@ public class OrderViewLayoutController implements Initializable{
 			
 			stage.showAndWait();
 			
+			//주문된 정보를 저장한다.
+			thisTableData.copyData(controller.getTableData());
+			tableData.copyData(thisTableData);
+			
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		
-		
+
+		printCurrentPrice();
 	}
 	
 	@FXML
@@ -263,6 +277,7 @@ public class OrderViewLayoutController implements Initializable{
 		}catch (Exception e){
 			e.printStackTrace();
 		}
+		
 	}
 	
 	
@@ -356,7 +371,8 @@ public class OrderViewLayoutController implements Initializable{
 	private void printCurrentPrice() {
 		lbnWholePrice.setText(String.format("%,20d 원", thisTableData.getSumPrice()));
 		lbnDiscountPrice.setText(String.format("- %,20d 원", thisTableData.getDiscount()));
-		lbnResultPrice.setText(String.format("%,20d 원", thisTableData.getSumPrice()-thisTableData.getDiscount()));
+		lbnPayPrice.setText(String.format("- %,20d 원", thisTableData.getPayMoney()));
+		lbnResultPrice.setText(String.format("%,20d 원", thisTableData.getSumPrice()-thisTableData.getDiscount()-thisTableData.getPayMoney()));
 	}
 	
 	private void checkItemListToButton() {
@@ -388,7 +404,6 @@ public class OrderViewLayoutController implements Initializable{
 				
 			}
 		});
-		
 		
 		
 		lbnTableTitle.setText(String.valueOf(tableData.getTableIndex()+1 + " 번 테이블"));

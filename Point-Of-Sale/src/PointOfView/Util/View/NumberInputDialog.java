@@ -166,7 +166,15 @@ public class NumberInputDialog extends Stage{
 		
 	}
 
+	/**
+	 * 입력 금액을 반환한다, 취소버튼의 경우 -1을 반환한다.
+	 * @return int
+	 */
 	public int getInputValue() {
+		
+		if(inputBox.getText().equals(""))
+			return -1;
+		
 		return Integer.valueOf(inputBox.getText());
 	}
 	
