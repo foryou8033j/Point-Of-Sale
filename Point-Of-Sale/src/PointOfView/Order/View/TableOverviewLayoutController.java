@@ -61,8 +61,8 @@ public class TableOverviewLayoutController implements Initializable{
 				+ "-%,18d 원\n"
 				+ "%,20d 원",
 				tableData.getSumPrice(), 
-				tableData.getDiscount(),
-				tableData.getSumPrice() - tableData.getDiscount()));
+				tableData.getDiscount() + tableData.getPayMoney(),
+				tableData.getSumPrice() - tableData.getDiscount() + tableData.getPayMoney()));
 		
 	}
 }

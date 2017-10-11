@@ -17,6 +17,9 @@ import javafx.stage.Stage;
 public class CardPaymentLayoutController {
 
     @FXML
+    private Text sumMoney;
+	
+    @FXML
     private Text orderpay;
 
     @FXML
@@ -48,6 +51,7 @@ public class CardPaymentLayoutController {
     		stage.close();
     		return;
     	}else {
+    		tableData.setDiscount(0);
     		tableData.setPayMoney(tableData.getPayMoney() + payMoney);
     		
     		if(tableData.getResultPay() <= 0) {
@@ -84,10 +88,21 @@ public class CardPaymentLayoutController {
     		payMoney = tableData.getResultPay();
 
     	try {
-    		orderpay.setText(String.format("%,20d 원", tableData.getSumPrice() - tableData.getPayMoney()));
-        	discountpay.setText(String.format("- %,20d 원", tableData.getDiscount()));
+    		
+    		int var = tableData.getSumPrice()-tableData.getDiscount()-tableData.getPayMoney()-payMoney;
+    		int order = tableData.getSumPrice() - tableData.getDiscount() - tableData.getPayMoney();
+    		
+    		sumMoney.setText(String.format("%,20d 원", tableData.getSumPrice()));
+        	discountpay.setText(String.format("- %,20d 원", tableData.getSumPrice() - order));
+        	
+        	orderpay.setText(String.format("%,20d 원", order));
         	requestPay.setText(String.format("- %,20d 원", payMoney));
-    		resultpay.setText(String.format("%,20d 원", tableData.getSumPrice()-tableData.getDiscount()-tableData.getPayMoney()-payMoney));
+        	
+        	if(var <= 0)
+        		resultpay.setText(String.format("결제 완료"));
+        	else
+        		resultpay.setText(String.format("%,20d 원", var));
+        	
     	}catch (Exception e) {
     		//ignore
     	}

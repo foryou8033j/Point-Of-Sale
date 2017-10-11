@@ -29,33 +29,24 @@
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="주문 금액">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="결제 금액" GridPane.rowIndex="2">
                <font>
                   <Font name="Malgun Gothic Bold" size="20.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="할인 금액" GridPane.rowIndex="1">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="결제 잔액" GridPane.rowIndex="4">
                <font>
                   <Font name="Malgun Gothic Bold" size="20.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="결제 잔액" GridPane.rowIndex="3">
-               <font>
-                  <Font name="Malgun Gothic Bold" size="20.0" />
-               </font>
-            </Text>
-            <Text fx:id="orderpay" strokeType="OUTSIDE" strokeWidth="0.0" text="orderPay" GridPane.columnIndex="1">
-               <font>
-                  <Font name="Malgun Gothic Bold" size="20.0" />
-               </font>
-            </Text>
-            <Text fx:id="resultpay" fill="#2f00bc" strokeType="OUTSIDE" strokeWidth="0.0" text="resultPay" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Text fx:id="resultpay" fill="#2f00bc" strokeType="OUTSIDE" strokeWidth="0.0" text="resultPay" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font name="Malgun Gothic Bold" size="20.0" />
                </font>
@@ -65,12 +56,32 @@
                   <Font name="Malgun Gothic Bold" size="20.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="결제 요청 금액" GridPane.rowIndex="2">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="결제 요청 금액" GridPane.rowIndex="3">
                <font>
                   <Font name="Malgun Gothic Bold" size="20.0" />
                </font>
             </Text>
-            <Text fx:id="requestPay" strokeType="OUTSIDE" strokeWidth="0.0" text="requestPay" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Text fx:id="requestPay" strokeType="OUTSIDE" strokeWidth="0.0" text="requestPay" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="할인 금액" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="orderpay" strokeType="OUTSIDE" strokeWidth="0.0" text="orderPay" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="주문 금액">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="sumMoney" strokeType="OUTSIDE" strokeWidth="0.0" text="sumMoney" GridPane.columnIndex="1">
                <font>
                   <Font name="Malgun Gothic Bold" size="20.0" />
                </font>
