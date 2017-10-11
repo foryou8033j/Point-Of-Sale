@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
-import PointOfView.Order.Table.Model.TableData;
+import PointOfView.Model.Table.TableData;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;

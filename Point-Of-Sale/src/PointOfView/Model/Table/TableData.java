@@ -1,10 +1,12 @@
-package PointOfView.Order.Table.Model;
+package PointOfView.Model.Table;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 import PointOfView.Order.Menu.Model.MenuItem;
+import PointOfView.Order.Table.Model.GridPositionModel;
+import PointOfView.Order.Table.Model.OrderList;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;

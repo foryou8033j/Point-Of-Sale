@@ -1,7 +1,7 @@
 package PointOfView.Model.Receipt;
 
 import PointOfView.Model.Receipt.ReceiptModel.PAY;
-import PointOfView.Order.Table.Model.TableData;
+import PointOfView.Model.Table.TableData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

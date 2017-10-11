@@ -2,7 +2,7 @@ package PointOfView.Order.Table.View.Payment.Cash;
 
 import PointOfView.MainApp;
 import PointOfView.Model.Receipt.ReceiptModel.PAY;
-import PointOfView.Order.Table.Model.TableData;
+import PointOfView.Model.Table.TableData;
 import PointOfView.Util.View.SimpleAlert;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

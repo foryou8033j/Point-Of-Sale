@@ -5,7 +5,7 @@ import java.awt.Toolkit;
 
 import PointOfView.Model.DataManagement;
 import PointOfView.Model.Receipt.Receipt;
-import PointOfView.Order.Table.Model.Tables;
+import PointOfView.Model.Table.Tables;
 import PointOfView.View.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

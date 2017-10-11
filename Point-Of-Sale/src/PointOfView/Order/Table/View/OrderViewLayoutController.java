@@ -5,10 +5,10 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
+import PointOfView.Model.Table.TableData;
 import PointOfView.Order.Menu.Model.MenuItem;
 import PointOfView.Order.Menu.Modify.MenuModifier;
 import PointOfView.Order.Table.Model.OrderList;
-import PointOfView.Order.Table.Model.TableData;
 import PointOfView.Order.Table.View.Payment.Card.CardPaymentLayoutController;
 import PointOfView.Order.Table.View.Payment.Cash.CashPaymentLayoutController;
 import PointOfView.Util.View.NumberInputDialog;

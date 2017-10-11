@@ -2,7 +2,7 @@ package PointOfView.Model.Receipt;
 
 import java.util.Calendar;
 
-import PointOfView.Order.Table.Model.TableData;
+import PointOfView.Model.Table.TableData;
 
 public class ReceiptModel {
 
