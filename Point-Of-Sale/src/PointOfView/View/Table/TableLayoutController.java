@@ -10,9 +10,9 @@ import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
 import PointOfView.Model.Table.TableData;
-import PointOfView.Order.Menu.Modify.MenuModifier;
-import PointOfView.Order.Table.View.OrderViewLayoutController;
 import PointOfView.Util.View.PasswordInputDialog;
+import PointOfView.View.Table.MenuModifiy.MenuModifier;
+import PointOfView.View.Table.Order.OrderViewLayoutController;
 import PointOfView.View.Table.Overview.TableOverviewLayoutController;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;

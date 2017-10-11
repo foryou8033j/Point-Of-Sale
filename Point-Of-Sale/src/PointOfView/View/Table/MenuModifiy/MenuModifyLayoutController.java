@@ -1,4 +1,4 @@
-package PointOfView.Order.Menu.Modify;
+package PointOfView.View.Table.MenuModifiy;
 
 import java.util.regex.Pattern;
 

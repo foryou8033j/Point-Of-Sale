@@ -1,4 +1,4 @@
-package PointOfView.Title.View;
+package PointOfView.View.Title;
 
 import java.net.URL;
 import java.util.ResourceBundle;

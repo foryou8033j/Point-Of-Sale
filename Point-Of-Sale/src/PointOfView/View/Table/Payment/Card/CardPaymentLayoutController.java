@@ -1,17 +1,20 @@
-package PointOfView.Order.Table.View.Payment.Cash;
+package PointOfView.View.Table.Payment.Card;
+
+import javax.swing.text.PlainDocument;
 
 import PointOfView.MainApp;
 import PointOfView.Model.Receipt.ReceiptModel.PAY;
 import PointOfView.Model.Table.TableData;
 import PointOfView.Util.View.SimpleAlert;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class CashPaymentLayoutController {
+public class CardPaymentLayoutController {
 
     @FXML
     private Text sumMoney;
@@ -49,16 +52,11 @@ public class CashPaymentLayoutController {
     		return;
     	}else {
     		
+    		
     		tableData.setPayMoney(tableData.getPayMoney() + payMoney + tableData.getDiscount());
     		tableData.setDiscount(0);
     		
-    		
     		if(tableData.getResultPay() <= 0) {
-    			
-    			int var = tableData.getSumPrice()-tableData.getDiscount()-tableData.getPayMoney()-payMoney;
-    			if(var < 0)
-    				new SimpleAlert(stage, AlertType.INFORMATION, "거스름돈", "거스름돈 " + tableData.getResultPay() + " 원 반환").showAndWait();
-    			
     			//영수증 기록을 남긴다.
     	    	mainApp.getReceipts().addReceiptList(PAY.CARD, tableData);
     	    	
@@ -67,9 +65,9 @@ public class CashPaymentLayoutController {
     	    	stage.close();
     		}else {
     			stage.close();
-    		}
-    		
+    		}    		
     	}
+
     	
     }
 
@@ -85,8 +83,8 @@ public class CashPaymentLayoutController {
     	this.payMoney = payMoney;
     	
     	
-    	/*if(payMoney >= tableData.getResultPay())
-    		payMoney = tableData.getResultPay();*/
+    	if(payMoney >= tableData.getResultPay())
+    		payMoney = tableData.getResultPay();
 
     	try {
     		
@@ -99,7 +97,7 @@ public class CashPaymentLayoutController {
         	orderpay.setText(String.format("%,20d 원", order));
         	requestPay.setText(String.format("- %,20d 원", payMoney));
         	
-        	if(var == 0)
+        	if(var <= 0)
         		resultpay.setText(String.format("결제 완료"));
         	else
         		resultpay.setText(String.format("%,20d 원", var));

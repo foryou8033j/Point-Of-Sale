@@ -1,4 +1,4 @@
-package PointOfView.Order.Table.View;
+package PointOfView.View.Table.Order;
 
 import java.net.URL;
 import java.util.Optional;
@@ -8,10 +8,10 @@ import PointOfView.MainApp;
 import PointOfView.Model.Menu.MenuItem;
 import PointOfView.Model.OderList.OrderList;
 import PointOfView.Model.Table.TableData;
-import PointOfView.Order.Menu.Modify.MenuModifier;
-import PointOfView.Order.Table.View.Payment.Card.CardPaymentLayoutController;
-import PointOfView.Order.Table.View.Payment.Cash.CashPaymentLayoutController;
 import PointOfView.Util.View.NumberInputDialog;
+import PointOfView.View.Table.MenuModifiy.MenuModifier;
+import PointOfView.View.Table.Payment.Card.CardPaymentLayoutController;
+import PointOfView.View.Table.Payment.Cash.CashPaymentLayoutController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
