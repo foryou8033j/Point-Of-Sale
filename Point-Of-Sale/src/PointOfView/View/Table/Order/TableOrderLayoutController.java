@@ -41,7 +41,7 @@ import javafx.stage.StageStyle;
  * 선택 된 테이블의 메뉴를 주문 하는 화면의 컨트롤러 클래스
  * @author Jeongsam
  */
-public class OrderViewLayoutController implements Initializable{
+public class TableOrderLayoutController implements Initializable{
 	
 	private MainApp mainApp = null;
 	private TableData tableData = null;

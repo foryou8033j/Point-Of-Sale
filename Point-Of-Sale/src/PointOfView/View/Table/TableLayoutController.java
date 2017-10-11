@@ -12,7 +12,7 @@ import PointOfView.MainApp;
 import PointOfView.Models.Table.TableData;
 import PointOfView.Util.Dialog.PasswordInputDialog;
 import PointOfView.View.Table.MenuModifiy.MenuModifier;
-import PointOfView.View.Table.Order.OrderViewLayoutController;
+import PointOfView.View.Table.Order.TableOrderLayoutController;
 import PointOfView.View.Table.Overview.TableOverviewLayoutController;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -406,11 +406,11 @@ public class TableLayoutController implements Initializable {
 			mainApp.getRootLayoutController().getRootPane().setStyle("");
 			
 			
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("Order/OrderViewLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Order/TableOrderLayout.fxml"));
 			BorderPane pane = loader.load();
 
 			
-			OrderViewLayoutController controller = loader.getController();
+			TableOrderLayoutController controller = loader.getController();
 			controller.setMainApp(mainApp, tableData);
 			
 			mainApp.getRootLayoutController().showThisPane(pane);
