@@ -1,4 +1,4 @@
-package PointOfView.Order.Table.View.Payment.Model;
+package PointOfView.Model.Receipt;
 
 import java.util.Calendar;
 

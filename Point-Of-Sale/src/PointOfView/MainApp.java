@@ -4,8 +4,8 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 
 import PointOfView.Model.DataManagement;
+import PointOfView.Model.Receipt.Receipt;
 import PointOfView.Order.Table.Model.Tables;
-import PointOfView.Order.Table.View.Payment.Model.Receipt;
 import PointOfView.View.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

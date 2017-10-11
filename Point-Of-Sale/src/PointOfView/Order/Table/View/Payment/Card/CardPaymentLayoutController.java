@@ -3,8 +3,8 @@ package PointOfView.Order.Table.View.Payment.Card;
 import javax.swing.text.PlainDocument;
 
 import PointOfView.MainApp;
+import PointOfView.Model.Receipt.ReceiptModel.PAY;
 import PointOfView.Order.Table.Model.TableData;
-import PointOfView.Order.Table.View.Payment.Model.ReceiptModel.PAY;
 import PointOfView.Util.View.SimpleAlert;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -65,12 +65,9 @@ public class CardPaymentLayoutController {
     	    	stage.close();
     		}else {
     			stage.close();
-    		}
-    		
+    		}    		
     	}
-    	
-    	
-    	
+
     	
     }
 
