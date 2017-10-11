@@ -1,4 +1,4 @@
-package PointOfView.Order.View;
+package PointOfView.View.Table.Overview;
 
 import java.net.URL;
 import java.util.Calendar;

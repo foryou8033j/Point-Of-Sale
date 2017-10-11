@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
-import PointOfView.Order.View.TableLayoutController;
+import PointOfView.View.Table.TableLayoutController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

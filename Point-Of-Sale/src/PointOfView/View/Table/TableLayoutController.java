@@ -1,4 +1,4 @@
-package PointOfView.Order.View;
+package PointOfView.View.Table;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -13,6 +13,7 @@ import PointOfView.Model.Table.TableData;
 import PointOfView.Order.Menu.Modify.MenuModifier;
 import PointOfView.Order.Table.View.OrderViewLayoutController;
 import PointOfView.Util.View.PasswordInputDialog;
+import PointOfView.View.Table.Overview.TableOverviewLayoutController;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
