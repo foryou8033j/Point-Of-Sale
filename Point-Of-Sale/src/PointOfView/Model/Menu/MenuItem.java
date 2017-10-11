@@ -1,4 +1,4 @@
-package PointOfView.Order.Menu.Model;
+package PointOfView.Model.Menu;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;

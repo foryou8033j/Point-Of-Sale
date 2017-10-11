@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 import PointOfView.MainApp;
 import PointOfView.Model.Hbox_MenuItem;
-import PointOfView.Order.Menu.Model.MenuItem;
+import PointOfView.Model.Menu.MenuItem;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;

@@ -3,7 +3,7 @@ package PointOfView.Order.Table.Model;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
-import PointOfView.Order.Menu.Model.MenuItem;
+import PointOfView.Model.Menu.MenuItem;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;

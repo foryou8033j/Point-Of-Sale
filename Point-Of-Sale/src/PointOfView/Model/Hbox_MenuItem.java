@@ -1,6 +1,6 @@
 package PointOfView.Model;
 
-import PointOfView.Order.Menu.Model.MenuItem;
+import PointOfView.Model.Menu.MenuItem;
 import javafx.scene.layout.HBox;
 
 /**

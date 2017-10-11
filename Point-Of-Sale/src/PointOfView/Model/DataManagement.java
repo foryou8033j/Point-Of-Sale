@@ -1,6 +1,6 @@
 package PointOfView.Model;
 
-import PointOfView.Order.Menu.Model.Menues;
+import PointOfView.Model.Menu.Menues;
 
 public class DataManagement {
 
