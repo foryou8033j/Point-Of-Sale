@@ -58,10 +58,10 @@ public class TableOverviewLayoutController implements Initializable{
 		
 		tableSumPrice.setText(String.format(""
 				+ "%,20d 원\n"
-				+ "-%,18d 원\n"
+				+ "%,20d 원\n"
 				+ "%,20d 원",
 				tableData.getSumPrice(), 
-				tableData.getDiscount() + tableData.getPayMoney(),
+				(tableData.getDiscount() + tableData.getPayMoney())*-1,
 				tableData.getSumPrice() - tableData.getDiscount() + tableData.getPayMoney()));
 		
 	}

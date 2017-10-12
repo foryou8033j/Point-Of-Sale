@@ -4,7 +4,7 @@ import PointOfView.Models.Menu.Menues;
 
 public class DataManagement {
 
-	private String posTitle = "뀨뀨까까 레스토랑";
+	private String posTitle = "삐뀨뀨웁 레스토랑";
 	private String adminPassword = "1234";
 	
 	private Menues menues = new Menues();

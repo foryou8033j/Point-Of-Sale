@@ -7,12 +7,14 @@ import PointOfView.Util.InnerService;
 import PointOfView.Util.ProcessService;
 import PointOfView.Util.Dialog.PasswordInputDialog;
 import PointOfView.Util.Dialog.PasswordInputDialog.Mode;
+import PointOfView.Util.Dialog.SimpleAlert;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
@@ -43,7 +45,7 @@ public class ConfigLayoutController {
 
     @FXML
     void handleResetAllData(ActionEvent event) {
-    	
+    	new SimpleAlert(mainApp.getPrimaryStage(), AlertType.ERROR, "NOT YET!", "응 아직 아니야").showAndWait();
     }
     
 
@@ -66,21 +68,31 @@ public class ConfigLayoutController {
     	
     	service.setOnSucceeded(e -> {
     		lbnNotice.setVisible(false);
+    		password.setDisable(false);
+    		repassword.setDisable(false);
     		service.reset();
     	});
     	
     	if(!name.getText().equals("")) {
-    		lbnNotice.setText("저장되었습니다.");
+
     		mainApp.getDataManagement().setPOSTitle(name.getText());
     	}
-    		
+    	
+    	if(!password.getText().equals(repassword.getText())) {
+    		password.setText("");
+    		repassword.setText("");
+    		lbnPasswordAlert.setVisible(false);
+    	}
     	
     	if(passwordChanged) {
-    		lbnNotice.setText("저장되었습니다.");
     		mainApp.getDataManagement().setAdminPassword(repassword.getText());
     	}
-    	else
-    		lbnNotice.setText("패스워드를 제외하고 저장되었습니다.");
+    	else {
+    		password.setDisable(true);
+    		repassword.setDisable(true);
+    	}
+    		
+    		
     	
     	lbnNotice.setVisible(true);
     	service.start();
@@ -132,8 +144,8 @@ public class ConfigLayoutController {
     	lbnNotice.setVisible(false);
     	lbnPasswordAlert.setVisible(false);
     	
-    	password.setPromptText(mainApp.getDataManagement().getPassword());
-    	repassword.setPromptText(mainApp.getDataManagement().getPassword());
+    	password.setPromptText("패스워드 입력");
+    	repassword.setPromptText("패스워드 재입력");
     	
     	name.setText(mainApp.getDataManagement().getPOSTitle());
     	
