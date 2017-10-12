@@ -22,6 +22,9 @@ import javafx.stage.StageStyle;
 
 public class PasswordInputDialog extends Stage{
 
+	public enum Mode{INPUT, MODIFY};
+	Mode mode;
+	
 	VBox vb = new VBox(10);
 	
 	private MainApp mainApp;
@@ -37,9 +40,29 @@ public class PasswordInputDialog extends Stage{
 	private int maxLength = 13;
 	private boolean pass = false;
 	
+	public PasswordInputDialog(MainApp mainApp, Mode mode,  String str) {
+		this.mainApp = mainApp;
+		setMode(mode);
+		title.setText(str);
+		initLayout();
+	}
+	
+	public PasswordInputDialog(MainApp mainApp, Mode mode) {
+		this.mainApp = mainApp;
+		setMode(mode);
+		initLayout();
+	}
+	
 	public PasswordInputDialog(MainApp mainApp) {
 		this.mainApp = mainApp;
 		
+		setMode(Mode.INPUT);
+		initLayout();
+		
+		showAndWait();
+	}
+	
+	private void initLayout() {
 		vb.getStylesheets().add("JMetroLightTheme.css");
 		vb.setStyle("-fx-border-width: 3; -fx-border-color: #F68657;");
 		
@@ -70,7 +93,11 @@ public class PasswordInputDialog extends Stage{
 		button[11].setDefaultButton(true);
 		button[11].setPrefSize(100, 100);
 		button[11].setOnAction(e -> {
-			checkPassword();
+			
+			if(mode.equals(Mode.INPUT))
+				checkPassword();
+			else
+				close();
 		});
 		
 		numberPane.setHgap(5);
@@ -158,9 +185,20 @@ public class PasswordInputDialog extends Stage{
 				
 			};
 		});
+	}
+	
+	public void setMode(Mode mode) {
 		
-		showAndWait();
+		this.mode = mode;
 		
+		switch(mode) {
+			case INPUT:
+				title.setText("관리자 패스워드를 입력하세요.");
+				break;
+			case MODIFY:
+				title.setText("변경 할 패스워드를 입력하세요.");
+				break;
+		}
 	}
 	
 	private void checkPassword(){
@@ -179,6 +217,10 @@ public class PasswordInputDialog extends Stage{
 	
 	public boolean isPass(){
 		return pass;
+	}
+	
+	public String getValue() {
+		return password.getText();
 	}
 	
 	

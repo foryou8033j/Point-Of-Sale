@@ -4,7 +4,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
+import PointOfView.View.Config.ConfigLayoutController;
 import PointOfView.View.Table.TableLayoutController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,15 +26,30 @@ public class TitleLayoutController implements Initializable{
 	@FXML private Button btnExit;
 	
 	/* 버튼 핸들러 관리 */
-	@FXML
-	private void handleShowOrderMenu(){
-		showOrderMenu();
-	}
-	
-	@FXML
-	private void handleExitButton() {
-		System.exit(1);
-	}
+    @FXML
+    void handleConfigurationScreen(ActionEvent event) {
+    	showConfigurationMenu();
+    }
+
+    @FXML
+    void handleExit(ActionEvent event) {
+    	System.exit(0);
+    }
+
+    @FXML
+    void handleStaffManagementScreen(ActionEvent event) {
+
+    }
+
+    @FXML
+    void handleStockManagementScreen(ActionEvent event) {
+
+    }
+
+    @FXML
+    void handleTableManagementScreen(ActionEvent event) {
+    	showOrderMenu();
+    }
 	
 	
 	/* 레이아웃 로드 관리 */
@@ -51,6 +68,23 @@ public class TitleLayoutController implements Initializable{
 			
 			TableLayoutController controller = loader.getController();
 			controller.setMainApp(mainApp, pane);
+			
+			mainApp.getRootLayoutController().showThisPane(pane);
+			
+			
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void showConfigurationMenu(){
+		try{
+			
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Config/ConfigLayout.fxml"));
+			BorderPane pane = loader.load();
+			
+			ConfigLayoutController controller = loader.getController();
+			controller.setMainApp(mainApp);
 			
 			mainApp.getRootLayoutController().showThisPane(pane);
 			

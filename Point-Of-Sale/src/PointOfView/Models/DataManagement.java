@@ -9,7 +9,18 @@ public class DataManagement {
 	
 	private Menues menues = new Menues();
 
+	/**
+	 * 포스 타이틀을 지정한다.
+	 * @param title
+	 */
+	public void setPOSTitle(String title) {
+		this.posTitle = title;
+	}
 	
+	/**
+	 * 포스 타이틀을 반환한다.
+	 * @return {@link String}
+	 */
 	public String getPOSTitle() {
 		return posTitle;
 	}
@@ -33,6 +44,14 @@ public class DataManagement {
 			return true;
 		
 		return false;
+	}
+	
+	/**
+	 * 패스워드를 반환받는다.
+	 * @return {@link String}
+	 */
+	public String getPassword() {
+		return adminPassword;
 	}
 	
 	/**
