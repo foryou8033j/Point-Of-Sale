@@ -1,7 +1,7 @@
 package PointOfView.View.Table.Payment.Cash;
 
 import PointOfView.MainApp;
-import PointOfView.Models.Receipt.ReceiptModel.PAY;
+import PointOfView.Models.Receipt.PAY_WAY;
 import PointOfView.Models.Table.TableData;
 import PointOfView.Util.Dialog.SimpleAlert;
 import javafx.event.ActionEvent;
@@ -60,7 +60,7 @@ public class CashPaymentLayoutController {
     				new SimpleAlert(stage, AlertType.INFORMATION, "거스름돈", "거스름돈 " + tableData.getResultPay() + " 원 반환").showAndWait();
     			
     			//영수증 기록을 남긴다.
-    	    	mainApp.getReceipts().addReceiptList(PAY.CARD, tableData);
+    	    	mainApp.getReceipts().addReceiptList(PAY_WAY.CARD, tableData);
     	    	
     	    	tableData.removeAll();
     	    	mainApp.getRootLayoutController().showOrderMenu();

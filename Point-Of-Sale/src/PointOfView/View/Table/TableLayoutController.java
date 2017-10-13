@@ -14,6 +14,7 @@ import PointOfView.Util.Dialog.PasswordInputDialog;
 import PointOfView.View.Table.MenuModifiy.MenuModifier;
 import PointOfView.View.Table.Order.TableOrderLayoutController;
 import PointOfView.View.Table.Overview.TableOverviewLayoutController;
+import PointOfView.View.Table.Receipt.ReceiptStage;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -186,7 +187,7 @@ public class TableLayoutController implements Initializable {
 		}else{
 			if(!new PasswordInputDialog(mainApp).isPass()) return;
 				
-				//여기에 영수증 관리 화면을 보여준다.
+				new ReceiptStage(mainApp).showAndWait();
 				
 			
 		}

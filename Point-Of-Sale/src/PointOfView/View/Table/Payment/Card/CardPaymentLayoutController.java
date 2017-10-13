@@ -1,16 +1,13 @@
 package PointOfView.View.Table.Payment.Card;
 
-import javax.swing.text.PlainDocument;
-
 import PointOfView.MainApp;
-import PointOfView.Models.Receipt.ReceiptModel.PAY;
+import PointOfView.Models.Receipt.PAY_WAY;
 import PointOfView.Models.Table.TableData;
 import PointOfView.Util.Dialog.SimpleAlert;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -58,7 +55,7 @@ public class CardPaymentLayoutController {
     		
     		if(tableData.getResultPay() <= 0) {
     			//영수증 기록을 남긴다.
-    	    	mainApp.getReceipts().addReceiptList(PAY.CARD, tableData);
+    	    	mainApp.getReceipts().addReceiptList(PAY_WAY.CARD, tableData);
     	    	
     	    	tableData.removeAll();
     	    	mainApp.getRootLayoutController().showOrderMenu();

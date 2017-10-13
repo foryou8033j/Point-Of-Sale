@@ -1,13 +1,15 @@
 package PointOfView.Models.Receipt;
 
-import PointOfView.Models.Receipt.ReceiptModel.PAY;
 import PointOfView.Models.Table.TableData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * 영수증 데이터를 관리한다.
+ * @author Jeongsam
+ *
+ */
 public class Receipt {
-	
-	
 	
 	private ObservableList<ReceiptModel> receiptList;
 	
@@ -23,7 +25,12 @@ public class Receipt {
 		return receiptList;
 	}
 	
-	public void addReceiptList(PAY payWay, TableData tableData) {
+	/**
+	 * 영수증을 추가한다.
+	 * @param payWay
+	 * @param tableData
+	 */
+	public void addReceiptList(PAY_WAY payWay, TableData tableData) {
 		receiptList.add(new ReceiptModel(payWay, tableData));
 	}
 }
