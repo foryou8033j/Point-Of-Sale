@@ -16,6 +16,7 @@ import javafx.stage.StageStyle;
 
 /**
  * Restaurant POS 프로그램의 시작부분이 될 MainApp 클래스이다.
+ * MainApp 주석 변경
  * @author Jeongsam
  */
 public class MainApp extends Application {
