@@ -5,7 +5,9 @@ import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
 import PointOfView.Models.OderList.OrderList;
+import PointOfView.Models.Receipt.PAY_WAY;
 import PointOfView.Models.Receipt.ReceiptModel;
+import PointOfView.View.Table.Receipt.Card.CardReceiptDetailLayoutController;
 import PointOfView.View.Table.Receipt.Card.CardReceiptLayoutController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +19,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -79,6 +82,12 @@ public class ReceiptLayoutController implements Initializable{
     	table.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> drawReceipt(newValue));
     	
+    	commonReceipe.selectedProperty().addListener(
+    			(observable, oldValue, newValue) -> drawReceipt(table.getSelectionModel().getSelectedItem()));
+    	
+    	specReceipe.selectedProperty().addListener(
+    			(observable, oldValue, newValue) -> drawReceipt(table.getSelectionModel().getSelectedItem()));
+    	
 	}
     
     private void drawReceipt(ReceiptModel receipt) {
@@ -87,7 +96,17 @@ public class ReceiptLayoutController implements Initializable{
     	
     	receipeTable.setItems(receipt.getPayTableData().getOrderList());
     	
-    	receipePane.setCenter(drawCardReceipt(receipt));
+    	
+    	if(receipt.getPayWay().equals(PAY_WAY.CARD)) {
+    		if(commonReceipe.isSelected())
+    			receipePane.setCenter(drawCardReceipt(receipt));
+    		else
+    			receipePane.setCenter(drawCardDetailReceipt(receipt));
+    	}
+    	
+    	
+    	
+    	
     }
     
     
@@ -97,7 +116,7 @@ public class ReceiptLayoutController implements Initializable{
 			AnchorPane pane = loader.load();
 			
 			CardReceiptLayoutController controller = loader.getController();
-			controller.setReceipt(receipt);
+			controller.setReceipt(mainApp, receipt);
 			
 			return pane;
 			
@@ -106,6 +125,24 @@ public class ReceiptLayoutController implements Initializable{
 		}
     	return null;
     }
+    
+    private AnchorPane drawCardDetailReceipt(ReceiptModel receipt) {
+    	try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Card/CardReceiptDetailLayout.fxml"));
+			AnchorPane pane = loader.load();
+			
+			CardReceiptDetailLayoutController controller = loader.getController();
+			controller.setReceipt(mainApp, receipt);
+			
+			return pane;
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+    	return null;
+    }
+    
+    
     
     /*private AnchorPane drawCashReceipt(ReceiptModel receipt) {
     	
@@ -126,6 +163,8 @@ public class ReceiptLayoutController implements Initializable{
     	this.stage = stage;
     	
     	table.setItems(mainApp.getReceipts().getReceiptList());
+    	
+    	receipePane.setCenter(new Text("선택 된 영수증 없음"));
     	
     }
 

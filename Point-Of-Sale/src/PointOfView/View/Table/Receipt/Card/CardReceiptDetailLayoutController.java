@@ -1,8 +1,10 @@
 package PointOfView.View.Table.Receipt.Card;
 
 import PointOfView.MainApp;
+import PointOfView.Models.OderList.OrderList;
 import PointOfView.Models.Receipt.ReceiptModel;
 import PointOfView.Models.Table.TableData;
+import PointOfView.Util.StringPadding;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -11,7 +13,7 @@ import javafx.scene.control.Label;
  * @author Jeongsam
  *
  */
-public class CardReceiptLayoutController {
+public class CardReceiptDetailLayoutController {
 
     @FXML
     private Label dealNumber;
@@ -40,6 +42,9 @@ public class CardReceiptLayoutController {
     @FXML
     private Label shopName;
     
+    @FXML
+    private Label menuList;
+    
     private ReceiptModel receipt;
     private TableData tableData;
     private MainApp mainApp;
@@ -57,6 +62,30 @@ public class CardReceiptLayoutController {
     	dealNumber.setText("거래 번호 : " + String.format("%010d", receipt.getIndex()));
     	dealAcceptNumber.setText("승인 번호 : " + String.format("%010d", receipt.getIndex()));
     	
+    	String list = "";
+    	
+    	int i=0;
+    	int less = 0;
+    	
+    	for(OrderList data:tableData.getOrderList()) {
+    		
+    		if (i++>5) {
+    			less++;
+    			continue;
+    		}
+    		
+    		String name = StringPadding.getRPad(data.getName(), 48, " " );
+    		String count = StringPadding.getRPad(String.valueOf(data.getCount()), 10, " " );
+    		String price = String.valueOf(data.getPrice());
+    		
+    		list = list.concat(name + count + price + "\n");
+    		
+    	}
+    	
+    	if(i>5)
+    		list = list.concat("기타 " + less + " 개의 메뉴");
+    	
+    	menuList.setText(list);
     	
     	cardCompany.setText(receipt.getCardCompany());
     	cardName.setText(receipt.getCardName());
