@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="520.0" prefWidth="280.0" style="-fx-border-color: #000000;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Table.Receipt.Card.CardReceiptLayoutController">
+   <children>
+      <Label layoutX="10.0" layoutY="36.0" text="BANK POS">
+         <font>
+            <Font name="Arial Narrow Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="57.0" text="금융 결제원">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="8.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Image/5928116285.gif" />
+         </image>
+      </ImageView>
+      <Label layoutX="104.0" layoutY="32.0" text="가맹점명 / 주소가 실제와 다른 경우&#10;신고안내 (포상급 10만원 지급)&#10;여신금융협회 (02-2011-0777)" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="127.0" text="카드번호">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="214.0" layoutY="95.0" text="[매장용]" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="111.0" text="단말기번호 : KG09***459" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="dealNumber" layoutX="143.0" layoutY="111.0" text="거래 번호 : 0000006510" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="cardNumber" layoutX="6.0" layoutY="147.0" prefHeight="20.0" prefWidth="194.0" text="4673-0931-****-2148" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="cardName" layoutX="6.0" layoutY="167.0" text="카드사명 : KB국민체크카드" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="dealTime" layoutX="6.0" layoutY="183.0" text="거래일시 : 17/10/10 15:16:11" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="167.0" layoutY="183.0" text="거래형태 : (일시불)" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="199.0" text="판매금액 : " textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="215.0" text="합      계 : " textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="Pay0" alignment="CENTER_RIGHT" layoutX="116.0" layoutY="197.0" prefHeight="20.0" prefWidth="143.0" text="6,600 원" textAlignment="RIGHT">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="Pay1" alignment="CENTER_RIGHT" layoutX="116.0" layoutY="213.0" prefHeight="20.0" prefWidth="143.0" text="6,600 원" textAlignment="RIGHT">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="233.0" text="=================================" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="248.0" text="정상 완료" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="dealAcceptNumber" layoutX="5.0" layoutY="264.0" prefHeight="20.0" prefWidth="194.0" text="승인번호 : 30005345" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="cardCompany" layoutX="6.0" layoutY="284.0" text="매입사명 : KB국민카드" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="300.0" text="전자매입전표" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="316.0" text="=================================" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="shopName" layoutX="6.0" layoutY="332.0" text="금오공대운동화빨래방" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="164.0" layoutY="332.0" text="TEL : 010-4107-8033" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="348.0" prefHeight="16.0" prefWidth="151.0" text="사업자번호 : 048-78-153849" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="364.0" text="가맹점번호 : 562048514" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="228.0" layoutY="348.0" text="서정삼" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="380.0" text="주소 : 경북 구미 양호61" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="9.0" layoutY="396.0" text="=================================" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="2.0" layoutY="412.0" text="금융결제원(HelpDesk) 1577-5500 JTEC-310 VER 1.36&#10;감사합니다!" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="3.0" layoutY="477.0" prefHeight="20.0" prefWidth="262.0" text="본 영수증은 법적 효력이 없습니다." textAlignment="JUSTIFY" textFill="#8d8d8d">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="89.0" layoutY="85.0" prefHeight="20.0" prefWidth="61.0" text="신용승인" textAlignment="JUSTIFY">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
