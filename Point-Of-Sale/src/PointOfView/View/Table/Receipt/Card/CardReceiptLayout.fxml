@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="511.0" prefWidth="276.0" style="-fx-border-color: #000000;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Table.Receipt.Card.CardReceiptLayoutController">
+<AnchorPane prefHeight="520.0" prefWidth="280.0" style="-fx-border-color: #000000;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Table.Receipt.Card.CardReceiptLayoutController">
    <children>
       <Label layoutX="10.0" layoutY="36.0" text="BANK POS">
          <font>

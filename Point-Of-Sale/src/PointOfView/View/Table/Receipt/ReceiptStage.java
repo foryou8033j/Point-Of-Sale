@@ -25,7 +25,7 @@ public class ReceiptStage extends Stage{
 			BorderPane pane = loader.load();
 			
 			ReceiptLayoutController controller = loader.getController();
-			controller.setMainApp(this, pane, mainApp);
+			controller.setMainApp(this, mainApp);
 			
 			Scene scene = new Scene(pane);
 			setScene(scene);

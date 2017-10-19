@@ -1,23 +1,24 @@
 package PointOfView.View.Config;
 
-import javax.management.timer.Timer;
-
 import PointOfView.MainApp;
 import PointOfView.Util.InnerService;
 import PointOfView.Util.ProcessService;
 import PointOfView.Util.Dialog.PasswordInputDialog;
 import PointOfView.Util.Dialog.PasswordInputDialog.Mode;
 import PointOfView.Util.Dialog.SimpleAlert;
-import javafx.application.Platform;
-import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
+/**
+ * 환경 설정 레이아웃 컨트롤러
+ * @author Jeongsam
+ *
+ */
 public class ConfigLayoutController {
 
     @FXML
@@ -42,13 +43,12 @@ public class ConfigLayoutController {
     void handleBackToTitle(ActionEvent event) {
     	mainApp.showTitleMenu();
     }
-
-    @FXML
-    void handleResetAllData(ActionEvent event) {
-    	new SimpleAlert(mainApp.getPrimaryStage(), AlertType.ERROR, "NOT YET!", "응 아직 아니야").showAndWait();
-    }
     
 
+    /**
+     * 변경 된 데이터를 저장한다.
+     * @param event
+     */
     @FXML
     void handleSave(ActionEvent event) {
     	
@@ -100,6 +100,10 @@ public class ConfigLayoutController {
     	
     }
     
+    /**
+     * 패스워드 입력 TextField 의 무결성을 점검한다.
+     * @param event
+     */
     @FXML
     void handlePasswordFieldInputDialog(MouseEvent event) {
     	
@@ -117,6 +121,10 @@ public class ConfigLayoutController {
     	password.setText(dialog.getValue());
     }
 
+    /**
+     * 패스워드 재입력 TextField의 무결성을 점검한다.
+     * @param event
+     */
     @FXML
     void handleRePasswordFieldInputDialog(MouseEvent event) {
     	PasswordInputDialog dialog = new PasswordInputDialog(mainApp, Mode.MODIFY);
@@ -139,16 +147,20 @@ public class ConfigLayoutController {
     
     private MainApp mainApp;
     
+    /**
+     * MainApp과 연동한다.
+     * @param mainApp
+     */
     public void setMainApp(MainApp mainApp) {
     	this.mainApp = mainApp;
     	lbnNotice.setVisible(false);
     	lbnPasswordAlert.setVisible(false);
     	
+    	// 기존의 데이터 반영
     	password.setPromptText("패스워드 입력");
     	repassword.setPromptText("패스워드 재입력");
     	
     	name.setText(mainApp.getDataManagement().getPOSTitle());
-    	
 
     }
 

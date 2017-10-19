@@ -4,6 +4,11 @@ import PointOfView.Models.Receipt.ReceiptModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+/**
+ * 카드 결제 영수증 레이아웃 컨트롤러
+ * @author Jeongsam
+ *
+ */
 public class CardReceiptLayoutController {
 
     @FXML

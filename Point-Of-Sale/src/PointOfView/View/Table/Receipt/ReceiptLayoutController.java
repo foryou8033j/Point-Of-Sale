@@ -4,20 +4,38 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
+import PointOfView.Models.OderList.OrderList;
 import PointOfView.Models.Receipt.ReceiptModel;
 import PointOfView.View.Table.Receipt.Card.CardReceiptLayoutController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+/**
+ * 영수증 레이아웃을 관리하는 컨트롤러
+ * @author Jeongsam
+ *
+ */
 public class ReceiptLayoutController implements Initializable{
 
+	
+	@FXML
+    private ToggleGroup receipeGroup;
+	
+    @FXML
+    private RadioButton commonReceipe;
+
+    @FXML
+    private RadioButton specReceipe;
+	
     @FXML
     private TableView<ReceiptModel> table;
 
@@ -29,6 +47,21 @@ public class ReceiptLayoutController implements Initializable{
 
     @FXML
     private TableColumn<ReceiptModel, String> payColumn;
+    
+    @FXML
+    private TableView<OrderList> receipeTable;
+
+    @FXML
+    private TableColumn<OrderList, String> orderColumn;
+
+    @FXML
+    private TableColumn<OrderList, String> countColumn;
+
+    @FXML
+    private TableColumn<OrderList, String> priceColumn;
+    
+    @FXML
+    private BorderPane receipePane;
 
     
     @Override
@@ -38,6 +71,10 @@ public class ReceiptLayoutController implements Initializable{
     	wayColumn.setCellValueFactory(cellData -> cellData.getValue().payProperty());
     	payColumn.setCellValueFactory(cellData -> cellData.getValue().moneyProperty());
     	
+    	orderColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+    	countColumn.setCellValueFactory(cellData -> cellData.getValue().countProperty().asString());
+    	priceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty());
+    	
     	
     	table.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> drawReceipt(newValue));
@@ -46,9 +83,11 @@ public class ReceiptLayoutController implements Initializable{
     
     private void drawReceipt(ReceiptModel receipt) {
     	if(receipt == null)
-    		pane.setCenter(null);
+    		receipePane.setCenter(null);
     	
-    	pane.setCenter(drawCardReceipt(receipt));
+    	receipeTable.setItems(receipt.getPayTableData().getOrderList());
+    	
+    	receipePane.setCenter(drawCardReceipt(receipt));
     }
     
     
@@ -59,8 +98,6 @@ public class ReceiptLayoutController implements Initializable{
 			
 			CardReceiptLayoutController controller = loader.getController();
 			controller.setReceipt(receipt);
-			
-			//controller.setMainApp(this, pane, mainApp);
 			
 			return pane;
 			
@@ -83,16 +120,13 @@ public class ReceiptLayoutController implements Initializable{
 
 	private Stage stage;
     private MainApp mainApp;
-    private BorderPane pane;
     
-    public void setMainApp(Stage stage, BorderPane pane, MainApp mainApp) {
+    public void setMainApp(Stage stage, MainApp mainApp) {
     	this.mainApp = mainApp;
     	this.stage = stage;
-    	this.pane = pane;
     	
     	table.setItems(mainApp.getReceipts().getReceiptList());
     	
-    	pane.setCenter(null);
     }
 
 	
