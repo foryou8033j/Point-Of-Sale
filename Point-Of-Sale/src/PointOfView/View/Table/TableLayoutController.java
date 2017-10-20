@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import PointOfView.MainApp;
 import PointOfView.Models.Table.TableData;
 import PointOfView.Util.Dialog.PasswordInputDialog;
+import PointOfView.View.Stastics.StasticsStage;
 import PointOfView.View.Table.MenuModifiy.MenuModifier;
 import PointOfView.View.Table.Order.TableOrderLayoutController;
 import PointOfView.View.Table.Overview.TableOverviewLayoutController;
@@ -214,7 +215,7 @@ public class TableLayoutController implements Initializable {
 		}else{
 			if(!new PasswordInputDialog(mainApp).isPass()) return;
 				
-				//여기에 정산, 통계 화면을 보여준다.
+				new StasticsStage(mainApp).showAndWait();
 				
 			
 		}
