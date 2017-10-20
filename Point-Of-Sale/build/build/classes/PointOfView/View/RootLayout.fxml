@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-border-color: #000000; -fx-border-width: 3; -fx-border-radius: 80; -fx-background-radius: 87,81; -fx-background-color: #D7FFF1;" stylesheets="@../../../CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.RootLayoutController">
+   <top>
+      <VBox alignment="CENTER" prefHeight="121.0" prefWidth="265.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="titleLabel" text="Restaurant Label Place" textFill="#9055a2">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="65.0" />
+               </font>
+            </Label>
+            <Label text="Point-Of-Sale System" textFill="#011638">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="14.0" />
+               </font></Label>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </top>
+   <bottom>
+      <Label text="금오공과대학교 컴퓨터공학과 20140636 서정삼&#10;소프트웨어 분석 및 설계 레벨 2 프로젝트" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+      </Label>
+   </bottom>
+</BorderPane>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="520.0" prefWidth="280.0" style="-fx-border-color: #000000;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Table.Receipt.Cash.CashReceiptDetailLayoutController">
+   <children>
+      <Label layoutX="15.0" layoutY="72.0" text="식별 번호 (  핸드폰 번호  )" AnchorPane.leftAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="200.0" layoutY="55.0" text="[매장용]" textAlignment="JUSTIFY" AnchorPane.rightAnchor="30.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="dealNumber" layoutX="195.0" layoutY="110.0" text="0000006510" textAlignment="JUSTIFY" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="71.0" layoutY="89.0" prefHeight="20.0" prefWidth="194.0" text="010XXXXXXXX" textAlignment="RIGHT" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="110.0" text="승인 번호" textAlignment="JUSTIFY" AnchorPane.leftAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="dealTime" layoutX="8.0" layoutY="140.0" text="거래일시 : 17/10/10 15:16:11" textAlignment="JUSTIFY" AnchorPane.leftAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="338.0" text="영 세 물 품" textAlignment="JUSTIFY" AnchorPane.leftAnchor="85.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="356.0" text="합      계 : " textAlignment="JUSTIFY" AnchorPane.leftAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="141.0" layoutY="336.0" prefHeight="20.0" prefWidth="128.0" text="0 원" textAlignment="RIGHT" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="PriceSum" alignment="CENTER_RIGHT" layoutX="126.0" layoutY="356.0" prefHeight="20.0" prefWidth="143.0" text="6,600 원" textAlignment="RIGHT" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="13.0" layoutY="376.0" text="=============================" textAlignment="JUSTIFY" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="shopName" layoutX="24.0" layoutY="441.0" text="금오공대운동화빨래방" textAlignment="JUSTIFY" AnchorPane.leftAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="140.0" layoutY="441.0" text="TEL : 010-4107-8033" textAlignment="JUSTIFY" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="457.0" prefHeight="16.0" prefWidth="151.0" text="사업자번호 : 048-78-153849" textAlignment="JUSTIFY" AnchorPane.leftAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="224.0" layoutY="457.0" text="서정삼" textAlignment="JUSTIFY" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="473.0" text="주소 : 경북 구미 양호61" textAlignment="JUSTIFY" AnchorPane.leftAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="10.0" layoutY="489.0" prefHeight="20.0" prefWidth="323.0" text="본 영수증은 법적 효력이 없습니다." textAlignment="JUSTIFY" textFill="#8d8d8d" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="10.0" layoutY="15.0" prefHeight="20.0" prefWidth="278.0" text="현금 (소득공제)" textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="10.0" layoutY="30.0" prefHeight="20.0" prefWidth="278.0" text="(정상매출)" textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="126.0" text="=============================" textAlignment="JUSTIFY" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="322.0" text="면 세 물 품" textAlignment="JUSTIFY" AnchorPane.leftAnchor="85.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="141.0" layoutY="320.0" prefHeight="20.0" prefWidth="128.0" text="0 원" textAlignment="RIGHT" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="305.0" text="부   가   세" textAlignment="JUSTIFY" AnchorPane.leftAnchor="85.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="289.0" text="과 세 물 품" textAlignment="JUSTIFY" AnchorPane.leftAnchor="85.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="taxPrice" alignment="CENTER_RIGHT" layoutX="141.0" layoutY="303.0" prefHeight="20.0" prefWidth="128.0" text="720 원" textAlignment="RIGHT" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="taxExceptPrice" alignment="CENTER_RIGHT" layoutX="141.0" layoutY="287.0" prefHeight="20.0" prefWidth="128.0" text="10,000 원" textAlignment="RIGHT" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="388.0" text="현   금" textAlignment="JUSTIFY" AnchorPane.leftAnchor="85.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="cashPrice" alignment="CENTER_RIGHT" layoutX="141.0" layoutY="387.0" prefHeight="20.0" prefWidth="128.0" text="10,000 원" textAlignment="RIGHT" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="403.0" text="받은돈" textAlignment="JUSTIFY" AnchorPane.leftAnchor="85.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="receiveCash" alignment="CENTER_RIGHT" layoutX="141.0" layoutY="400.0" prefHeight="20.0" prefWidth="128.0" text="10,000 원" textAlignment="RIGHT" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="86.0" layoutY="419.0" text="거스름" textAlignment="JUSTIFY" AnchorPane.leftAnchor="85.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="returnedCash" alignment="CENTER_RIGHT" layoutX="141.0" layoutY="415.0" prefHeight="20.0" prefWidth="128.0" text="10,000 원" textAlignment="RIGHT" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="9.0" layoutY="154.0" text="메뉴명                                       개수        가격" textAlignment="JUSTIFY" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic Bold" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="menuList" layoutX="9.0" layoutY="165.0" text="메뉴명                                       개수        가격" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="6.0" layoutY="275.0" text="=============================" textAlignment="JUSTIFY" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <font>
+            <Font name="Malgun Gothic" size="11.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

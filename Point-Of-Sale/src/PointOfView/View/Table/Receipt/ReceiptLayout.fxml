@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="590.0" prefWidth="900.0" style="-fx-border-color: #000000; -fx-border-width: 2;" stylesheets="@../../../../../CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Table.Receipt.ReceiptLayoutController">
+<BorderPane prefHeight="590.0" prefWidth="900.0" style="-fx-border-color: #000000; -fx-border-width: 2;" stylesheets="@../../../Resource/CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Table.Receipt.ReceiptLayoutController">
    <bottom>
       <FlowPane alignment="CENTER_RIGHT" hgap="10.0" prefHeight="50.0" prefWidth="685.0" BorderPane.alignment="CENTER">
          <children>

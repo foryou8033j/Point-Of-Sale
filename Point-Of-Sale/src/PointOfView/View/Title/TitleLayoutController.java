@@ -4,12 +4,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
+import PointOfView.Util.Dialog.ExceptionDialog;
 import PointOfView.View.Config.ConfigLayoutController;
 import PointOfView.View.Table.TableLayoutController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 
@@ -62,7 +64,7 @@ public class TitleLayoutController implements Initializable{
 			mainApp.getRootLayoutController().getRootPane().setStyle("");
 			
 			
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Table/TableLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(TitleLayoutController.class.getResource("/PointOfView/View/Table/TableLayout.fxml"));
 			BorderPane pane = loader.load();
 
 			
@@ -80,7 +82,7 @@ public class TitleLayoutController implements Initializable{
 	public void showConfigurationMenu(){
 		try{
 			
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Config/ConfigLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(TitleLayoutController.class.getResource("/PointOfView/View/Config/ConfigLayout.fxml"));
 			BorderPane pane = loader.load();
 			
 			ConfigLayoutController controller = loader.getController();
@@ -90,6 +92,7 @@ public class TitleLayoutController implements Initializable{
 			
 			
 		}catch (Exception e){
+			new ExceptionDialog(AlertType.ERROR, "에러", "", "", e).showAndWait();
 			e.printStackTrace();
 		}
 	}

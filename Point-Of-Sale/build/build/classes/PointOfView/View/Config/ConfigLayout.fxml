@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #000000; -fx-border-width: 1.5; -fx-border-radius: 15.4, 16; -fx-background-radius: 16;" stylesheets="@../../../../CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Config.ConfigLayoutController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <top>
+      <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#c90090" strokeType="OUTSIDE" strokeWidth="0.0" text="환경 설정">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="31.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="320.0" top="10.0" />
+               </HBox.margin>
+            </Text>
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#handleBackToTitle" prefHeight="75.0" prefWidth="101.0" text="◀" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </BorderPane.margin>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="매장명">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="31.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="관리 패스워드" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="31.0" />
+               </font>
+            </Text>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <opaqueInsets>
+                        <Insets right="10.0" />
+                     </opaqueInsets>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="패스워드 입력" />
+                        <PasswordField fx:id="password" editable="false" onMouseClicked="#handlePasswordFieldInputDialog" prefHeight="23.0" prefWidth="170.0">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Malgun Gothic" size="12.0" />
+                           </font>
+                        </PasswordField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <opaqueInsets>
+                        <Insets right="10.0" />
+                     </opaqueInsets>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="패스워드 재입력" />
+                        <PasswordField fx:id="repassword" editable="false" onMouseClicked="#handleRePasswordFieldInputDialog" prefWidth="170.0">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Malgun Gothic" size="12.0" />
+                           </font>
+                        </PasswordField>
+                     </children>
+                  </HBox>
+                  <Text fx:id="lbnPasswordAlert" fill="#c90404" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwordnotice" visible="false" />
+               </children>
+            </VBox>
+            <TextField fx:id="name" prefHeight="40.0" prefWidth="278.0" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Malgun Gothic Bold" size="17.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <VBox alignment="CENTER" prefHeight="55.0" prefWidth="577.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fx:id="lbnNotice" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="설정이 저장되었습니다." visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#handleSave" prefHeight="45.0" prefWidth="168.0" text="저장" />
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane prefHeight="590.0" prefWidth="900.0" style="-fx-border-color: #000000; -fx-border-width: 2;" stylesheets="@../../../../../CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Table.MenuModifiy.MenuModifyLayoutController">
+<BorderPane prefHeight="590.0" prefWidth="900.0" style="-fx-border-color: #000000; -fx-border-width: 2;" stylesheets="@../../../Resource/CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Table.MenuModifiy.MenuModifyLayoutController">
    <right>
       <GridPane fx:id="gridPane" prefHeight="600.0" prefWidth="562.0" style="-fx-border-width: 1; -fx-border-color: #000000;" BorderPane.alignment="CENTER">
         <columnConstraints>

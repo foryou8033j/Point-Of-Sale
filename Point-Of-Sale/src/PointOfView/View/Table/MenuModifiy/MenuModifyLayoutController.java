@@ -130,7 +130,7 @@ public class MenuModifyLayoutController {
 		
 		Scene scene = new Scene(vb);
 		
-		scene.getStylesheets().add("JMetroLightTheme.css");
+		scene.getStylesheets().add("../../../Resource/CSS/JMetroLightTheme.css");
 		
 		
 		addDialog.setScene(scene);
