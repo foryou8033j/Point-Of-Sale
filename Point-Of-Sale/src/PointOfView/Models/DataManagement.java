@@ -1,6 +1,8 @@
 package PointOfView.Models;
 
 import PointOfView.Models.Menu.Menues;
+import PointOfView.Models.Stastics.StasticsModel;
+import PointOfView.Models.Stastics.Sale.SaleStasticsModel;
 
 public class DataManagement {
 
@@ -8,6 +10,7 @@ public class DataManagement {
 	private String adminPassword = "1234";
 	
 	private Menues menues = new Menues();
+	
 
 	/**
 	 * 포스 타이틀을 지정한다.

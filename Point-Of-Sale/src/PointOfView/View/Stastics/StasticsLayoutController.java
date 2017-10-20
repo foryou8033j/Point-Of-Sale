@@ -34,6 +34,7 @@ public class StasticsLayoutController {
     		BorderPane pane = loader.load();
     		
     		SaleStasticsLayoutController controller = loader.getController();
+    		controller.setStastics(mainApp.getStasticsModel());
     		
     		saleStasticsTab.setContent(pane);
     	}catch (Exception e) {

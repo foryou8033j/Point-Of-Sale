@@ -5,6 +5,7 @@ import java.awt.Toolkit;
 
 import PointOfView.Models.DataManagement;
 import PointOfView.Models.Receipt.Receipt;
+import PointOfView.Models.Stastics.StasticsModel;
 import PointOfView.Models.Table.Tables;
 import PointOfView.View.RootLayoutController;
 import javafx.application.Application;
@@ -30,13 +31,16 @@ public class MainApp extends Application {
 	
 	private Tables tables;
 	private Receipt receipts;
-	
+	private StasticsModel stasticsModel;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
 		this.tables = new Tables();
 		this.receipts = new Receipt();
+		
+		
+		stasticsModel = new StasticsModel(receipts, managementData.getMenues());
 		
 		initStage();
 		showTitleMenu();
@@ -130,6 +134,10 @@ public class MainApp extends Application {
 	 */
 	public Receipt getReceipts() {
 		return receipts;
+	}
+	
+	public StasticsModel getStasticsModel() {
+		return stasticsModel;
 	}
 	
 	public static void main(String[] args) {
