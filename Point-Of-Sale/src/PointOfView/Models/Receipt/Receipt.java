@@ -29,12 +29,19 @@ public class Receipt {
 			cardCompany.put("신한카드", "KB신한카드신용");
 			cardCompany.put("NH농협", "NH농협체크");
 			cardCompany.put("NH농협", "NH농협신용");
+			cardCompany.put("카카오뱅크", "카카오뱅크체크");
+			cardCompany.put("K뱅크", "K뱅크체크");
+			cardCompany.put("대구은행", "대구은행체크");
+			cardCompany.put("대구은행", "대구은행신용");
+			cardCompany.put("우체국", "우체국여신체크");
+			cardCompany.put("IBK금융", "IBK체크");
+			cardCompany.put("IBK금융", "IBK신용");
 	    }
 		
 		/**
 		 * 카드사를 반환한다
-		 * @param i 인덱스
-		 * @return 카드사명
+		 * @param	i	인덱스
+		 * @return 		카드사명
 		 */
 		public static String getCompany(int i) {
 			List keys = new ArrayList(cardCompany.keySet());
@@ -43,8 +50,8 @@ public class Receipt {
 		
 		/**
 		 * 카드 이름을 반환한다.
-		 * @param name 카드사
-		 * @return 카드 이름
+		 * @param	name	카드사
+		 * @return			카드 이름
 		 */
 		public static String getCardName(String name) {
 			return cardCompany.get(name);
