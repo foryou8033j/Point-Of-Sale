@@ -10,40 +10,8 @@
 
 <BorderPane prefHeight="590.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Stastics.Sale.SaleStasticsLayoutController">
    <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" tabMinWidth="120.0" BorderPane.alignment="CENTER">
+      <TabPane prefHeight="200.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" tabMinWidth="140.0" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab text="연별">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <BarChart fx:id="yearChart" title="연별 매출 통계" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-                           <xAxis>
-                              <CategoryAxis fx:id="yearChartXAxis" label="YEAR" side="BOTTOM" />
-                           </xAxis>
-                           <yAxis>
-                              <NumberAxis side="LEFT" />
-                           </yAxis>
-                        </BarChart>
-                     </children>
-                  </AnchorPane>
-               </content>
-          </Tab>
-          <Tab text="월별">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <BarChart fx:id="monthChart" title="월별 매출 통계" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-                           <xAxis>
-                              <CategoryAxis fx:id="monthChartXAxis" label="MONTH" side="BOTTOM" />
-                           </xAxis>
-                           <yAxis>
-                              <NumberAxis side="LEFT" />
-                           </yAxis>
-                        </BarChart>
-                     </children>
-                  </AnchorPane>
-               </content>
-          </Tab>
             <Tab text="일별">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -53,13 +21,45 @@
                             <CategoryAxis fx:id="dayChartXAxis" label="DAY" side="BOTTOM" />
                           </xAxis>
                           <yAxis>
-                            <NumberAxis side="LEFT" />
+                            <NumberAxis label="금액" side="LEFT" />
                           </yAxis>
                         </BarChart>
                      </children>
                   </AnchorPane>
                </content>
             </Tab>
+          <Tab text="월별">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BarChart fx:id="monthChart" title="월별 매출 통계" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <xAxis>
+                              <CategoryAxis fx:id="monthChartXAxis" label="MONTH" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis label="금액" side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab text="연별">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BarChart fx:id="yearChart" title="연별 매출 통계" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <xAxis>
+                              <CategoryAxis fx:id="yearChartXAxis" label="YEAR" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis label="금액" side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
         </tabs>
       </TabPane>
    </center>

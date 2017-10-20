@@ -3,7 +3,6 @@ package PointOfView.View.Stastics;
 import PointOfView.MainApp;
 import PointOfView.View.Stastics.Menu.MenuStasticsLayoutController;
 import PointOfView.View.Stastics.Sale.SaleStasticsLayoutController;
-import PointOfView.View.Stastics.Time.TimeStasticsLayoutController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,8 +18,6 @@ public class StasticsLayoutController {
     @FXML
     private Tab menuStasticsTab;
 
-    @FXML
-    private Tab timeStasticsPane;
 
     @FXML
     void handleClose(ActionEvent event) {
@@ -49,22 +46,9 @@ public class StasticsLayoutController {
     		BorderPane pane = loader.load();
     		
     		MenuStasticsLayoutController controller = loader.getController();
+    		controller.setStastics(mainApp.getStasticsModel());
     		
     		menuStasticsTab.setContent(pane);
-    	}catch (Exception e) {
-    		//ignore
-    	}
-    }
-
-    @FXML
-    void handleTimeTabSelected(ActionEvent event) {
-    	try {
-    		FXMLLoader loader = new FXMLLoader(getClass().getResource("Time/TimeStasticsLayout.fxml"));
-    		BorderPane pane = loader.load();
-    		
-    		TimeStasticsLayoutController controller = loader.getController();
-    		
-    		timeStasticsPane.setContent(pane);
     	}catch (Exception e) {
     		//ignore
     	}
@@ -78,7 +62,6 @@ public class StasticsLayoutController {
     	this.stage = stage;
     	
     	handleSaleTabSelected(null);
-    	handleTimeTabSelected(null);
     	handleMenuTabSelected(null);
     	
     	

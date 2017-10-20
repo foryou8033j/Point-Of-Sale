@@ -1,10 +1,14 @@
 package PointOfView.Models.Stastics.Sale;
 
+import java.sql.Date;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 import PointOfView.Models.Receipt.Receipt;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.chart.XYChart;
 
 public class SaleStasticsModel {
 
@@ -44,13 +48,13 @@ public class SaleStasticsModel {
         }
         
         //최근 10년의 해를 리스트화 한다.
-        
         int year = cal.get(Calendar.YEAR);
         
         for(int i=0; i<10; i++) {
         	System.out.println(year);
         	yearNames.add(String.valueOf(year--));
         }
+
 		
 	}
 	
@@ -68,6 +72,127 @@ public class SaleStasticsModel {
 		
 	}
 	
+	/**
+	 * 년별 매출 통계를 반환한다.
+	 * @return	XYChart.Series<String, Integer>
+	 */
+	public XYChart.Series<String, Integer> getYearModel(){
+		Map<String, Integer> yearModel = new HashMap<>();
+		
+        // 월별로 합산 매출액 만든다.
+        for (int i = 0; i < receipt.getReceiptList().size(); i++) {
+        	
+        	String date = String.valueOf(receipt.getReceiptList().get(i).getPayTime().get(Calendar.YEAR));
+        	int price = receipt.getReceiptList().get(i).getPayTableData().getSumPrice();
+        	
+        	if(yearModel.get(date) == null)
+        		yearModel.put(date, price);
+        	else
+        		yearModel.put(date, yearModel.get(date) + price);
+        }
+        	
+        XYChart.Series<String, Integer> series = new XYChart.Series<>();
+        
+        // 그래프 Series 에 데이터를 추가한다.
+        for (int i=0; i < yearNames.size(); i++) {
+        	
+        	String date = yearNames.get(i);
+        	
+        	if(yearModel.get(date) == null)
+        		continue;
+        	
+        	int price = yearModel.get(date);
+        	System.out.println(price);
+        	series.getData().add(new XYChart.Data<>(yearNames.get(i), price));
+        	
+        	yearModel.put(date, yearModel.get(date) + price);
+        }
+        
+        return series;
+		
+	}
+	
+	
+	/**
+	 * 월별 매출 통계를 반환한다.
+	 * @return	XYChart.Series<String, Integer>
+	 */
+	public XYChart.Series<String, Integer> getMonthModel(){
+		Map<String, Integer> monthModel = new HashMap<>();
+		
+        // 월별로 합산 매출액 만든다.
+        for (int i = 0; i < receipt.getReceiptList().size(); i++) {
+        	
+        	String date = String.valueOf(receipt.getReceiptList().get(i).getPayTime().get(Calendar.MONTH)+1);
+        	int price = receipt.getReceiptList().get(i).getPayTableData().getSumPrice();
+        	
+        	if(monthModel.get(date) == null)
+        		monthModel.put(date, price);
+        	else
+        		monthModel.put(date, monthModel.get(date) + price);
+        }
+        	
+        XYChart.Series<String, Integer> series = new XYChart.Series<>();
+        
+        // 그래프 Series 에 데이터를 추가한다.
+        for (int i=0; i < monthNames.size(); i++) {
+        	
+        	String date = monthNames.get(i);
+        	
+        	if(monthModel.get(date) == null)
+        		continue;
+        	
+        	int price = monthModel.get(date);
+        	System.out.println(price);
+        	series.getData().add(new XYChart.Data<>(monthNames.get(i), price));
+        	
+        	monthModel.put(date, monthModel.get(date) + price);
+        }
+        
+        return series;
+		
+	}
+	
+	
+	/**
+	 * 일별 매출 통계를 반환한다.
+	 * @return	XYChart.Series<String, Integer>
+	 */
+	public XYChart.Series<String, Integer> getDayModel(){
+		Map<String, Integer> dayModel = new HashMap<>();
+		
+        // 일별로 합산 매출액 만든다.
+        for (int i = 0; i < receipt.getReceiptList().size(); i++) {
+        	
+        	String date = String.valueOf(receipt.getReceiptList().get(i).getPayTime().get(Calendar.DATE));
+        	int price = receipt.getReceiptList().get(i).getPayTableData().getSumPrice();
+        	
+        	if(dayModel.get(date) == null)
+        		dayModel.put(date, price);
+        	else
+        		dayModel.put(date, dayModel.get(date) + price);
+        }
+        	
+        XYChart.Series<String, Integer> series = new XYChart.Series<>();
+        
+        // 그래프 Series 에 데이터를 추가한다.
+        for (int i=0; i < dayNames.size(); i++) {
+        	
+        	String date = dayNames.get(i);
+        	
+        	if(dayModel.get(date) == null)
+        		continue;
+        	
+        	int price = dayModel.get(date);
+        	System.out.println(price);
+        	series.getData().add(new XYChart.Data<>(dayNames.get(i), price));
+        	
+        	dayModel.put(date, dayModel.get(date) + price);
+        }
+        
+        return series;
+		
+	}
 	
 	
 	

@@ -10,11 +10,10 @@
 
 <BorderPane prefHeight="590.0" prefWidth="900.0" style="-fx-border-color: #000000; -fx-border-width: 1.5;" stylesheets="@../../Resource/CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Stastics.StasticsLayoutController">
    <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" tabMinWidth="200.0" BorderPane.alignment="CENTER">
+      <TabPane prefHeight="200.0" prefWidth="200.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" tabMinWidth="425.0" BorderPane.alignment="CENTER">
         <tabs>
           <Tab fx:id="saleStasticsTab" text="매출 통계" />
             <Tab fx:id="menuStasticsTab" text="메뉴 통계" />
-          <Tab fx:id="timeStasticsPane" text="점유 시간 통계" />
         </tabs>
       </TabPane>
    </center>
