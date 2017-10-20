@@ -13,7 +13,7 @@
    <center>
       <TabPane prefHeight="200.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab onSelectionChanged="#yearChartOpen" text="연별">
+          <Tab text="연별">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -29,7 +29,7 @@
                   </AnchorPane>
                </content>
           </Tab>
-          <Tab onSelectionChanged="#monthChartOpen" text="월별">
+          <Tab text="월별">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -45,7 +45,7 @@
                   </AnchorPane>
                </content>
           </Tab>
-            <Tab onSelectionChanged="#weekChartOpen" text="주별">
+            <Tab text="주별">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -61,7 +61,7 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab onSelectionChanged="#dayChartOpen" text="일별">
+            <Tab text="일별">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>

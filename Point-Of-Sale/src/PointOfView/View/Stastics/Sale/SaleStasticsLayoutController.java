@@ -18,22 +18,22 @@ public class SaleStasticsLayoutController {
     @FXML
     private BarChart<?, ?> dayChart;
 
-    @FXML
+    
     void dayChartOpen(ActionEvent event) {
 
     }
 
-    @FXML
+    
     void monthChartOpen(ActionEvent event) {
 
     }
 
-    @FXML
+    
     void weekChartOpen(ActionEvent event) {
 
     }
 
-    @FXML
+    
     void yearChartOpen(ActionEvent event) {
 
     }
