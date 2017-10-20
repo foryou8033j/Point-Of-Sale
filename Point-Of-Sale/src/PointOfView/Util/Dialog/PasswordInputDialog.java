@@ -63,7 +63,10 @@ public class PasswordInputDialog extends Stage{
 	}
 	
 	private void initLayout() {
-		vb.getStylesheets().add("JMetroLightTheme.css");
+		
+		String css = this.getClass().getResource("/PointOfView/Resource/CSS/JMetroLightTheme.css").toExternalForm();
+		
+		vb.getStylesheets().add(css);
 		vb.setStyle("-fx-border-width: 3; -fx-border-color: #F68657;");
 		
 

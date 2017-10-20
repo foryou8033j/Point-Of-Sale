@@ -205,7 +205,7 @@ public class TableOrderLayoutController implements Initializable{
 			stage.initStyle(StageStyle.UNDECORATED);
 			
 			
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Payment/Card/CardPaymentLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(TableOrderLayoutController.class.getResource("/PointOfView/View/Table/Payment/Card/CardPaymentLayout.fxml"));
 			BorderPane pane = loader.load();
 			
 			CardPaymentLayoutController controller = loader.getController();
@@ -266,7 +266,7 @@ public class TableOrderLayoutController implements Initializable{
 			stage.initStyle(StageStyle.UNDECORATED);
 			
 			
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../Payment/Cash/CashPaymentLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(TableOrderLayoutController.class.getResource("/PointOfView/View/Table/Payment/Cash/CashPaymentLayout.fxml"));
 			BorderPane pane = loader.load();
 			
 			CashPaymentLayoutController controller = loader.getController();
