@@ -9,6 +9,8 @@ import PointOfView.Models.Receipt.PAY_WAY;
 import PointOfView.Models.Receipt.ReceiptModel;
 import PointOfView.View.Table.Receipt.Card.CardReceiptDetailLayoutController;
 import PointOfView.View.Table.Receipt.Card.CardReceiptLayoutController;
+import PointOfView.View.Table.Receipt.Cash.CashReceiptDetailLayoutController;
+import PointOfView.View.Table.Receipt.Cash.CashReceiptLayoutController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -102,6 +104,10 @@ public class ReceiptLayoutController implements Initializable{
     			receipePane.setCenter(drawCardReceipt(receipt));
     		else
     			receipePane.setCenter(drawCardDetailReceipt(receipt));
+    	}else {
+    		if(commonReceipe.isSelected())
+    			receipePane.setCenter(drawCashReceipt(receipt));
+    		else receipePane.setCenter(drawCashDetailReceipt(receipt));
     	}
     	
     	
@@ -140,6 +146,40 @@ public class ReceiptLayoutController implements Initializable{
 			e.printStackTrace();
 		}
     	return null;
+    }
+    
+    private AnchorPane drawCashReceipt(ReceiptModel receipt) {
+    	try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Cash/CashReceiptLayout.fxml"));
+			AnchorPane pane = loader.load();
+			
+			CashReceiptLayoutController controller = loader.getController();
+			controller.setReceipt(mainApp, receipt);
+			
+			return pane;
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+    	return null;
+    
+    }
+    
+    private AnchorPane drawCashDetailReceipt(ReceiptModel receipt) {
+    	try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Cash/CashReceiptDetailLayout.fxml"));
+			AnchorPane pane = loader.load();
+			
+			CashReceiptDetailLayoutController controller = loader.getController();
+			controller.setReceipt(mainApp, receipt);
+			
+			return pane;
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+    	return null;
+    
     }
     
     

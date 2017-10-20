@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Menuitems>
     <menuitem category="주메뉴" name="정통육개장" price="8000" column="0" row="0" show="true"/>
-    <menuitem category="주메뉴" name="맑은육개장" price="8000" column="1" row="0" show="true"/>
-    <menuitem category="주메뉴" name="육개장칼국수" price="8000" column="2" row="0" show="true"/>
+    <menuitem category="주메뉴" name="맑은육개장" price="8000" column="1" row="1" show="true"/>
+    <menuitem category="주메뉴" name="육개장칼국수" price="8000" column="1" row="0" show="true"/>
     <menuitem category="주메뉴" name="떡만두국" price="8000" column="3" row="0" show="true"/>
-    <menuitem category="어린이메뉴" name="어린이맑은육개장" price="5000" column="1" row="1" show="true"/>
+    <menuitem category="어린이메뉴" name="어린이맑은육개장" price="5000" column="0" row="1" show="true"/>
     <menuitem category="어린이메뉴" name="어린이떡만두국" price="5000" column="3" row="1" show="true"/>
     <menuitem category="주메뉴" name="양지육개장전골(소)" price="21000" column="0" row="3" show="true"/>
     <menuitem category="주메뉴" name="양지육개장전골(중)" price="26000" column="1" row="3" show="true"/>

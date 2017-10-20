@@ -81,9 +81,20 @@ public class Receipt {
 	 * @param payWay
 	 * @param tableData
 	 */
+	public void addReceiptList(PAY_WAY payWay, TableData tableData, int returnedCash) {
+		
+		int index = receiptList.size();
+		receiptList.add(new ReceiptModel(index, payWay, tableData, returnedCash));
+	}
+	
+	/**
+	 * 영수증을 추가한다.
+	 * @param payWay
+	 * @param tableData
+	 */
 	public void addReceiptList(PAY_WAY payWay, TableData tableData) {
 		
 		int index = receiptList.size();
-		receiptList.add(new ReceiptModel(payWay, tableData, index));
+		receiptList.add(new ReceiptModel(index, payWay, tableData));
 	}
 }

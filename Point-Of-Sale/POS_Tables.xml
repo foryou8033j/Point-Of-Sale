@@ -28,16 +28,12 @@
     <table index="25" column="3" row="7" show="true"/>
     <table index="26" column="2" row="6" show="true"/>
     <table index="27" column="3" row="6" show="true"/>
-    <table index="28" column="2" row="4" show="true"/>
-    <table index="29" column="3" row="4" show="true"/>
-    <table index="30" column="2" row="3" show="true"/>
-    <table index="31" column="3" row="3" show="true"/>
-    <table index="32" column="4" row="7" show="true"/>
-    <table index="33" column="5" row="7" show="true"/>
-    <table index="34" column="4" row="6" show="true"/>
-    <table index="35" column="5" row="3" show="true"/>
-    <table index="36" column="3" row="9" show="true"/>
-    <table index="37" column="4" row="9" show="true"/>
-    <table index="38" column="6" row="3" show="true"/>
-    <table index="39" column="6" row="4" show="true"/>
+    <table index="28" column="4" row="7" show="true"/>
+    <table index="29" column="5" row="7" show="true"/>
+    <table index="30" column="4" row="6" show="true"/>
+    <table index="31" column="5" row="3" show="true"/>
+    <table index="32" column="3" row="9" show="true"/>
+    <table index="33" column="4" row="9" show="true"/>
+    <table index="34" column="6" row="3" show="true"/>
+    <table index="35" column="6" row="4" show="true"/>
 </Tables>

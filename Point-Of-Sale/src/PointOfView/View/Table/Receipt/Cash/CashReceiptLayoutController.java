@@ -17,28 +17,28 @@ public class CashReceiptLayoutController {
     private Label dealNumber;
 
     @FXML
-    private Label cardNumber;
-
-    @FXML
-    private Label cardName;
-
-    @FXML
     private Label dealTime;
 
     @FXML
-    private Label Pay0;
-    
-    @FXML
-    private Label Pay1;
-
-    @FXML
-    private Label dealAcceptNumber;
-
-    @FXML
-    private Label cardCompany;
+    private Label PriceSum;
 
     @FXML
     private Label shopName;
+
+    @FXML
+    private Label taxPrice;
+
+    @FXML
+    private Label taxExceptPrice;
+
+    @FXML
+    private Label cashPrice;
+
+    @FXML
+    private Label receiveCash;
+
+    @FXML
+    private Label returnedCash;
     
     private ReceiptModel receipt;
     private TableData tableData;
@@ -49,18 +49,24 @@ public class CashReceiptLayoutController {
     	this.receipt = receipt;
     	this.tableData = receipt.getPayTableData();
     	
-    	Pay0.setText(String.format("%,20d 원", tableData.getSumPrice()));
-    	Pay1.setText(String.format("%,20d 원", tableData.getSumPrice()));
+    	cashPrice.setText(String.format("%,20d 원", tableData.getSumPrice()));
+    	PriceSum.setText(String.format("%,20d 원", tableData.getSumPrice()));
     	
     	shopName.setText(mainApp.getDataManagement().getPOSTitle());
     	
     	dealNumber.setText("거래 번호 : " + String.format("%010d", receipt.getIndex()));
-    	dealAcceptNumber.setText("승인 번호 : " + String.format("%010d", receipt.getIndex()));
+    	
+    	int sum = tableData.getSumPrice();
+    	int tax = (int)(sum * 0.02);
+    	sum = sum - tax;
+    	
+    	taxExceptPrice.setText(String.format("%,20d 원", sum));
+    	taxPrice.setText(String.format("%,20d 원", tax));
+    	
+    	receiveCash.setText(String.format("%,20d 원", tableData.getSumPrice() + receipt.getReturnedCash()));
+    	returnedCash.setText(String.format("%,20d 원", receipt.getReturnedCash()));
     	
     	
-    	cardCompany.setText(receipt.getCardCompany());
-    	cardName.setText(receipt.getCardName());
-    	cardNumber.setText(receipt.getCardNumber());
     	
     }
 

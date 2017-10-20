@@ -27,15 +27,25 @@ public class ReceiptModel {
 	private StringProperty pay = new SimpleStringProperty();
 	private StringProperty money = new SimpleStringProperty();
 	
+	private int returnedCash = 0;
+	
 	private int tradeIndex;
 	private String cardCompany = "";
 	private String cardName = "";
 	private String cardNumber = "";
 	
-	public ReceiptModel(PAY_WAY payWay, TableData tableData, int index) {
+	
+	public ReceiptModel(int index, PAY_WAY payWay, TableData tableData, int returnedCash) {
+		this(index, payWay, tableData);
+		this.returnedCash = returnedCash;
+	}
+	
+	public ReceiptModel(int index, PAY_WAY payWay, TableData tableData) {
 		
 		//결제 영수증 고유 번호 저장
 		tradeIndex = index;
+		
+		this.returnedCash = returnedCash;
 		
 		//결제 시간 저장
 		this.payTime = Calendar.getInstance();
@@ -109,6 +119,14 @@ public class ReceiptModel {
 	
 	public String getCardNumber() {
 		return cardNumber;
+	}
+	
+	public void setReturnedCash(int cash) {
+		returnedCash = cash;
+	}
+	
+	public int getReturnedCash() {
+		return returnedCash;
 	}
 	
 }

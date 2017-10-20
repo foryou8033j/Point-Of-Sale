@@ -33,7 +33,7 @@
             <Font name="Malgun Gothic Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="214.0" layoutY="49.0" text="[매장용]" textAlignment="JUSTIFY">
+      <Label layoutX="214.0" layoutY="49.0" text="[매장용]" textAlignment="JUSTIFY" AnchorPane.rightAnchor="30.0">
          <font>
             <Font name="Malgun Gothic" size="11.0" />
          </font>
@@ -43,7 +43,7 @@
             <Font name="Malgun Gothic" size="11.0" />
          </font>
       </Label>
-      <Label fx:id="dealNumber" layoutX="143.0" layoutY="65.0" text="거래 번호 : 0000006510" textAlignment="JUSTIFY">
+      <Label fx:id="dealNumber" layoutX="143.0" layoutY="65.0" text="거래 번호 : 0000006510" textAlignment="JUSTIFY" AnchorPane.rightAnchor="5.0">
          <font>
             <Font name="Malgun Gothic" size="11.0" />
          </font>
@@ -78,22 +78,22 @@
             <Font name="Malgun Gothic" size="11.0" />
          </font>
       </Label>
-      <Label fx:id="Pay0" alignment="CENTER_RIGHT" layoutX="116.0" layoutY="151.0" prefHeight="20.0" prefWidth="143.0" text="6,600 원" textAlignment="RIGHT">
+      <Label fx:id="Pay0" alignment="CENTER_RIGHT" layoutX="116.0" layoutY="151.0" prefHeight="20.0" prefWidth="143.0" text="6,600 원" textAlignment="RIGHT" AnchorPane.rightAnchor="5.0">
          <font>
             <Font name="Malgun Gothic Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="Pay1" alignment="CENTER_RIGHT" layoutX="116.0" layoutY="167.0" prefHeight="20.0" prefWidth="143.0" text="6,600 원" textAlignment="RIGHT">
+      <Label fx:id="Pay1" alignment="CENTER_RIGHT" layoutX="116.0" layoutY="167.0" prefHeight="20.0" prefWidth="143.0" text="6,600 원" textAlignment="RIGHT" AnchorPane.rightAnchor="5.0">
          <font>
             <Font name="Malgun Gothic Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="6.0" layoutY="179.0" text="=================================" textAlignment="JUSTIFY">
+      <Label layoutX="6.0" layoutY="179.0" text="=============================" textAlignment="JUSTIFY" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
          <font>
             <Font name="Malgun Gothic" size="11.0" />
          </font>
       </Label>
-      <Label layoutX="218.0" layoutY="324.0" text="정상 완료" textAlignment="JUSTIFY">
+      <Label layoutX="218.0" layoutY="324.0" text="정상 완료" textAlignment="JUSTIFY" AnchorPane.rightAnchor="5.0">
          <font>
             <Font name="Malgun Gothic" size="11.0" />
          </font>
@@ -113,7 +113,7 @@
             <Font name="Malgun Gothic" size="11.0" />
          </font>
       </Label>
-      <Label layoutX="6.0" layoutY="368.0" text="=================================" textAlignment="JUSTIFY">
+      <Label layoutX="6.0" layoutY="368.0" text="=============================" textAlignment="JUSTIFY" AnchorPane.rightAnchor="5.0">
          <font>
             <Font name="Malgun Gothic" size="11.0" />
          </font>
@@ -123,7 +123,7 @@
             <Font name="Malgun Gothic" size="11.0" />
          </font>
       </Label>
-      <Label layoutX="162.0" layoutY="380.0" text="TEL : 010-4107-8033" textAlignment="JUSTIFY">
+      <Label layoutX="162.0" layoutY="380.0" text="TEL : 010-4107-8033" textAlignment="JUSTIFY" AnchorPane.rightAnchor="5.0">
          <font>
             <Font name="Malgun Gothic" size="11.0" />
          </font>
@@ -138,7 +138,7 @@
             <Font name="Malgun Gothic" size="11.0" />
          </font>
       </Label>
-      <Label layoutX="228.0" layoutY="396.0" text="서정삼" textAlignment="JUSTIFY">
+      <Label layoutX="228.0" layoutY="396.0" text="서정삼" textAlignment="JUSTIFY" AnchorPane.rightAnchor="5.0">
          <font>
             <Font name="Malgun Gothic" size="11.0" />
          </font>
@@ -148,7 +148,7 @@
             <Font name="Malgun Gothic" size="11.0" />
          </font>
       </Label>
-      <Label layoutX="9.0" layoutY="440.0" text="=================================" textAlignment="JUSTIFY">
+      <Label layoutX="9.0" layoutY="440.0" text="=============================" textAlignment="JUSTIFY" AnchorPane.rightAnchor="5.0">
          <font>
             <Font name="Malgun Gothic" size="11.0" />
          </font>
@@ -168,17 +168,17 @@
             <Font name="Malgun Gothic Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="7.0" layoutY="310.0" text="=================================" textAlignment="JUSTIFY">
+      <Label layoutX="7.0" layoutY="310.0" text="=============================" textAlignment="JUSTIFY" AnchorPane.rightAnchor="5.0">
          <font>
             <Font name="Malgun Gothic" size="11.0" />
          </font>
       </Label>
-      <Label layoutX="5.0" layoutY="188.0" text="메뉴명                                       개수        가격" textAlignment="JUSTIFY">
+      <Label layoutX="5.0" layoutY="188.0" text="메뉴명                                       개수        가격" textAlignment="JUSTIFY" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
          <font>
             <Font name="Malgun Gothic Bold" size="11.0" />
          </font>
       </Label>
-      <Label fx:id="menuList" layoutX="5.0" layoutY="199.0" text="메뉴명                                       개수        가격">
+      <Label fx:id="menuList" layoutX="5.0" layoutY="199.0" text="메뉴명                                       개수        가격" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
          <font>
             <Font name="Malgun Gothic" size="11.0" />
          </font>
