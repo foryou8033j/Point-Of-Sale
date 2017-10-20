@@ -129,8 +129,8 @@ public class MenuModifyLayoutController {
 		vb.getChildren().addAll(hb, hbSub);
 		
 		Scene scene = new Scene(vb);
-		
-		scene.getStylesheets().add("../../../Resource/CSS/JMetroLightTheme.css");
+		String css = this.getClass().getResource("/PointOfView/Resource/CSS/JMetroLightTheme.css").toExternalForm();
+		scene.getStylesheets().add(css);
 		
 		
 		addDialog.setScene(scene);
