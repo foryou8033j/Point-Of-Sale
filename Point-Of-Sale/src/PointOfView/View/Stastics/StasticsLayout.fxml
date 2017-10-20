@@ -12,9 +12,9 @@
    <center>
       <TabPane prefHeight="200.0" prefWidth="200.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" tabMinWidth="200.0" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab fx:id="saleStasticsTab" onSelectionChanged="#handleSaleTabSelected" text="매출 통계" />
-            <Tab fx:id="menuStasticsTab" onSelectionChanged="#handleMenuTabSelected" text="메뉴 통계" />
-          <Tab fx:id="timeStasticsPane" onSelectionChanged="#handleTimeTabSelected" text="점유 시간 통계" />
+          <Tab fx:id="saleStasticsTab" text="매출 통계" />
+            <Tab fx:id="menuStasticsTab" text="메뉴 통계" />
+          <Tab fx:id="timeStasticsPane" text="점유 시간 통계" />
         </tabs>
       </TabPane>
    </center>
