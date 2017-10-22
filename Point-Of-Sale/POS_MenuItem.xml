@@ -22,8 +22,8 @@
     <menuitem category="주류" name="매화수" price="5000" column="2" row="6" show="true"/>
     <menuitem category="주류" name="청하" price="4500" column="2" row="7" show="true"/>
     <menuitem category="주류" name="막걸리" price="4000" column="3" row="7" show="true"/>
-    <menuitem category="부매뉴" name="메밀전병" price="5000" column="4" row="4" show="true"/>
-    <menuitem category="부매뉴" name="만두반접시" price="3500" column="4" row="3" show="true"/>
-    <menuitem category="부매뉴" name="한판보쌈" price="10000" column="5" row="4" show="true"/>
-    <menuitem category="부매뉴" name="만두한접시" price="7000" column="5" row="3" show="true"/>
+    <menuitem category="부매뉴" name="메밀전병" price="5000" column="4" row="3" show="true"/>
+    <menuitem category="부매뉴" name="만두반접시" price="3500" column="5" row="3" show="true"/>
+    <menuitem category="부매뉴" name="한판보쌈" price="10000" column="4" row="4" show="true"/>
+    <menuitem category="부매뉴" name="만두한접시" price="7000" column="5" row="4" show="true"/>
 </Menuitems>
