@@ -10,15 +10,14 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 
+@XmlType( name = "orderList")
+public class OrderList extends MenuItem{
 
-public class OrderList {
-
-	private MenuItem menuItem;
 	private IntegerProperty count = new SimpleIntegerProperty(0);
 	private StringProperty price = new SimpleStringProperty("");
 	
-	public OrderList(MenuItem menuItem) {
-		this.menuItem = menuItem;
+	public OrderList(MenuItem item) {
+		super(item.getName(), item.getCategory(), item.getPrice(), item.getColumn(), item.getRow());
 		count.set(1);
 	}
 	
@@ -44,13 +43,13 @@ public class OrderList {
 	
 	
 	public String getName() {
-		return menuItem.getName();
+		return super.getName();
 	}
 	
 
 	
 	public int getPrice() {
-		return menuItem.getPrice() * count.get();
+		return super.getPrice() * count.get();
 	}
 	
 
@@ -61,7 +60,7 @@ public class OrderList {
 	
 
 	public MenuItem getMenuItem() {
-		return menuItem;
+		return (MenuItem) this;
 	}
 	
 	public StringProperty nameProperty() {
