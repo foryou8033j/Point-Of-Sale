@@ -26,7 +26,7 @@ public class MainApp extends Application {
     private Stage primaryStage = null;
     private RootLayoutController rootLayoutController = null;
 
-    private DataManagement managementData = new DataManagement();
+    private DataManagement managementData;
 
     private Tables tables;
     private Receipt receipts;
@@ -35,6 +35,8 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 	this.primaryStage = primaryStage;
+	
+	this.managementData = new DataManagement();
 	this.tables = new Tables();
 	this.receipts = new Receipt();
 

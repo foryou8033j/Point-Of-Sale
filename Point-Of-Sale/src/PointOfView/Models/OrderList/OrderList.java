@@ -1,4 +1,4 @@
-package PointOfView.Models.OderList;
+package PointOfView.Models.OrderList;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
@@ -15,6 +15,15 @@ public class OrderList extends MenuItem{
 
 	private IntegerProperty count = new SimpleIntegerProperty(0);
 	private StringProperty price = new SimpleStringProperty("");
+	
+	public OrderList() {
+	    super();
+	}
+	
+	public OrderList(int count, String name, String category, int price, int column, int row) {
+	    super(name, category, price, column, row);
+	    this.count.set(1);
+	}
 	
 	public OrderList(MenuItem item) {
 		super(item.getName(), item.getCategory(), item.getPrice(), item.getColumn(), item.getRow());

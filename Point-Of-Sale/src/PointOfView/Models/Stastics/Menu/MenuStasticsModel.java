@@ -6,7 +6,7 @@ import java.util.Map;
 
 import PointOfView.Models.Menu.MenuItem;
 import PointOfView.Models.Menu.Menues;
-import PointOfView.Models.OderList.OrderList;
+import PointOfView.Models.OrderList.OrderList;
 import PointOfView.Models.Receipt.Receipt;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

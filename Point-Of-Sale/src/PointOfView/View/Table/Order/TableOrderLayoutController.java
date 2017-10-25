@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
 import PointOfView.Models.Menu.MenuItem;
-import PointOfView.Models.OderList.OrderList;
+import PointOfView.Models.OrderList.OrderList;
 import PointOfView.Models.Table.TableData;
 import PointOfView.Util.Dialog.NumberInputDialog;
 import PointOfView.View.Table.MenuModifiy.MenuModifier;

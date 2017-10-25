@@ -2,9 +2,11 @@ package PointOfView.View.Table;
 
 import java.awt.AWTException;
 import java.awt.Robot;
+import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.ConcurrentModificationException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -389,8 +391,12 @@ public class TableLayoutController implements Initializable {
 			
 			return pane;
 			
-		}catch (Exception e){
+		}catch (ConcurrentModificationException e){
+		    	System.out.println("에러!!!!!!!!!!!!!!!!");
 			e.printStackTrace();
+		} catch (IOException e) {
+		    System.out.println("Orverview Layout 로드 중 오류 발생");
+		    e.printStackTrace();
 		}
 		
 		return null;

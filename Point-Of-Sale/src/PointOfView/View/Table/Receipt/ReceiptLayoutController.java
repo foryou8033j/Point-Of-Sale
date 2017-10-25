@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
-import PointOfView.Models.OderList.OrderList;
+import PointOfView.Models.OrderList.OrderList;
 import PointOfView.Models.Receipt.PAY_WAY;
 import PointOfView.Models.Receipt.ReceiptModel;
 import PointOfView.View.Table.Receipt.Card.CardReceiptDetailLayoutController;

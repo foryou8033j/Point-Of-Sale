@@ -1,7 +1,7 @@
 package PointOfView.View.Table.Receipt.Cash;
 
 import PointOfView.MainApp;
-import PointOfView.Models.OderList.OrderList;
+import PointOfView.Models.OrderList.OrderList;
 import PointOfView.Models.Receipt.ReceiptModel;
 import PointOfView.Models.Table.TableData;
 import PointOfView.Util.StringPadding;

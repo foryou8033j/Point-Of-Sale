@@ -1,12 +1,14 @@
 package PointOfView.Models.Table;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 import PointOfView.Models.Menu.MenuItem;
-import PointOfView.Models.OderList.GridPositionModel;
-import PointOfView.Models.OderList.OrderList;
+import PointOfView.Models.OrderList.GridPositionModel;
+import PointOfView.Models.OrderList.OrderList;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
@@ -20,6 +22,12 @@ public class TableData extends GridPositionModel{
 	private ObservableList<OrderList> orderList = null;
 	private int sumPrice;
 
+	
+	public TableData(int index, int column, int row, ObservableList<OrderList> list) {
+	    this(index, column, row);
+	    orderList = FXCollections.observableArrayList(list);
+	}
+	
 	public TableData(int index, int column, int row) {
 		super(true);
 		setTableIndex(index);
@@ -111,8 +119,14 @@ public class TableData extends GridPositionModel{
 	}
 
 	
+	//@XmlJavaTypeAdapter(OrderListWrappingAdapter.class)
+	@XmlElements ( { @XmlElement ( name = "orderList", type = OrderList.class)})
 	public ObservableList<OrderList> getOrderList(){
 		return orderList;
+	}
+	
+	public void setOrderList(ObservableList<OrderList> list) {
+	    orderList = FXCollections.observableArrayList(list);
 	}
 	
 	public void setDiscount(int dis) {
