@@ -53,7 +53,7 @@ public class OrderList extends MenuItem{
 	}
 	
 
-
+	@XmlAttribute(name ="count", required = true)
 	public int getCount() {
 		return count.get();
 	}
