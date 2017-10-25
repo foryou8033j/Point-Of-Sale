@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -16,14 +16,14 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <BarChart fx:id="dayChart" layoutX="127.0" layoutY="67.0" title="일별 매출 통계" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                        <LineChart fx:id="dayChart" layoutX="109.0" layoutY="68.0" prefHeight="590.0" prefWidth="871.0" title="일별 매출 통계" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                           <xAxis>
                             <CategoryAxis fx:id="dayChartXAxis" label="DAY" side="BOTTOM" />
                           </xAxis>
                           <yAxis>
-                            <NumberAxis label="금액" side="LEFT" />
+                            <NumberAxis side="LEFT" />
                           </yAxis>
-                        </BarChart>
+                        </LineChart>
                      </children>
                   </AnchorPane>
                </content>
@@ -32,14 +32,14 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <BarChart fx:id="monthChart" title="월별 매출 통계" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-                           <xAxis>
-                              <CategoryAxis fx:id="monthChartXAxis" label="MONTH" side="BOTTOM" />
-                           </xAxis>
-                           <yAxis>
-                              <NumberAxis label="금액" side="LEFT" />
-                           </yAxis>
-                        </BarChart>
+                        <LineChart fx:id="monthChart" layoutX="87.0" layoutY="14.0" title="월별 매출 통계" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                          <xAxis>
+                            <CategoryAxis fx:id="monthChartXAxis" label="MONTH" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
                      </children>
                   </AnchorPane>
                </content>
@@ -48,14 +48,14 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <BarChart fx:id="yearChart" title="연별 매출 통계" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
-                           <xAxis>
-                              <CategoryAxis fx:id="yearChartXAxis" label="YEAR" side="BOTTOM" />
-                           </xAxis>
-                           <yAxis>
-                              <NumberAxis label="금액" side="LEFT" />
-                           </yAxis>
-                        </BarChart>
+                        <LineChart fx:id="yearChart" layoutX="168.0" layoutY="14.0" title="연별 매출 통계" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                          <xAxis>
+                            <CategoryAxis fx:id="yearChartXAxis" label="YEAR" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
                      </children>
                   </AnchorPane>
                </content>

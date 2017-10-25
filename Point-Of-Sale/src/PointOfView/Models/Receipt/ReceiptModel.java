@@ -111,7 +111,9 @@ public class ReceiptModel {
 		
 		pay.set(payWay.toString());
 		
-		money.set(String.valueOf(tableData.getSumPrice()));
+		money.set(String.format("%,d 원", tableData.getSumPrice()));
+		
+		
 	}
 	
 	public StringProperty dateProperty() {

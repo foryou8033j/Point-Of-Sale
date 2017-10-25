@@ -2,6 +2,8 @@ package PointOfView.Models.Stastics.Sale;
 
 import java.sql.Date;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,6 +35,8 @@ public class SaleStasticsModel {
 	    else
 		dayNames.add(String.valueOf(lastDayOfPreMonth--));
 	}
+	
+	Collections.reverse(dayNames);
 
 	// 최근 12달의 월을 리스트화 한다.
 	int curMonth = cal.getTime().getMonth();
@@ -44,6 +48,8 @@ public class SaleStasticsModel {
 	    else
 		monthNames.add(String.valueOf(lastMonthOfYear--));
 	}
+	
+	Collections.reverse(monthNames);
 
 	// 최근 10년의 해를 리스트화 한다.
 	int year = cal.get(Calendar.YEAR);
@@ -53,6 +59,7 @@ public class SaleStasticsModel {
 	    yearNames.add(String.valueOf(year--));
 	}
 
+	Collections.reverse(yearNames);
     }
 
     public ObservableList<String> getXAxisModel(CHART_CATEGORY category) {
@@ -105,6 +112,8 @@ public class SaleStasticsModel {
 
 	    yearModel.put(date, yearModel.get(date) + price);
 	}
+	
+	series.setName("매출액");
 
 	return series;
 
@@ -147,6 +156,8 @@ public class SaleStasticsModel {
 	    monthModel.put(date, monthModel.get(date) + price);
 	}
 
+	series.setName("매출액");
+	
 	return series;
 
     }
@@ -188,6 +199,8 @@ public class SaleStasticsModel {
 	    dayModel.put(date, dayModel.get(date) + price);
 	}
 
+	series.setName("매출액");
+	
 	return series;
 
     }

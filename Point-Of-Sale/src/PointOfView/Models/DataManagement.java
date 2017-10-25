@@ -6,7 +6,7 @@ import PointOfView.Models.Stastics.Sale.SaleStasticsModel;
 
 public class DataManagement {
 
-	private String posTitle = "삐뀨뀨웁 레스토랑";
+	private String posTitle = "남천면옥";
 	private String adminPassword = "1234";
 	
 	private Menues menues = new Menues();

@@ -5,12 +5,16 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane prefHeight="590.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Stastics.Menu.MenuStasticsLayoutController">
    <center>
-      <BarChart fx:id="menuChart" title="메뉴 별 통계" BorderPane.alignment="CENTER">
+      <BarChart fx:id="menuChart" alternativeColumnFillVisible="true" barGap="0.0" title="메뉴 별 통계" BorderPane.alignment="CENTER">
         <xAxis>
-          <CategoryAxis fx:id="menuXAxis" autoRanging="false" label="메뉴" side="BOTTOM" startMargin="2.0" tickLabelGap="2.0" />
+          <CategoryAxis fx:id="menuXAxis" label="메뉴" side="BOTTOM" tickLabelRotation="90.0">
+               <tickLabelFont>
+                  <Font name="Malgun Gothic" size="11.0" />
+               </tickLabelFont></CategoryAxis>
         </xAxis>
         <yAxis>
           <NumberAxis label="판매량" side="LEFT" />

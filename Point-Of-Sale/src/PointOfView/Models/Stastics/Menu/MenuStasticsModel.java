@@ -28,6 +28,9 @@ public class MenuStasticsModel {
     }
 
     private void createMenuList() {
+	
+	menuNames.clear();
+	
 	// 등록 된 메뉴를 바탕으로 메뉴 리스트를 만든다.
 	for (MenuItem data : menues.getMenuItems())
 	    menuNames.add(data.getName());
@@ -91,6 +94,8 @@ public class MenuStasticsModel {
 	    model.put(menu, model.get(menu) + count);
 	}
 
+	series.setName("판매량");
+	
 	return series;
 
     }
