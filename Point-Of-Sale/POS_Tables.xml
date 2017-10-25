@@ -7,7 +7,7 @@
             <price>5000</price>
         </orderlist>
     </table>
-    <table discount="0" payMoney="0" index="1" column="1" row="0" isShow="true">
+    <table discount="5000" payMoney="7000" index="1" column="1" row="0" isShow="true">
         <orderlist count="3" column="0" row="0" isShow="true">
             <name>육개장</name>
             <category>음식</category>

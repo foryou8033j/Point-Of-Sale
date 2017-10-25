@@ -1,8 +1,11 @@
 package PointOfView.Models.Table;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
+import javax.xml.bind.annotation.XmlType;
 
 import PointOfView.Models.Menu.MenuItem;
 import PointOfView.Models.OrderList.GridPositionModel;
@@ -11,8 +14,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 
-//@XmlType(name = "TableData")
-//@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "TableData")
+@XmlAccessorType(XmlAccessType.NONE)
 //@XmlRootElement(name = "TableData")
 public class TableData extends GridPositionModel {
 
