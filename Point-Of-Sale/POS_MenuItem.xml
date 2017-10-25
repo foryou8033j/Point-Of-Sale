@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Menuitems>
-    <menuitem column="0" row="0" isShow="true">
-        <name>육개장</name>
-        <category>음식</category>
-        <price>5000</price>
+    <menuitem column="1" row="0" isShow="true">
+        <name>카페모카</name>
+        <category>음료</category>
+        <price>3000</price>
+    </menuitem>
+    <menuitem column="2" row="0" isShow="true">
+        <name>라떼</name>
+        <category>음료</category>
+        <price>2000</price>
+    </menuitem>
+    <menuitem column="4" row="0" isShow="true">
+        <name>시럽</name>
+        <category>기타</category>
+        <price>500</price>
     </menuitem>
 </Menuitems>

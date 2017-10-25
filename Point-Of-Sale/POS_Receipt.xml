@@ -2,7 +2,7 @@
 <Receipt>
     <receipt>
         <payWay>CASH</payWay>
-        <payTime>2017-10-25T14:54:36.145+09:00</payTime>
+        <payTime>2017-10-23T14:54:36.145+09:00</payTime>
         <tableData discount="0" payMoney="16000" index="3" column="-1" row="-1" isShow="false">
             <orderlist count="3" column="0" row="0" isShow="true">
                 <name>육개장</name>
@@ -18,8 +18,8 @@
     </receipt>
     <receipt>
         <payWay>CARD</payWay>
-        <payTime>2017-10-25T14:55:41.618+09:00</payTime>
-        <tableData discount="0" payMoney="15000" index="1" column="0" row="0" isShow="false">
+        <payTime>2017-10-24T14:55:41.618+09:00</payTime>
+        <tableData discount="0" payMoney="15000" index="1" column="-1" row="-1" isShow="false">
             <orderlist count="3" column="0" row="0" isShow="true">
                 <name>육개장</name>
                 <category>음식</category>
@@ -31,5 +31,68 @@
         <cardCompany>NH농협</cardCompany>
         <cardName>NH농협신용</cardName>
         <cardNumber>4327-2316-****-1654</cardNumber>
+    </receipt>
+    <receipt>
+        <payWay>CARD</payWay>
+        <payTime>2017-10-25T15:05:04.637+09:00</payTime>
+        <tableData discount="0" payMoney="6000" index="10" column="-1" row="-1" isShow="false">
+            <orderlist count="2" column="0" row="0" isShow="true">
+                <name>아메리카노</name>
+                <category>음료</category>
+                <price>1500</price>
+            </orderlist>
+            <orderlist count="1" column="1" row="0" isShow="true">
+                <name>카페모카</name>
+                <category>음료</category>
+                <price>3000</price>
+            </orderlist>
+        </tableData>
+        <returnedCash>0</returnedCash>
+        <tradeIndex>2</tradeIndex>
+        <cardCompany>카카오뱅크</cardCompany>
+        <cardName>카카오뱅크체크</cardName>
+        <cardNumber>6422-9593-****-1577</cardNumber>
+    </receipt>
+    <receipt>
+        <payWay>CARD</payWay>
+        <payTime>2017-10-25T15:09:06.159+09:00</payTime>
+        <tableData discount="0" payMoney="10000" index="10" column="-1" row="-1" isShow="false">
+            <orderlist count="2" column="0" row="0" isShow="true">
+                <name>아메리카노</name>
+                <category>음료</category>
+                <price>1500</price>
+            </orderlist>
+            <orderlist count="1" column="1" row="0" isShow="true">
+                <name>카페모카</name>
+                <category>음료</category>
+                <price>3000</price>
+            </orderlist>
+            <orderlist count="1" column="2" row="0" isShow="true">
+                <name>라떼</name>
+                <category>음료</category>
+                <price>2000</price>
+            </orderlist>
+        </tableData>
+        <returnedCash>0</returnedCash>
+        <tradeIndex>3</tradeIndex>
+        <cardCompany>대구은행</cardCompany>
+        <cardName>대구은행신용</cardName>
+        <cardNumber>4143-1411-****-7849</cardNumber>
+    </receipt>
+    <receipt>
+        <payWay>CARD</payWay>
+        <payTime>2017-10-25T15:12:07.280+09:00</payTime>
+        <tableData discount="0" payMoney="7000" index="5" column="0" row="0" isShow="false">
+            <orderlist count="4" column="0" row="0" isShow="true">
+                <name>아메리카노</name>
+                <category>음료</category>
+                <price>1500</price>
+            </orderlist>
+        </tableData>
+        <returnedCash>0</returnedCash>
+        <tradeIndex>4</tradeIndex>
+        <cardCompany>신한카드</cardCompany>
+        <cardName>KB신한카드신용</cardName>
+        <cardNumber>1342-7766-****-9231</cardNumber>
     </receipt>
 </Receipt>

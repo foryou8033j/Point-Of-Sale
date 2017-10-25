@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Tables>
-    <table discount="0" payMoney="0" index="0" column="0" row="0" isShow="true">
-        <orderlist count="4" column="0" row="0" isShow="true">
-            <name>육개장</name>
-            <category>음식</category>
-            <price>5000</price>
-        </orderlist>
-    </table>
-    <table discount="0" payMoney="0" index="1" column="1" row="0" isShow="true"/>
-    <table discount="0" payMoney="0" index="2" column="0" row="1" isShow="true">
-        <orderlist count="9" column="0" row="0" isShow="true">
-            <name>육개장</name>
-            <category>음식</category>
-            <price>5000</price>
-        </orderlist>
-    </table>
-    <table discount="0" payMoney="0" index="3" column="1" row="1" isShow="true"/>
+    <table discount="0" payMoney="0" index="0" column="0" row="0" isShow="true"/>
+    <table discount="0" payMoney="0" index="1" column="0" row="2" isShow="true"/>
+    <table discount="0" payMoney="0" index="2" column="0" row="4" isShow="true"/>
+    <table discount="0" payMoney="0" index="3" column="0" row="6" isShow="true"/>
+    <table discount="0" payMoney="0" index="4" column="0" row="8" isShow="true"/>
+    <table discount="0" payMoney="0" index="5" column="2" row="0" isShow="true"/>
+    <table discount="0" payMoney="0" index="6" column="2" row="2" isShow="true"/>
+    <table discount="0" payMoney="0" index="7" column="2" row="4" isShow="true"/>
+    <table discount="0" payMoney="0" index="8" column="2" row="6" isShow="true"/>
+    <table discount="0" payMoney="0" index="9" column="2" row="8" isShow="true"/>
+    <table discount="0" payMoney="0" index="10" column="4" row="0" isShow="true"/>
+    <table discount="0" payMoney="0" index="11" column="4" row="2" isShow="true"/>
+    <table discount="0" payMoney="0" index="12" column="4" row="4" isShow="true"/>
+    <table discount="0" payMoney="0" index="13" column="4" row="6" isShow="true"/>
+    <table discount="0" payMoney="0" index="14" column="4" row="8" isShow="true"/>
+    <table discount="0" payMoney="0" index="15" column="6" row="0" isShow="true"/>
+    <table discount="0" payMoney="0" index="16" column="6" row="2" isShow="true"/>
+    <table discount="0" payMoney="0" index="17" column="6" row="4" isShow="true"/>
+    <table discount="0" payMoney="0" index="18" column="6" row="7" isShow="true"/>
+    <table discount="0" payMoney="0" index="19" column="6" row="8" isShow="true"/>
 </Tables>
