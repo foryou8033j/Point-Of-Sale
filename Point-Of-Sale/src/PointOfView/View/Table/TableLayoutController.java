@@ -249,6 +249,8 @@ public class TableLayoutController implements Initializable {
 				final int column = tables.get(i).getColumn();
 				final int row = tables.get(i).getRow();
 				
+				
+				
 				if(removeTableList.contains(tables.get(index))) {
 					pane.setStyle("-fx-border-color: #FF0000; "
 							+ "-fx-border-width: 1.5;"

@@ -6,6 +6,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import PointOfView.Models.OrderList.OrderList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
@@ -22,8 +23,16 @@ public class Tables {
 		loadDataFromFile();
 		
 		//TODO : 파일 저장 시에 할인율까지 저장되는 문제로 인해 로드 할 때 할인율 초기화
-		for(TableData data :tableDatas)
-			data.clearDiscount();
+		for(TableData data :tableDatas) {
+		    System.out.println(data.getTableIndex());
+		    System.out.println(data.getColumn());
+		    System.out.println(data.getRow());
+		    for(OrderList list : data.getOrderList()) {
+			System.out.println(list.getName());
+			System.out.println(list.getColumn());
+		    }
+		    
+		}
 		
 	}
 	

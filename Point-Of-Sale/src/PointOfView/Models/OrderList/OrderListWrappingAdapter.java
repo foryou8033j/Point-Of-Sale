@@ -13,12 +13,11 @@ public class OrderListWrappingAdapter extends XmlAdapter<List<OrderList>, Observ
 
     @Override
     public ObservableList<OrderList> unmarshal(List<OrderList> v) throws Exception {
-        return FXCollections.observableArrayList(v);
+	return FXCollections.observableArrayList(v);
     }
 
-    
     @Override
     public List<OrderList> marshal(ObservableList<OrderList> v) throws Exception {
-        return v;
+	return v;
     }
 }
