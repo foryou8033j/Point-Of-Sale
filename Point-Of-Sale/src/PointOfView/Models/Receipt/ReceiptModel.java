@@ -2,13 +2,17 @@ package PointOfView.Models.Receipt;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Random;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import PointOfView.Models.Receipt.Receipt.CardCompany;
 import PointOfView.Models.Table.TableData;
+import PointOfView.Util.CalendarWrappingAdapter;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -17,14 +21,20 @@ import javafx.beans.property.StringProperty;
  * @author Jeongsam
  *
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class ReceiptModel {
 
 	private PAY_WAY payWay; 
-	private Calendar payTime; 
+	
+	//@XmlJavaTypeAdapter(CalendarWrappingAdapter.class)
+	private Calendar payTime;
 	private TableData tableData;
 	
+	@XmlTransient
 	private StringProperty date = new SimpleStringProperty();
+	@XmlTransient
 	private StringProperty pay = new SimpleStringProperty();
+	@XmlTransient
 	private StringProperty money = new SimpleStringProperty();
 	
 	private int returnedCash = 0;
@@ -34,6 +44,20 @@ public class ReceiptModel {
 	private String cardName = "";
 	private String cardNumber = "";
 	
+	public ReceiptModel() {
+	    	
+	}
+	
+	public ReceiptModel(int index, PAY_WAY payWay, TableData tableData, int returnedCash, Calendar payTime,
+		int tradeIndex, String cardCompany, String cardName, String cardNumber ) {
+	    	this(index, payWay, tableData);
+		this.returnedCash = returnedCash;
+		this.payTime = payTime;
+		this.tradeIndex = tradeIndex;
+		this.cardCompany = cardCompany;
+		this.cardName = cardName;
+		this.cardNumber = cardNumber;
+	}
 	
 	public ReceiptModel(int index, PAY_WAY payWay, TableData tableData, int returnedCash) {
 		this(index, payWay, tableData);
@@ -79,6 +103,15 @@ public class ReceiptModel {
 		
 		cardNumber = String.valueOf(rnd0) + "-" + String.valueOf(rnd1) + "-****-" + String.valueOf(rnd2);
 		
+	}
+	
+	public void makeCell() {
+	    	SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd(E)  HH:mm:ss", Locale.KOREA );
+		date.set(format.format(payTime.getTimeInMillis()));
+		
+		pay.set(payWay.toString());
+		
+		money.set(String.valueOf(tableData.getSumPrice()));
 	}
 	
 	public StringProperty dateProperty() {

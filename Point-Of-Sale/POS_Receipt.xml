@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Receipt>
+    <receipt>
+        <payWay>CASH</payWay>
+        <payTime>2017-10-25T14:54:36.145+09:00</payTime>
+        <tableData discount="0" payMoney="16000" index="3" column="-1" row="-1" isShow="false">
+            <orderlist count="3" column="0" row="0" isShow="true">
+                <name>육개장</name>
+                <category>음식</category>
+                <price>5000</price>
+            </orderlist>
+        </tableData>
+        <returnedCash>-1000</returnedCash>
+        <tradeIndex>0</tradeIndex>
+        <cardCompany></cardCompany>
+        <cardName></cardName>
+        <cardNumber></cardNumber>
+    </receipt>
+    <receipt>
+        <payWay>CARD</payWay>
+        <payTime>2017-10-25T14:55:41.618+09:00</payTime>
+        <tableData discount="0" payMoney="15000" index="1" column="0" row="0" isShow="false">
+            <orderlist count="3" column="0" row="0" isShow="true">
+                <name>육개장</name>
+                <category>음식</category>
+                <price>5000</price>
+            </orderlist>
+        </tableData>
+        <returnedCash>0</returnedCash>
+        <tradeIndex>1</tradeIndex>
+        <cardCompany>NH농협</cardCompany>
+        <cardName>NH농협신용</cardName>
+        <cardNumber>4327-2316-****-1654</cardNumber>
+    </receipt>
+</Receipt>
