@@ -6,14 +6,19 @@ import java.util.ResourceBundle;
 import PointOfView.MainApp;
 import PointOfView.Util.Dialog.ExceptionDialog;
 import PointOfView.View.Config.ConfigLayoutController;
+import PointOfView.View.Staff.StaffManagementLayoutController;
 import PointOfView.View.Table.TableLayoutController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class TitleLayoutController implements Initializable{
 
@@ -40,7 +45,7 @@ public class TitleLayoutController implements Initializable{
 
     @FXML
     void handleStaffManagementScreen(ActionEvent event) {
-
+	showStaffManagementMenu();
     }
 
     @FXML
@@ -95,6 +100,38 @@ public class TitleLayoutController implements Initializable{
 			new ExceptionDialog(AlertType.ERROR, "에러", "", "", e).showAndWait();
 			e.printStackTrace();
 		}
+	}
+	
+	public void showStaffManagementMenu() {
+	    try{
+		
+		Stage stage = new Stage(StageStyle.UTILITY);
+		stage.initOwner(mainApp.getPrimaryStage());
+		stage.initModality(Modality.WINDOW_MODAL);
+		
+		stage.setTitle(mainApp.getDataManagement().getPOSTitle() + " 직원 관리");
+		
+		FXMLLoader loader = new FXMLLoader(TitleLayoutController.class.getResource("/PointOfView/View/Staff/StaffManagementLayout.fxml"));
+		BorderPane pane = loader.load();
+		
+		StaffManagementLayoutController controller = loader.getController();
+		controller.setStaffData(stage, mainApp.getDataManagement().getStaffs());
+		
+		//ConfigLayoutController controller = loader.getController();
+		//controller.setMainApp(mainApp);
+		
+		//mainApp.getRootLayoutController().showThisPane(pane);
+		
+		Scene scene = new Scene(pane);
+		stage.setScene(scene);
+		
+		stage.showAndWait();
+		
+		
+	}catch (Exception e){
+		new ExceptionDialog(AlertType.ERROR, "에러", "", "", e).showAndWait();
+		e.printStackTrace();
+	}
 	}
 	
 	

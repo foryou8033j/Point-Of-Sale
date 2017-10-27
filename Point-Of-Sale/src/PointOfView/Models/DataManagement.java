@@ -1,6 +1,7 @@
 package PointOfView.Models;
 
 import PointOfView.Models.Menu.Menues;
+import PointOfView.Models.Staff.Staff;
 import PointOfView.Models.Stastics.StasticsModel;
 import PointOfView.Models.Stastics.Sale.SaleStasticsModel;
 
@@ -10,6 +11,7 @@ public class DataManagement {
 	private String adminPassword = "1234";
 	
 	private Menues menues = new Menues();
+	private Staff staffs = new Staff();
 	
 
 	/**
@@ -34,6 +36,14 @@ public class DataManagement {
 	 */
 	public Menues getMenues() {
 		return menues;
+	}
+	
+	/**
+	 * 직원 목록을 반환한다.
+	 * @return
+	 */
+	public Staff getStaffs() {
+	    return staffs;
 	}
 	
 	/**

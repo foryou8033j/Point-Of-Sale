@@ -3,5 +3,10 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="Image"/>
+	<classpathentry exported="true" kind="lib" path="src/PointOfView/Resource/API/commons-lang3-3.6-javadoc.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/PointOfView/Resource/API/commons-lang3-3.6-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/PointOfView/Resource/API/commons-lang3-3.6-test-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/PointOfView/Resource/API/commons-lang3-3.6-tests.jar"/>
+	<classpathentry exported="true" kind="lib" path="src/PointOfView/Resource/API/commons-lang3-3.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
