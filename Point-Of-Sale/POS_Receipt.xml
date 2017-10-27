@@ -36,7 +36,7 @@
     <receipt>
         <payWay>CARD</payWay>
         <payTime>2017-10-21T16:29:01.550+09:00</payTime>
-        <tableData discount="0" payMoney="21000" index="6" column="0" row="0" isShow="false">
+        <tableData discount="0" payMoney="21000" index="6" column="-1" row="-1" isShow="false">
             <orderlist count="1" name="정통육개장" category="주메뉴" price="8000" column="0" row="0" isShow="true"/>
             <orderlist count="1" name="맑은육개장" category="주메뉴" price="8000" column="1" row="0" isShow="true"/>
             <orderlist count="1" name="어린이맑은육개장" category="어린이메뉴" price="5000" column="1" row="1" isShow="true"/>
@@ -50,7 +50,7 @@
     <receipt>
         <payWay>CARD</payWay>
         <payTime>2017-10-22T16:29:13.163+09:00</payTime>
-        <tableData discount="0" payMoney="43500" index="8" column="0" row="0" isShow="false">
+        <tableData discount="0" payMoney="43500" index="8" column="-1" row="-1" isShow="false">
             <orderlist count="2" name="어린이맑은육개장" category="어린이메뉴" price="5000" column="1" row="1" isShow="true"/>
             <orderlist count="1" name="카스" category="주류" price="4500" column="1" row="6" isShow="true"/>
             <orderlist count="1" name="매화수" category="주류" price="5000" column="2" row="6" isShow="true"/>
@@ -65,7 +65,7 @@
     <receipt>
         <payWay>CASH</payWay>
         <payTime>2017-10-23T16:29:29.383+09:00</payTime>
-        <tableData discount="0" payMoney="40000" index="19" column="0" row="0" isShow="false">
+        <tableData discount="0" payMoney="40000" index="19" column="-1" row="-1" isShow="false">
             <orderlist count="2" name="맑은육개장" category="주메뉴" price="8000" column="1" row="0" isShow="true"/>
             <orderlist count="1" name="육개장칼국수" category="주메뉴" price="8000" column="2" row="0" isShow="true"/>
             <orderlist count="1" name="떡만두국" category="주메뉴" price="8000" column="3" row="0" isShow="true"/>
@@ -80,7 +80,7 @@
     <receipt>
         <payWay>CARD</payWay>
         <payTime>2017-10-24T16:29:44.316+09:00</payTime>
-        <tableData discount="0" payMoney="45000" index="19" column="0" row="0" isShow="false">
+        <tableData discount="0" payMoney="45000" index="19" column="-1" row="-1" isShow="false">
             <orderlist count="1" name="모듬육개장전골(소)" category="주메뉴" price="21000" column="0" row="4" isShow="true"/>
             <orderlist count="0" name="모듬육개장전골(중)" category="주메뉴" price="26000" column="1" row="4" isShow="true"/>
             <orderlist count="6" name="맛있는 참" category="주류" price="4000" column="0" row="7" isShow="true"/>
@@ -94,7 +94,7 @@
     <receipt>
         <payWay>CARD</payWay>
         <payTime>2017-10-25T16:29:54.178+09:00</payTime>
-        <tableData discount="0" payMoney="40000" index="19" column="0" row="0" isShow="false">
+        <tableData discount="0" payMoney="40000" index="19" column="-1" row="-1" isShow="false">
             <orderlist count="1" name="양지육개장전골(대)" category="주메뉴" price="32000" column="2" row="3" isShow="true"/>
             <orderlist count="1" name="메밀전병" category="부매뉴" price="5000" column="4" row="3" isShow="true"/>
             <orderlist count="1" name="콜라" category="음료수" price="1000" column="5" row="5" isShow="true"/>
@@ -104,5 +104,22 @@
         <cardCompany>NH농협</cardCompany>
         <cardName>NH농협신용</cardName>
         <cardNumber>4326-9316-****-6800</cardNumber>
+    </receipt>
+    <receipt>
+        <payWay>CARD</payWay>
+        <payTime>2017-10-27T11:34:57.666+09:00</payTime>
+        <tableData discount="0" payMoney="100000" index="11" column="0" row="0" isShow="false">
+            <orderlist count="1" name="정통육개장" category="주메뉴" price="8000" column="0" row="0" isShow="true"/>
+            <orderlist count="1" name="맑은육개장" category="주메뉴" price="8000" column="1" row="0" isShow="true"/>
+            <orderlist count="2" name="어린이맑은육개장" category="어린이메뉴" price="5000" column="1" row="1" isShow="true"/>
+            <orderlist count="1" name="양지육개장전골(소)" category="주메뉴" price="21000" column="0" row="3" isShow="true"/>
+            <orderlist count="1" name="양지육개장전골(중)" category="주메뉴" price="26000" column="1" row="3" isShow="true"/>
+            <orderlist count="1" name="모듬육개장전골(소)" category="주메뉴" price="21000" column="0" row="4" isShow="true"/>
+        </tableData>
+        <returnedCash>0</returnedCash>
+        <tradeIndex>7</tradeIndex>
+        <cardCompany>IBK금융</cardCompany>
+        <cardName>IBK신용</cardName>
+        <cardNumber>9171-1771-****-2126</cardNumber>
     </receipt>
 </Receipt>
