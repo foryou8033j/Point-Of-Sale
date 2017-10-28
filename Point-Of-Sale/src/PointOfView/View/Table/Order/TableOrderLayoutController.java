@@ -174,7 +174,7 @@ public class TableOrderLayoutController implements Initializable {
 	}
 
 	thisTableData.getOrderList().remove(tableView.getSelectionModel().getSelectedItem());
-	tableView.getSelectionModel().getSelectedItem().clearCount();
+	//tableView.getSelectionModel().getSelectedItem().clearCount();
 
 	printCurrentPrice();
     }

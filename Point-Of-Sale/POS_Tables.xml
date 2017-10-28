@@ -12,9 +12,7 @@
     <table discount="0" payMoney="0" index="9" column="3" row="0" isShow="true"/>
     <table discount="0" payMoney="0" index="10" column="4" row="0" isShow="true"/>
     <table discount="0" payMoney="0" index="11" column="4" row="1" isShow="true"/>
-    <table discount="0" payMoney="0" index="12" column="5" row="0" isShow="true">
-        <orderlist count="5" name="만두한접시" category="부매뉴" price="7000" stock="0" column="5" row="1" isShow="true"/>
-    </table>
+    <table discount="0" payMoney="0" index="12" column="5" row="0" isShow="true"/>
     <table discount="0" payMoney="0" index="13" column="5" row="1" isShow="true"/>
     <table discount="0" payMoney="0" index="14" column="2" row="4" isShow="true"/>
     <table discount="0" payMoney="0" index="15" column="2" row="5" isShow="true"/>

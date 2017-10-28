@@ -35,8 +35,8 @@
             </TableView>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#handleAddStaff" prefHeight="50.0" prefWidth="150.0" text="직원 고용" />
-                  <Button mnemonicParsing="false" onAction="#handleRemoveStaff" prefHeight="50.0" prefWidth="150.0" text="직원 해고" />
+                  <Button mnemonicParsing="false" onAction="#handleAddStaff" prefHeight="50.0" prefWidth="150.0" text="직원 등록" />
+                  <Button mnemonicParsing="false" onAction="#handleRemoveStaff" prefHeight="50.0" prefWidth="150.0" text="직원 등록 해제" />
                </children>
             </HBox>
          </children>
