@@ -202,6 +202,8 @@ public class ReceiptLayoutController implements Initializable{
     	this.mainApp = mainApp;
     	this.stage = stage;
     	
+    	
+    	
     	table.setItems(mainApp.getReceipts().getReceiptList());
     	
     	receipePane.setCenter(new Text("선택 된 영수증 없음"));

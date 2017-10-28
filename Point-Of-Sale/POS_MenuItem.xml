@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Menuitems>
-    <menuitem name="정통육개장" category="주메뉴" price="8000" stock="40" column="0" row="0" isShow="true"/>
-    <menuitem name="맑은육개장" category="주메뉴" price="8000" stock="30" column="1" row="0" isShow="true"/>
-    <menuitem name="육개장칼국수" category="주메뉴" price="8000" stock="30" column="2" row="0" isShow="true"/>
-    <menuitem name="떡만두국" category="주메뉴" price="8000" stock="30" column="3" row="0" isShow="true"/>
-    <menuitem name="어린이맑은육개장" category="어린이메뉴" price="5000" stock="40" column="1" row="1" isShow="true"/>
-    <menuitem name="어린이떡만두국" category="어린이메뉴" price="5000" stock="30" column="3" row="1" isShow="true"/>
-    <menuitem name="양지육개장전골(소)" category="주메뉴" price="21000" stock="30" column="0" row="3" isShow="true"/>
-    <menuitem name="양지육개장전골(중)" category="주메뉴" price="26000" stock="30" column="1" row="3" isShow="true"/>
-    <menuitem name="양지육개장전골(대)" category="주메뉴" price="32000" stock="30" column="2" row="3" isShow="true"/>
-    <menuitem name="모듬육개장전골(소)" category="주메뉴" price="21000" stock="30" column="0" row="4" isShow="true"/>
-    <menuitem name="모듬육개장전골(중)" category="주메뉴" price="26000" stock="30" column="1" row="4" isShow="true"/>
-    <menuitem name="모듬육개장전골(대)" category="주메뉴" price="32000" stock="30" column="2" row="4" isShow="true"/>
-    <menuitem name="맛있는 참" category="주류" price="4000" stock="20" column="0" row="7" isShow="true"/>
-    <menuitem name="참이슬" category="주류" price="4000" stock="30" column="1" row="7" isShow="true"/>
-    <menuitem name="하이트" category="주류" price="4500" stock="30" column="0" row="6" isShow="true"/>
-    <menuitem name="카스" category="주류" price="4500" stock="25" column="1" row="6" isShow="true"/>
-    <menuitem name="콜라" category="음료수" price="1000" stock="35" column="5" row="5" isShow="true"/>
-    <menuitem name="사이다" category="음료수" price="1000" stock="25" column="5" row="6" isShow="true"/>
-    <menuitem name="환타" category="음료수" price="1000" stock="35" column="5" row="7" isShow="true"/>
-    <menuitem name="매화수" category="주류" price="5000" stock="25" column="2" row="6" isShow="true"/>
-    <menuitem name="청하" category="주류" price="4500" stock="25" column="2" row="7" isShow="true"/>
-    <menuitem name="막걸리" category="주류" price="4000" stock="25" column="3" row="7" isShow="true"/>
-    <menuitem name="메밀전병" category="부매뉴" price="5000" stock="25" column="4" row="3" isShow="true"/>
-    <menuitem name="만두반접시" category="부매뉴" price="3500" stock="25" column="5" row="0" isShow="true"/>
-    <menuitem name="한판보쌈" category="부매뉴" price="10000" stock="25" column="5" row="3" isShow="true"/>
-    <menuitem name="만두한접시" category="부매뉴" price="7000" stock="37" column="5" row="1" isShow="true"/>
+    <menuitem name="전통육개장" category="주메뉴" price="8000" stock="29" column="0" row="0" isShow="true"/>
+    <menuitem name="맑은육개장" category="주메뉴" price="8000" stock="10" column="1" row="0" isShow="true"/>
+    <menuitem name="육개장칼국수" category="주메뉴" price="8000" stock="25" column="2" row="0" isShow="true"/>
+    <menuitem name="떡만두국" category="주메뉴" price="8000" stock="27" column="3" row="0" isShow="true"/>
+    <menuitem name="어린이맑은육개장" category="어린이메뉴" price="5000" stock="35" column="1" row="1" isShow="true"/>
+    <menuitem name="어린이떡만두국" category="어린이메뉴" price="5000" stock="27" column="3" row="1" isShow="true"/>
+    <menuitem name="양지육개장전골(소)" category="주메뉴" price="21000" stock="25" column="0" row="3" isShow="true"/>
+    <menuitem name="양지육개장전골(중)" category="주메뉴" price="26000" stock="27" column="1" row="3" isShow="true"/>
+    <menuitem name="양지육개장전골(대)" category="주메뉴" price="32000" stock="26" column="2" row="3" isShow="true"/>
+    <menuitem name="모듬육개장전골(소)" category="주메뉴" price="21000" stock="29" column="0" row="4" isShow="true"/>
+    <menuitem name="모듬육개장전골(중)" category="주메뉴" price="26000" stock="29" column="1" row="4" isShow="true"/>
+    <menuitem name="모듬육개장전골(대)" category="주메뉴" price="32000" stock="28" column="2" row="4" isShow="true"/>
+    <menuitem name="맛있는 참" category="주류" price="4000" stock="80" column="0" row="7" isShow="true"/>
+    <menuitem name="참이슬" category="주류" price="4000" stock="107" column="1" row="7" isShow="true"/>
+    <menuitem name="하이트" category="주류" price="4500" stock="93" column="0" row="6" isShow="true"/>
+    <menuitem name="카스" category="주류" price="4500" stock="102" column="1" row="6" isShow="true"/>
+    <menuitem name="콜라" category="음료수" price="1000" stock="73" column="5" row="5" isShow="true"/>
+    <menuitem name="사이다" category="음료수" price="1000" stock="81" column="5" row="6" isShow="true"/>
+    <menuitem name="환타" category="음료수" price="1000" stock="82" column="5" row="7" isShow="true"/>
+    <menuitem name="매화수" category="주류" price="5000" stock="53" column="2" row="6" isShow="true"/>
+    <menuitem name="청하" category="주류" price="4500" stock="44" column="2" row="7" isShow="true"/>
+    <menuitem name="막걸리" category="주류" price="4000" stock="19" column="3" row="7" isShow="true"/>
+    <menuitem name="메밀전병" category="부매뉴" price="5000" stock="16" column="4" row="3" isShow="true"/>
+    <menuitem name="만두반접시" category="부매뉴" price="3500" stock="21" column="5" row="0" isShow="true"/>
+    <menuitem name="한판보쌈" category="부매뉴" price="10000" stock="24" column="5" row="3" isShow="true"/>
+    <menuitem name="만두한접시" category="부매뉴" price="7000" stock="35" column="5" row="1" isShow="true"/>
 </Menuitems>

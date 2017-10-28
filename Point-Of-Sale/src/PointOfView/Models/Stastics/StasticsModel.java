@@ -18,6 +18,7 @@ public class StasticsModel {
 	this.receipt = receipt;
 	this.menues = menues;
 
+	
 	saleStasticsModel = new SaleStasticsModel(receipt);
 	menuStasticsModel = new MenuStasticsModel(menues, receipt);
 

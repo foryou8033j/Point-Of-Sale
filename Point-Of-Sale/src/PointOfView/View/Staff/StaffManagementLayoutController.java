@@ -226,6 +226,8 @@ public class StaffManagementLayoutController implements Initializable {
 	this.staff = staff;
 	this.stage = stage;
 
+	staff.loadDataFromFile();
+	
 	pane.setVisible(false);
 	staffTableView.setItems(staff.getStaffDatas());
 

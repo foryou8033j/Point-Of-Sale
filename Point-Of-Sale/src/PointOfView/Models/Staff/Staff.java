@@ -36,13 +36,6 @@ public class Staff {
     private void initJobCategory() {
 	
 	jobCategory = FXCollections.observableArrayList("사장", "부사장", "직원", "아르바이트", "용역", "일당", "대타");
-	jobCategory.add("사장");
-	jobCategory.add("부사장");
-	jobCategory.add("직원");
-	jobCategory.add("아르바이트");
-	jobCategory.add("용역");
-	jobCategory.add("일당");
-	jobCategory.add("대타");
     }
 
     private void initJobPart() {

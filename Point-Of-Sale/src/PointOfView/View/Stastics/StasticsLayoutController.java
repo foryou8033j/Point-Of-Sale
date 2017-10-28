@@ -61,6 +61,8 @@ public class StasticsLayoutController {
     	this.mainApp = mainApp;
     	this.stage = stage;
     	
+    	mainApp.getReceipts().loadDataFromFile();
+    	
     	handleSaleTabSelected(null);
     	handleMenuTabSelected(null);
     	
