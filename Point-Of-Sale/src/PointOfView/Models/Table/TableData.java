@@ -164,8 +164,6 @@ public class TableData extends GridPositionModel {
     private int calSumPrice() {
 
 	sumPrice = 0;
-
-	System.out.println("orderList Size = " + orderList.size());
 	
 	
 	try {

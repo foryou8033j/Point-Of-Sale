@@ -17,6 +17,7 @@ public class SaleStasticsModel {
     private Receipt receipt;
 
     private ObservableList<String> dayNames = FXCollections.observableArrayList();
+    private ObservableList<String> weekNames = FXCollections.observableArrayList();
     private ObservableList<String> monthNames = FXCollections.observableArrayList();
     private ObservableList<String> yearNames = FXCollections.observableArrayList();
 
@@ -35,8 +36,11 @@ public class SaleStasticsModel {
 	    else
 		dayNames.add(String.valueOf(lastDayOfPreMonth--));
 	}
-	
+
 	Collections.reverse(dayNames);
+
+	// 최근 4주의 주를 리스트화 한다.
+	weekNames.addAll("1", "2주", "3", "4", "5");
 
 	// 최근 12달의 월을 리스트화 한다.
 	int curMonth = cal.getTime().getMonth();
@@ -48,14 +52,13 @@ public class SaleStasticsModel {
 	    else
 		monthNames.add(String.valueOf(lastMonthOfYear--));
 	}
-	
+
 	Collections.reverse(monthNames);
 
 	// 최근 10년의 해를 리스트화 한다.
 	int year = cal.get(Calendar.YEAR);
 
 	for (int i = 0; i < 10; i++) {
-	    System.out.println(year);
 	    yearNames.add(String.valueOf(year--));
 	}
 
@@ -65,6 +68,9 @@ public class SaleStasticsModel {
     public ObservableList<String> getXAxisModel(CHART_CATEGORY category) {
 	if (category.equals(CHART_CATEGORY.DAY))
 	    return dayNames;
+
+	else if (category.equals(CHART_CATEGORY.WEEK))
+	    return weekNames;
 
 	else if (category.equals(CHART_CATEGORY.MONTH))
 	    return monthNames;
@@ -107,12 +113,11 @@ public class SaleStasticsModel {
 		continue;
 
 	    int price = yearModel.get(date);
-	    System.out.println(price);
 	    series.getData().add(new XYChart.Data<>(yearNames.get(i), price));
 
 	    yearModel.put(date, yearModel.get(date) + price);
 	}
-	
+
 	series.setName("매출액");
 
 	return series;
@@ -150,16 +155,72 @@ public class SaleStasticsModel {
 		continue;
 
 	    int price = monthModel.get(date);
-	    System.out.println(price);
 	    series.getData().add(new XYChart.Data<>(monthNames.get(i), price));
 
 	    monthModel.put(date, monthModel.get(date) + price);
 	}
 
 	series.setName("매출액");
-	
+
 	return series;
 
+    }
+
+    /**
+     * 주별 매출 통계를 반환한다.
+     * 
+     * @return XYChart.Series<String, Integer>
+     */
+    public XYChart.Series<String, Integer> getWeekModel() {
+
+	Map<String, Integer> weekModel = new HashMap<>();
+
+	// 주별로 합산 통계를 만든다
+	for (int i = 0; i < receipt.getReceiptList().size(); i++) {
+
+	    String week = String.valueOf(receipt.getReceiptList().get(i).getPayTime().get(Calendar.WEEK_OF_MONTH));
+
+	    int year = receipt.getReceiptList().get(i).getPayTime().get(Calendar.YEAR);
+	    int month = receipt.getReceiptList().get(i).getPayTime().get(Calendar.MONTH);
+
+	    Calendar cal = Calendar.getInstance();
+
+	    int cur_year = cal.get(Calendar.YEAR);
+	    int cur_month = cal.get(Calendar.MONTH);
+
+	    // 올해나 이번달이 아닌경우 무시한다.
+	    if (year != cur_year || month != cur_month)
+		continue;
+
+	    int price = receipt.getReceiptList().get(i).getPayTableData().getSumPrice();
+
+	    if (weekModel.get(week) == null)
+		weekModel.put(week, price);
+	    else
+		weekModel.put(week, weekModel.get(week) + price);
+	}
+
+	XYChart.Series<String, Integer> series = new XYChart.Series<>();
+	
+	// 그래프 Series 에 데이터를 추가한다.
+	for (int i = 0; i < dayNames.size(); i++) {
+
+	    String date = dayNames.get(i);
+
+	    if (weekModel.get(date) == null)
+		continue;
+
+	    int price = weekModel.get(date);
+	    series.getData().add(new XYChart.Data<>(dayNames.get(i), price));
+
+	    weekModel.put(date, weekModel.get(date) + price);
+	}
+
+	series.setName("매출액");
+
+	
+
+	return series;
     }
 
     /**
@@ -193,14 +254,13 @@ public class SaleStasticsModel {
 		continue;
 
 	    int price = dayModel.get(date);
-	    System.out.println(price);
 	    series.getData().add(new XYChart.Data<>(dayNames.get(i), price));
 
 	    dayModel.put(date, dayModel.get(date) + price);
 	}
 
 	series.setName("매출액");
-	
+
 	return series;
 
     }

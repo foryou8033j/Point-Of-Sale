@@ -10,7 +10,9 @@ import PointOfView.Models.Receipt.Receipt;
 import PointOfView.Models.Receipt.ReceiptModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.chart.XYChart;
+import javafx.scene.layout.StackPane;
 
 public class MenuStasticsModel {
 
@@ -28,9 +30,9 @@ public class MenuStasticsModel {
     }
 
     private void createMenuList() {
-	
+
 	menuNames.clear();
-	
+
 	// 등록 된 메뉴를 바탕으로 메뉴 리스트를 만든다.
 	for (MenuItem data : menues.getMenuItems())
 	    menuNames.add(data.getName());
@@ -56,13 +58,13 @@ public class MenuStasticsModel {
      * 
      * @return XYChart.Series<String, Integer>
      */
-    public XYChart.Series<String, Integer> getYearModel() {
+    public XYChart.Series<String, Integer> getMenuModel() {
 
 	createMenuList();
 
 	Map<String, Integer> model = new HashMap<>();
 
-	// 월별로 합산 매출액 만든다.
+	// 메뉴 별로 합산 매출액 만든다.
 	for (int i = 0; i < receipt.getReceiptList().size(); i++) {
 
 	    for (OrderList order : receipt.getReceiptList().get(i).getPayTableData().getOrderList()) {
@@ -88,14 +90,18 @@ public class MenuStasticsModel {
 		continue;
 
 	    int count = model.get(menu);
-	    System.out.println(count);
-	    series.getData().add(new XYChart.Data<>(menuNames.get(i), count));
 
-	    model.put(menu, model.get(menu) + count);
+	    // XYChart.Data<> data = new XYChart.Data<>(menuNames.get(i), count);
+
+	    XYChart.Data<String, Integer> data = new XYChart.Data<>(menuNames.get(i), count);
+
+
+
+	    series.getData().add(data);
 	}
 
 	series.setName("판매량");
-	
+
 	return series;
 
     }

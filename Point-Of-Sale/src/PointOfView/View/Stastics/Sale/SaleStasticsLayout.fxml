@@ -10,7 +10,7 @@
 
 <BorderPane prefHeight="590.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Stastics.Sale.SaleStasticsLayoutController">
    <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" tabMinWidth="140.0" BorderPane.alignment="CENTER">
+      <TabPane prefHeight="200.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" tabMinWidth="100.0" BorderPane.alignment="CENTER">
         <tabs>
             <Tab text="일별">
                <content>
@@ -23,6 +23,22 @@
                           <yAxis>
                             <NumberAxis side="LEFT" />
                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="주별">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="weekChart" layoutX="109.0" layoutY="68.0" prefHeight="590.0" prefWidth="871.0" title="주별 매출 통계" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                           <xAxis>
+                              <CategoryAxis fx:id="weekChartXAxis" label="WEEK" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
                         </LineChart>
                      </children>
                   </AnchorPane>

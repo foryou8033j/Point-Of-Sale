@@ -46,7 +46,7 @@ public class StasticsLayoutController {
     		BorderPane pane = loader.load();
     		
     		MenuStasticsLayoutController controller = loader.getController();
-    		controller.setStastics(mainApp.getStasticsModel());
+    		controller.setStastics(mainApp.getDataManagement().getMenues(), stage, mainApp.getStasticsModel());
     		
     		menuStasticsTab.setContent(pane);
     	}catch (Exception e) {
