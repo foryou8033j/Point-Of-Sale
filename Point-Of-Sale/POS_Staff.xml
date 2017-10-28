@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Staff>
-    <staff todayWorkHour="6" wholeWorkHour="482" monthlyWorkHour="160" lastMonth="9" category="사장" name="서정삼" part="사무실" pay="16000" status="WORK"/>
-    <staff todayWorkHour="2" wholeWorkHour="212" monthlyWorkHour="120" lastMonth="9" category="부사장" name="김두상" part="관리" pay="12000" status="WORK"/>
+    <staff todayWorkHour="6" wholeWorkHour="482" monthlyWorkHour="160" lastMonth="9" category="사장" name="서정삼" part="사무실" pay="16000" status="REST"/>
+    <staff todayWorkHour="2" wholeWorkHour="212" monthlyWorkHour="120" lastMonth="9" category="부사장" name="김두상" part="관리" pay="12000" status="REST"/>
     <staff todayWorkHour="3" wholeWorkHour="80" monthlyWorkHour="2" lastMonth="9" category="아르바이트" name="김영우" part="홀" pay="6550" status="REST"/>
-    <staff todayWorkHour="3" wholeWorkHour="82" monthlyWorkHour="2" lastMonth="9" category="아르바이트" name="조수정" part="홀" pay="6550" status="WORK"/>
-    <staff todayWorkHour="2" wholeWorkHour="125" monthlyWorkHour="0" lastMonth="9" category="직원" name="조상영" part="사무실" pay="7000" status="WORK"/>
+    <staff todayWorkHour="3" wholeWorkHour="82" monthlyWorkHour="2" lastMonth="9" category="아르바이트" name="조수정" part="홀" pay="6550" status="REST"/>
+    <staff todayWorkHour="2" wholeWorkHour="125" monthlyWorkHour="0" lastMonth="9" category="직원" name="조상영" part="사무실" pay="7000" status="REST"/>
     <staff todayWorkHour="2" wholeWorkHour="2" monthlyWorkHour="2" lastMonth="9" category="용역" name="현진혁" part="배달" pay="7500" status="REST"/>
-    <staff todayWorkHour="0" wholeWorkHour="48" monthlyWorkHour="12" lastMonth="9" category="아르바이트" name="김여주" part="주방" pay="6550" status="WORK"/>
-    <staff todayWorkHour="4" wholeWorkHour="120" monthlyWorkHour="20" lastMonth="9" category="직원" name="임준혁" part="주방" pay="7000" status="WORK"/>
-    <staff todayWorkHour="5" wholeWorkHour="5" monthlyWorkHour="5" lastMonth="9" category="일당" name="김태우" part="배달" pay="8000" status="WORK"/>
-    <staff todayWorkHour="2" wholeWorkHour="48" monthlyWorkHour="16" lastMonth="9" category="아르바이트" name="홍지원" part="사무실" pay="6550" status="WORK"/>
-    <staff todayWorkHour="6" wholeWorkHour="6" monthlyWorkHour="6" lastMonth="9" category="대타" name="정연욱" part="홀" pay="6550" status="WORK"/>
+    <staff todayWorkHour="0" wholeWorkHour="48" monthlyWorkHour="12" lastMonth="9" category="아르바이트" name="김여주" part="주방" pay="6550" status="REST"/>
+    <staff todayWorkHour="4" wholeWorkHour="120" monthlyWorkHour="20" lastMonth="9" category="직원" name="임준혁" part="주방" pay="7000" status="REST"/>
+    <staff todayWorkHour="5" wholeWorkHour="5" monthlyWorkHour="5" lastMonth="9" category="일당" name="김태우" part="배달" pay="8000" status="REST"/>
+    <staff todayWorkHour="2" wholeWorkHour="48" monthlyWorkHour="16" lastMonth="9" category="아르바이트" name="홍지원" part="사무실" pay="6550" status="REST"/>
+    <staff todayWorkHour="6" wholeWorkHour="6" monthlyWorkHour="6" lastMonth="9" category="대타" name="정연욱" part="홀" pay="6550" status="REST"/>
     <staff todayWorkHour="5" wholeWorkHour="5" monthlyWorkHour="5" lastMonth="9" category="아르바이트" name="이정은" part="홍보" pay="7200" status="REST"/>
     <staff todayWorkHour="0" wholeWorkHour="0" monthlyWorkHour="0" lastMonth="9" category="아르바이트" name="홍길동" part="주방" pay="6550" status="REST"/>
 </Staff>
