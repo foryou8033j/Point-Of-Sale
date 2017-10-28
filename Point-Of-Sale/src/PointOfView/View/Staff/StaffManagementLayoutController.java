@@ -4,13 +4,14 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+import PointOfView.MainApp;
 import PointOfView.Models.Staff.Staff;
 import PointOfView.Models.Staff.StaffModel;
+import PointOfView.View.Staff.Config.StaffConfigStage;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -74,6 +75,8 @@ public class StaffManagementLayoutController implements Initializable {
     @FXML
     void handleAddStaff(ActionEvent event) {
 
+	new StaffAddStage(stage, staff).showAndWait();
+	
     }
 
     @FXML
@@ -83,12 +86,21 @@ public class StaffManagementLayoutController implements Initializable {
 
     @FXML
     void handleDefaultSetting(ActionEvent event) {
-
+	new StaffConfigStage(mainApp, stage).showAndWait();
     }
 
     @FXML
     void handleRemoveStaff(ActionEvent event) {
 
+	StaffModel item = staffTableView.getSelectionModel().getSelectedItem();
+	
+	if(item == null) return;
+	else {
+	    item.quitWork();
+	    staff.getStaffDatas().remove(item);
+	}
+	
+	
     }
 
     @FXML
@@ -96,19 +108,18 @@ public class StaffManagementLayoutController implements Initializable {
 
 	if (currentSelectedStaffModel == null)
 	    return;
-	
-	
-	if(currentSelectedStaffModel.isSupended()) {
+
+	if (currentSelectedStaffModel.isSupended()) {
 	    btnStatus.setText("퇴근");
 	    currentSelectedStaffModel.startWork();
-	}else if(!currentSelectedStaffModel.isWork()) {
+	} else if (!currentSelectedStaffModel.isWork()) {
 	    btnStatus.setText("퇴근");
 	    currentSelectedStaffModel.startWork();
-	}else {
+	} else {
 	    btnStatus.setText("출근");
 	    currentSelectedStaffModel.stopWork();
 	}
-	
+
     }
 
     @Override
@@ -137,13 +148,12 @@ public class StaffManagementLayoutController implements Initializable {
 	name.setText(staffModel.getName());
 	category.setText(staffModel.getCategory());
 	part.setText(staffModel.getPart());
-	
-	
-	wholeWorkDay.setText(currentSelectedStaffModel.getWholeWorkHour()/24 + " 일");
+
+	wholeWorkDay.setText(currentSelectedStaffModel.getWholeWorkHour() / 24 + " 일");
 	montylyWorkTime.setText(currentSelectedStaffModel.getMonthlyWorkHour() + " 시간");
-	
-	monthlyPay.setText(String.format("%,20d 원", currentSelectedStaffModel.getMonthlyWorkHour() * staff.getPayPerHour()));
-	
+
+	monthlyPay.setText(
+		String.format("%,20d 원", currentSelectedStaffModel.getMonthlyWorkHour() * staff.getPayPerHour()));
 
 	if (staffModel.isWork() && !staffModel.isSupended()) {
 	    btnStatus.setText("퇴근");
@@ -153,8 +163,6 @@ public class StaffManagementLayoutController implements Initializable {
 
     }
 
-    
-    
     /**
      * 현재 시간을 그려준다.
      */
@@ -167,12 +175,25 @@ public class StaffManagementLayoutController implements Initializable {
 	    while (true) {
 		Calendar curTime = Calendar.getInstance();
 		Platform.runLater(() -> {
-		    
-		    currentTime.setText(formatter.format(curTime.getTime()));
-		    if(currentSelectedStaffModel != null && currentSelectedStaffModel.isWork())
-			todayWorkTime.setText(currentSelectedStaffModel.getTodayWorkHours() + ":" + workFormatter.format(currentSelectedStaffModel.getTodayWorkTime()));
-		    else if(currentSelectedStaffModel != null && !currentSelectedStaffModel.isWork())
-			todayWorkTime.setText(currentSelectedStaffModel.getTodayWorkHours() + ":" + workFormatter.format(currentSelectedStaffModel.getTodayWorkTime()));
+
+		    if (currentSelectedStaffModel != null) {
+
+			wholeWorkDay.setText(currentSelectedStaffModel.getWholeWorkHour() / 24 + " 일");
+			montylyWorkTime.setText(currentSelectedStaffModel.getMonthlyWorkHour() + " 시간");
+
+			monthlyPay.setText(String.format("%,20d 원",
+				currentSelectedStaffModel.getMonthlyWorkHour() * Integer.parseInt(currentSelectedStaffModel.getPay())));
+
+			currentTime.setText(formatter.format(curTime.getTime()));
+			if (currentSelectedStaffModel.isWork())
+			    todayWorkTime.setText(currentSelectedStaffModel.getTodayWorkHours() + ":"
+				    + workFormatter.format(currentSelectedStaffModel.getTodayWorkTime()));
+			else if (!currentSelectedStaffModel.isWork())
+			    todayWorkTime.setText(currentSelectedStaffModel.getTodayWorkHours() + ":"
+				    + workFormatter.format(currentSelectedStaffModel.getTodayWorkTime()));
+
+		    }
+
 		});
 		try {
 		    new Robot().delay(1);
@@ -186,14 +207,23 @@ public class StaffManagementLayoutController implements Initializable {
     }
 
     private Staff staff;
+    private MainApp mainApp;
     private Stage stage;
 
-    public void setStaffData(Stage stage, Staff staff) {
+    public void setStaffData(MainApp mainApp, Stage stage, Staff staff) {
+	this.mainApp = mainApp;
 	this.staff = staff;
 	this.stage = stage;
 
 	pane.setVisible(false);
 	staffTableView.setItems(staff.getStaffDatas());
+	
+	try {
+	    staffTableView.getSelectionModel().select(0);
+	}catch (Exception e) {
+	    
+	}
+	
 
 	printCurrentTime();
     }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Staff>
+    <staff todayWorkHour="1" wholeWorkHour="1" monthlyWorkHour="1" lastMonth="9" category="사장" name="서정삼" part="사무실" pay="6550" status="REST"/>
+    <staff todayWorkHour="1" wholeWorkHour="1" monthlyWorkHour="1" lastMonth="9" category="부사장" name="김두상" part="관리" pay="6550" status="REST"/>
+    <staff todayWorkHour="0" wholeWorkHour="0" monthlyWorkHour="0" lastMonth="9" category="아르바이트" name="김영우" part="홀" pay="6550" status="REST"/>
+    <staff todayWorkHour="0" wholeWorkHour="0" monthlyWorkHour="0" lastMonth="9" category="아르바이트" name="조수정" part="홍보" pay="6550" status="REST"/>
+</Staff>

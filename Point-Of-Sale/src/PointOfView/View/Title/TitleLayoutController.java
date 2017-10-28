@@ -3,6 +3,8 @@ package PointOfView.View.Title;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.apache.commons.lang3.time.StopWatch;
+
 import PointOfView.MainApp;
 import PointOfView.Util.Dialog.ExceptionDialog;
 import PointOfView.View.Config.ConfigLayoutController;
@@ -40,6 +42,14 @@ public class TitleLayoutController implements Initializable{
 
     @FXML
     void handleExit(ActionEvent event) {
+	
+	try {
+	    mainApp.getDataManagement().getStaffs().saveAndQuit();
+	}catch (Exception e) {
+	    //ignore
+	}
+	
+	
     	System.exit(0);
     }
 
@@ -115,7 +125,7 @@ public class TitleLayoutController implements Initializable{
 		BorderPane pane = loader.load();
 		
 		StaffManagementLayoutController controller = loader.getController();
-		controller.setStaffData(stage, mainApp.getDataManagement().getStaffs());
+		controller.setStaffData(mainApp, stage, mainApp.getDataManagement().getStaffs());
 		
 		//ConfigLayoutController controller = loader.getController();
 		//controller.setMainApp(mainApp);
