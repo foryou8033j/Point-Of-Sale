@@ -3,19 +3,18 @@ package PointOfView.View.Title;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import org.apache.commons.lang3.time.StopWatch;
-
 import PointOfView.MainApp;
 import PointOfView.Util.Dialog.ExceptionDialog;
 import PointOfView.View.Config.ConfigLayoutController;
 import PointOfView.View.Staff.StaffManagementLayoutController;
+import PointOfView.View.Stock.StockLayoutController;
 import PointOfView.View.Table.TableLayoutController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
@@ -60,7 +59,7 @@ public class TitleLayoutController implements Initializable{
 
     @FXML
     void handleStockManagementScreen(ActionEvent event) {
-
+	showStockManagementMenu();
     }
 
     @FXML
@@ -90,6 +89,24 @@ public class TitleLayoutController implements Initializable{
 			
 			
 		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void showStockManagementMenu(){
+		try{
+			
+			FXMLLoader loader = new FXMLLoader(TitleLayoutController.class.getResource("/PointOfView/View/Stock/StockLayout.fxml"));
+			BorderPane pane = loader.load();
+			
+			StockLayoutController controller = loader.getController();
+			controller.setMainApp(mainApp);
+			
+			mainApp.getRootLayoutController().showThisPane(pane);
+			
+			
+		}catch (Exception e){
+			new ExceptionDialog(AlertType.ERROR, "에러", "", "", e).showAndWait();
 			e.printStackTrace();
 		}
 	}

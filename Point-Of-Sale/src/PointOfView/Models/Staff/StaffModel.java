@@ -56,6 +56,8 @@ public class StaffModel {
 
 	lastMonth = Calendar.getInstance().get(Calendar.MONTH);
 
+	pay.set("6550");
+	
 	stopwatch = new StopWatch();
 
 	staffWorkListener();

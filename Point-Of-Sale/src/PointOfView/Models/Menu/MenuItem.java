@@ -19,6 +19,9 @@ public class MenuItem extends GridPositionModel {
     private String category = null;
     @XmlAttribute(name = "price")
     private int price;
+    
+    @XmlAttribute(name = "stock")
+    private int stock;
 
     public MenuItem() {
 	super(false);
@@ -31,6 +34,7 @@ public class MenuItem extends GridPositionModel {
 	this.name = new String(name);
 	this.category = new String(category);
 	this.price = price;
+	this.stock = 0;
     }
 
     public MenuItem(String name, String category, int price, int column, int row) {
@@ -67,6 +71,14 @@ public class MenuItem extends GridPositionModel {
 
     public void setPrice(int price) {
 	this.price = price;
+    }
+    
+    public void setStock(int i) {
+	stock = i;
+    }
+    
+    public int getStock() {
+	return stock;
     }
 
 }

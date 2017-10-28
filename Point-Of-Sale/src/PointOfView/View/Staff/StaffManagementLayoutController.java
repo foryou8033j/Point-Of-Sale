@@ -11,7 +11,9 @@ import java.util.ResourceBundle;
 import PointOfView.MainApp;
 import PointOfView.Models.Staff.Staff;
 import PointOfView.Models.Staff.StaffModel;
+import PointOfView.Util.Dialog.PasswordInputDialog;
 import PointOfView.View.Staff.Config.StaffConfigStage;
+import PointOfView.View.Table.Receipt.ReceiptStage;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -74,9 +76,11 @@ public class StaffManagementLayoutController implements Initializable {
 
     @FXML
     void handleAddStaff(ActionEvent event) {
-
-	new StaffAddStage(stage, staff).showAndWait();
+	if (!new PasswordInputDialog(mainApp).isPass())
+	    return;
 	
+	new StaffAddStage(stage, staff).showAndWait();
+
     }
 
     @FXML
@@ -86,21 +90,28 @@ public class StaffManagementLayoutController implements Initializable {
 
     @FXML
     void handleDefaultSetting(ActionEvent event) {
+
+	if (!new PasswordInputDialog(mainApp).isPass())
+	    return;
+
 	new StaffConfigStage(mainApp, stage).showAndWait();
     }
 
     @FXML
     void handleRemoveStaff(ActionEvent event) {
 
+	if (!new PasswordInputDialog(mainApp).isPass())
+	    return;
+
 	StaffModel item = staffTableView.getSelectionModel().getSelectedItem();
-	
-	if(item == null) return;
+
+	if (item == null)
+	    return;
 	else {
 	    item.quitWork();
 	    staff.getStaffDatas().remove(item);
 	}
-	
-	
+
     }
 
     @FXML
@@ -181,8 +192,8 @@ public class StaffManagementLayoutController implements Initializable {
 			wholeWorkDay.setText(currentSelectedStaffModel.getWholeWorkHour() / 24 + " 일");
 			montylyWorkTime.setText(currentSelectedStaffModel.getMonthlyWorkHour() + " 시간");
 
-			monthlyPay.setText(String.format("%,20d 원",
-				currentSelectedStaffModel.getMonthlyWorkHour() * Integer.parseInt(currentSelectedStaffModel.getPay())));
+			monthlyPay.setText(String.format("%,20d 원", currentSelectedStaffModel.getMonthlyWorkHour()
+				* Integer.parseInt(currentSelectedStaffModel.getPay())));
 
 			currentTime.setText(formatter.format(curTime.getTime()));
 			if (currentSelectedStaffModel.isWork())
@@ -217,13 +228,12 @@ public class StaffManagementLayoutController implements Initializable {
 
 	pane.setVisible(false);
 	staffTableView.setItems(staff.getStaffDatas());
-	
+
 	try {
 	    staffTableView.getSelectionModel().select(0);
-	}catch (Exception e) {
-	    
+	} catch (Exception e) {
+
 	}
-	
 
 	printCurrentTime();
     }

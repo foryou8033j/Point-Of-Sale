@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 
 import PointOfView.MainApp;
 import PointOfView.Models.Staff.StaffModel;
+import PointOfView.View.Staff.StaffAddStage;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -33,6 +34,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
 public class StaffConfigLayoutController implements Initializable {
@@ -59,7 +61,8 @@ public class StaffConfigLayoutController implements Initializable {
 
     TableColumn pay;
 
-    public MainApp mainApp;
+    private MainApp mainApp;
+    private Stage stage; 
 
     final IntegerProperty dataDragFromData = new SimpleIntegerProperty(-1);
 
@@ -67,7 +70,7 @@ public class StaffConfigLayoutController implements Initializable {
 	// TODO Auto-generated constructor stub
     }
 
-    public void setMainApp(MainApp mainApp) {
+    public void setMainApp(Stage stage, MainApp mainApp) {
 	this.mainApp = mainApp;
 
 	table.setItems(mainApp.getDataManagement().getStaffs().getStaffDatas());
@@ -135,8 +138,7 @@ public class StaffConfigLayoutController implements Initializable {
 	delete.setOnAction(new EventHandler<ActionEvent>() {
 	    @Override
 	    public void handle(ActionEvent arg0) {
-		// mainApp.getPasswordList().remove(table.getSelectionModel().getSelectedItem());
-
+		mainApp.getDataManagement().getStaffs().getStaffDatas().remove(table.getSelectionModel().getSelectedItem());
 	    }
 
 	});
@@ -244,6 +246,8 @@ public class StaffConfigLayoutController implements Initializable {
 
     private void handleAddMember() {
 
+	new StaffAddStage(stage, mainApp.getDataManagement().getStaffs()).showAndWait();
+	
     }
 
     public class EditingCell extends TableCell<StaffModel, String> {

@@ -30,7 +30,7 @@ public class StaffConfigStage extends Stage {
 
 	initOwner(stage);
 	initModality(Modality.APPLICATION_MODAL);
-	setTitle("시급 설정");
+	setTitle("직원 정보 관리");
 
 	initLayout();
 
@@ -45,7 +45,7 @@ public class StaffConfigStage extends Stage {
 	    AnchorPane pane = loader.load();
 
 	    StaffConfigLayoutController controller = loader.getController();
-	    controller.setMainApp(mainApp);
+	    controller.setMainApp(this, mainApp);
 
 	    Scene scene = new Scene(pane);
 
