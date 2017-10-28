@@ -59,6 +59,9 @@ public class CardPaymentLayoutController {
     	    	
     	    	tableData.removeAll();
     	    	mainApp.getRootLayoutController().showOrderMenu();
+    	    	
+    	    	mainApp.getDataManagement().getMenues().saveDataToFile();
+    	    	
     	    	stage.close();
     		}else {
     			stage.close();

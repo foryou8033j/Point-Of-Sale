@@ -78,5 +78,14 @@ public class Menues {
     public ObservableList<MenuItem> getMenuItems() {
 	return menuItems;
     }
+    
+    public MenuItem getMenuItem(String name) {
+	for(MenuItem item:menuItems) {
+	    if(item.getName().equals(name))
+		return item;
+	}
+	
+	return null;
+    }
 
 }

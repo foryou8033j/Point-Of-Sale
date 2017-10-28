@@ -75,8 +75,8 @@ public class ConfigLayoutController {
 	});
 
 	if (!name.getText().equals("")) {
-
 	    mainApp.getDataManagement().setPOSTitle(name.getText());
+	    mainApp.getDataManagement().saveProperties();
 	}
 
 	if (!password.getText().equals(repassword.getText())) {
@@ -92,6 +92,7 @@ public class ConfigLayoutController {
 	    repassword.setDisable(true);
 	}
 
+	mainApp.getDataManagement().saveProperties();
 	lbnNotice.setVisible(true);
 	service.start();
 
