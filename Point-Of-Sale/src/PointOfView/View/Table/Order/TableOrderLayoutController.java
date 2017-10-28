@@ -114,9 +114,18 @@ public class TableOrderLayoutController implements Initializable {
 	    return;
 
 	tableView.getSelectionModel().getSelectedItem().minusCount();
-	
-	if(tableView.getSelectionModel().getSelectedItem().getCount() <= 0)
+
+	if (tableView.getSelectionModel().getSelectedItem().getCount() <= 0)
 	    thisTableData.getOrderList().remove(tableView.getSelectionModel().getSelectedItem());
+
+	String menuMame = tableView.getSelectionModel().getSelectedItem().getMenuItem().getName();
+	MenuItem item = mainApp.getDataManagement().getMenues().getMenuItem(menuMame);
+
+	item.setStock(item.getStock() + 1);
+
+	if (item.getStock() > 10) {
+	    drawMenuPane();
+	}
 
 	printCurrentPrice();
     }
@@ -132,6 +141,10 @@ public class TableOrderLayoutController implements Initializable {
 
 	String menuMame = tableView.getSelectionModel().getSelectedItem().getMenuItem().getName();
 	MenuItem item = mainApp.getDataManagement().getMenues().getMenuItem(menuMame);
+
+	if (item.getStock() < 10) {
+	    drawMenuPane();
+	}
 
 	if (item.getStock() > 0) {
 	    tableView.getSelectionModel().getSelectedItem().plusCount();
@@ -150,8 +163,19 @@ public class TableOrderLayoutController implements Initializable {
 
 	if (tableView.getSelectionModel().getSelectedItem() == null)
 	    return;
+	
+	String menuMame = tableView.getSelectionModel().getSelectedItem().getMenuItem().getName();
+	MenuItem item = mainApp.getDataManagement().getMenues().getMenuItem(menuMame);
+
+	item.setStock(item.getStock() + tableView.getSelectionModel().getSelectedItem().getCount());
+
+	if (item.getStock() > 10) {
+	    drawMenuPane();
+	}
+
 	thisTableData.getOrderList().remove(tableView.getSelectionModel().getSelectedItem());
 	tableView.getSelectionModel().getSelectedItem().clearCount();
+
 	printCurrentPrice();
     }
 
@@ -359,7 +383,6 @@ public class TableOrderLayoutController implements Initializable {
 		pane.setStyle("-fx-border-color: #000000; " + "-fx-border-width: 1.5;" + "-fx-border-radius: 15;"
 			+ "-fx-background-radius: 16.4, 15;" + "-fx-background-color: #EFFFE9");
 	    });
-
 	    pane.setOnMouseClicked(e -> {
 
 		if (item.getStock() > 0) {
@@ -367,11 +390,21 @@ public class TableOrderLayoutController implements Initializable {
 		    item.setStock(item.getStock() - 1);
 		    printCurrentPrice();
 
+		    if (item.getStock() < 10) {
+			pane.setStyle("-fx-border-color: #000000;" + "-fx-border-width: 1.5;" + "-fx-border-radius: 15;"
+				+ "-fx-background-radius: 16.4, 15;" + "-fx-background-color: #FFAAAA");
+		    }
+
 		    if (item.getStock() <= 0)
 			pane.setDisable(true);
 		}
 
 	    });
+
+	    if (item.getStock() < 10) {
+		pane.setStyle("-fx-border-color: #000000;" + "-fx-border-width: 1.5;" + "-fx-border-radius: 15;"
+			+ "-fx-background-radius: 16.4, 15;" + "-fx-background-color: #FFAAAA");
+	    }
 
 	    if (item.getStock() <= 0)
 		pane.setDisable(true);

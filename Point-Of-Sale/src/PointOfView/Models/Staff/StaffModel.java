@@ -75,8 +75,6 @@ public class StaffModel {
 		int min = Integer.parseInt(formatterMM.format(stopwatch.getTime()));
 		int sec = Integer.parseInt(formatterSS.format(stopwatch.getTime()));
 
-		System.out.println(this.name.get() + " : " + min + ":" + sec);
-
 		if (Calendar.getInstance().get(Calendar.MONTH) != lastMonth)
 		    monthlyWorkHour = 0;
 

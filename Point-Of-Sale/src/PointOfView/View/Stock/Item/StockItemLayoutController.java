@@ -41,6 +41,14 @@ public class StockItemLayoutController {
 	save();
     }
     
+    @FXML
+    void handleMuchMore(ActionEvent event) {
+	item.setStock(item.getStock() + 10);
+	count.setText(String.valueOf(item.getStock()));
+	
+	save();
+    }
+    
     private void save() {
 	menu.saveDataToFile();
     }
