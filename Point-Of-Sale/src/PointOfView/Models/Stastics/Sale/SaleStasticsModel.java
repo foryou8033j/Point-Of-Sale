@@ -12,6 +12,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
 
+/**
+ * 매출 통계 전처리 클래스
+ * 
+ * @author Jeongsam
+ *
+ */
 public class SaleStasticsModel {
 
     private Receipt receipt;
@@ -201,7 +207,7 @@ public class SaleStasticsModel {
 	}
 
 	XYChart.Series<String, Integer> series = new XYChart.Series<>();
-	
+
 	// 그래프 Series 에 데이터를 추가한다.
 	for (int i = 0; i < dayNames.size(); i++) {
 
@@ -217,8 +223,6 @@ public class SaleStasticsModel {
 	}
 
 	series.setName("매출액");
-
-	
 
 	return series;
     }

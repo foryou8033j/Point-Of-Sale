@@ -12,6 +12,11 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ * 메뉴 통계 컨트롤러
+ * @author Jeongsam
+ *
+ */
 public class MenuStasticsLayoutController {
 
     @FXML
@@ -43,7 +48,8 @@ public class MenuStasticsLayoutController {
 
 			int price = menues.getMenuItem(data.getXValue()).getPrice();
 
-			logPopup = new LogPopup(e, String.format("단품 %,d 원", price), String.format("총 %,d 원", price * data.getYValue()));
+			logPopup = new LogPopup(e, String.format("단품 %,d 원", price),
+				String.format("총 %,d 원", price * data.getYValue()));
 			logPopup.show();
 		    }
 

@@ -14,9 +14,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 
+/**
+ * 테이블 데이터 관리 클래스
+ * @author Jeongsam
+ *
+ */
 @XmlType(name = "TableData")
 @XmlAccessorType(XmlAccessType.NONE)
-//@XmlRootElement(name = "TableData")
+// @XmlRootElement(name = "TableData")
 public class TableData extends GridPositionModel {
 
     private int index;
@@ -78,7 +83,7 @@ public class TableData extends GridPositionModel {
     }
 
     public int getSumPrice() {
-	
+
 	return calSumPrice();
     }
 
@@ -122,9 +127,9 @@ public class TableData extends GridPositionModel {
     }
 
     // @XmlJavaTypeAdapter(OrderListWrappingAdapter.class)
-    
-    //@XmlElement(name = "orderlist")
-    @XmlElements ( { @XmlElement ( name = "orderlist", type = OrderList.class)})
+
+    // @XmlElement(name = "orderlist")
+    @XmlElements({ @XmlElement(name = "orderlist", type = OrderList.class) })
     public ObservableList<OrderList> getOrderList() {
 	return orderList;
     }
@@ -164,24 +169,20 @@ public class TableData extends GridPositionModel {
     private int calSumPrice() {
 
 	sumPrice = 0;
-	
-	
+
 	try {
 	    for (OrderList item : orderList) {
 
-		    if (item == null)
-			break;
-		    
-		    sumPrice += item.getPrice();
+		if (item == null)
+		    break;
 
-		}
-	}catch (Exception e) {
+		sumPrice += item.getPrice();
+
+	    }
+	} catch (Exception e) {
 	    System.out.println("여기");
 	    e.printStackTrace();
 	}
-	
-	
-	
 
 	return sumPrice;
 

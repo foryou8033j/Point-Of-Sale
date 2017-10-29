@@ -11,6 +11,12 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
+/**
+ * MenuItem 통합 클래스
+ * 
+ * @author Jeongsam
+ *
+ */
 public class Menues {
 
     private ObservableList<MenuItem> menuItems = null;
@@ -24,14 +30,11 @@ public class Menues {
 
 	loadDataFromFile();
 
-	/*
-	 * //임시로 메뉴를 추가한다. menuItems.addAll(new MenuItem("육개장", "주메뉴", 8000), new
-	 * MenuItem("순대국", "주메뉴", 5000), new MenuItem("공기밥", "주메뉴", 1000), new
-	 * MenuItem("탕수육", "주메뉴", 14000), new MenuItem("자장면", "주메뉴", 5000), new
-	 * MenuItem("폭탄피자", "주메뉴", 12000));
-	 */
     }
 
+    /**
+     * 파일을 불러온다.
+     */
     public void loadDataFromFile() {
 
 	try {
@@ -51,6 +54,9 @@ public class Menues {
 	}
     }
 
+    /**
+     * 파일을 저장한다.
+     */
     public void saveDataToFile() {
 	try {
 	    JAXBContext context = JAXBContext.newInstance(MenuItemDataWrapper.class);
@@ -75,16 +81,28 @@ public class Menues {
 	}
     }
 
+    /**
+     * {@link MenuItem} 반환
+     * 
+     * @return {@link MenuItem}
+     */
     public ObservableList<MenuItem> getMenuItems() {
 	return menuItems;
     }
-    
+
+    /**
+     * {@link MenuItem} 반환
+     * 
+     * @param name
+     *            String
+     * @return {@link MenuItem}
+     */
     public MenuItem getMenuItem(String name) {
-	for(MenuItem item:menuItems) {
-	    if(item.getName().equals(name))
+	for (MenuItem item : menuItems) {
+	    if (item.getName().equals(name))
 		return item;
 	}
-	
+
 	return null;
     }
 

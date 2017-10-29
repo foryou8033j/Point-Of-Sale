@@ -9,6 +9,12 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * 주문 리스트를 JAXB에 랩핑 클래스
+ * 
+ * @author Jeongsam
+ *
+ */
 public class OrderListWrappingAdapter extends XmlAdapter<List<OrderList>, ObservableList<OrderList>> {
 
     @Override

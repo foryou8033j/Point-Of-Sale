@@ -9,7 +9,12 @@ import PointOfView.Models.Receipt.ReceiptModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-
+/**
+ * Staff 데이터를 랩핑한다.
+ * 
+ * @author Jeongsam
+ *
+ */
 @XmlRootElement(name = "Staff")
 public class StaffDataWrapper {
 
@@ -24,5 +29,5 @@ public class StaffDataWrapper {
     public void setDatas(ObservableList<StaffModel> receipt) {
 	this.staff = (List) receipt;
     }
-    
+
 }

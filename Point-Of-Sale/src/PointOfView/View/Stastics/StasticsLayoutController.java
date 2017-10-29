@@ -10,6 +10,11 @@ import javafx.scene.control.Tab;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+/**
+ * 매출 통계 컨트롤러
+ * @author Jeongsam
+ *
+ */
 public class StasticsLayoutController {
 
     @FXML

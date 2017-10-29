@@ -21,6 +21,12 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+/**
+ * 직원 추가 스테이지
+ * 
+ * @author Jeongsam
+ *
+ */
 public class StaffAddStage extends Stage {
 
     private Staff staff;
@@ -59,7 +65,7 @@ public class StaffAddStage extends Stage {
 	TextField name = new TextField();
 	ComboBox<String> category = new ComboBox<String>();
 	ComboBox<String> part = new ComboBox<String>();
-	
+
 	category.setItems(staff.getJobCategory());
 	part.setItems(staff.getJobPart());
 
@@ -85,7 +91,8 @@ public class StaffAddStage extends Stage {
 		return;
 	    }
 
-	    staff.getStaffDatas().add(new StaffModel(name.getText(), category.getSelectionModel().getSelectedItem(), part.getSelectionModel().getSelectedItem()));
+	    staff.getStaffDatas().add(new StaffModel(name.getText(), category.getSelectionModel().getSelectedItem(),
+		    part.getSelectionModel().getSelectedItem()));
 	    staff.saveDataToFile();
 
 	    close();

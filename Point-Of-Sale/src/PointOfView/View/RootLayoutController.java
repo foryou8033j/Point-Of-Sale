@@ -12,6 +12,12 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
+/**
+ * RootLayoutController
+ * 
+ * @author Jeongsam
+ *
+ */
 public class RootLayoutController implements Initializable {
 
     // 메인앱과 연동 될 객체이다.

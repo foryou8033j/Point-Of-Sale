@@ -163,7 +163,7 @@ public class TableOrderLayoutController implements Initializable {
 
 	if (tableView.getSelectionModel().getSelectedItem() == null)
 	    return;
-	
+
 	String menuMame = tableView.getSelectionModel().getSelectedItem().getMenuItem().getName();
 	MenuItem item = mainApp.getDataManagement().getMenues().getMenuItem(menuMame);
 
@@ -174,7 +174,7 @@ public class TableOrderLayoutController implements Initializable {
 	}
 
 	thisTableData.getOrderList().remove(tableView.getSelectionModel().getSelectedItem());
-	//tableView.getSelectionModel().getSelectedItem().clearCount();
+	// tableView.getSelectionModel().getSelectedItem().clearCount();
 
 	printCurrentPrice();
     }
@@ -390,6 +390,7 @@ public class TableOrderLayoutController implements Initializable {
 		    item.setStock(item.getStock() - 1);
 		    printCurrentPrice();
 
+		    // 재고량이 일정 이하일 때 패널 상태를 변화시킨다.
 		    if (item.getStock() < 10) {
 			pane.setStyle("-fx-border-color: #000000;" + "-fx-border-width: 1.5;" + "-fx-border-radius: 15;"
 				+ "-fx-background-radius: 16.4, 15;" + "-fx-background-color: #FFAAAA");

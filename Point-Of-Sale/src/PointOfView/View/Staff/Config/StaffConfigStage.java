@@ -14,6 +14,12 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+/**
+ * 직원 관리 스테이지
+ * 
+ * @author Jeongsam
+ *
+ */
 public class StaffConfigStage extends Stage {
 
     private MainApp mainApp;

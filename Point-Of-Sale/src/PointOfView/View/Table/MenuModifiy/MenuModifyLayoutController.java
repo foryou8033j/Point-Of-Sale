@@ -29,6 +29,12 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+/**
+ * 메뉴 수정 컨트롤러
+ * 
+ * @author Jeongsam
+ *
+ */
 public class MenuModifyLayoutController {
 
     private Stage stage;

@@ -14,6 +14,12 @@ import javafx.scene.Node;
 import javafx.scene.chart.XYChart;
 import javafx.scene.layout.StackPane;
 
+/**
+ * 메뉴 통계 전처리 클래스
+ * 
+ * @author Jeongsam
+ *
+ */
 public class MenuStasticsModel {
 
     private Menues menues;
@@ -94,8 +100,6 @@ public class MenuStasticsModel {
 	    // XYChart.Data<> data = new XYChart.Data<>(menuNames.get(i), count);
 
 	    XYChart.Data<String, Integer> data = new XYChart.Data<>(menuNames.get(i), count);
-
-
 
 	    series.getData().add(data);
 	}

@@ -7,6 +7,12 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
+/**
+ * 재고 관리 아이템 컨트롤러
+ * 
+ * @author Jeongsam
+ *
+ */
 public class StockItemLayoutController {
 
     @FXML
@@ -17,19 +23,19 @@ public class StockItemLayoutController {
 
     @FXML
     private Text count;
-    
+
     private MenuItem item;
     private Menues menu;
 
     @FXML
     void handleLess(ActionEvent event) {
-	
-	if(item.getStock() == 0 ) 
+
+	if (item.getStock() == 0)
 	    return;
-	
+
 	item.setStock(item.getStock() - 1);
 	count.setText(String.valueOf(item.getStock()));
-	
+
 	save();
     }
 
@@ -37,27 +43,27 @@ public class StockItemLayoutController {
     void handleMore(ActionEvent event) {
 	item.setStock(item.getStock() + 1);
 	count.setText(String.valueOf(item.getStock()));
-	
+
 	save();
     }
-    
+
     @FXML
     void handleMuchMore(ActionEvent event) {
 	item.setStock(item.getStock() + 10);
 	count.setText(String.valueOf(item.getStock()));
-	
+
 	save();
     }
-    
+
     private void save() {
 	menu.saveDataToFile();
     }
-    
+
     public void setMenuItem(Menues menu, MenuItem item) {
 
 	this.menu = menu;
 	this.item = item;
-	
+
 	name.setText(item.getName());
 	count.setText(String.valueOf(item.getStock()));
     }

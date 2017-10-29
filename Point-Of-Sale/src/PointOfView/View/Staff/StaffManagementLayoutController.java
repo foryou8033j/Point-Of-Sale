@@ -25,6 +25,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ * 직원 관리 레이아웃
+ * @author Jeongsam
+ *
+ */
 public class StaffManagementLayoutController implements Initializable {
 
     private StaffModel currentSelectedStaffModel = null;

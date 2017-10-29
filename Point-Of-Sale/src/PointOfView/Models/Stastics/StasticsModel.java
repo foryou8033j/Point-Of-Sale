@@ -5,6 +5,12 @@ import PointOfView.Models.Receipt.Receipt;
 import PointOfView.Models.Stastics.Menu.MenuStasticsModel;
 import PointOfView.Models.Stastics.Sale.SaleStasticsModel;
 
+/**
+ * 통계 관리 클래스
+ * 
+ * @author Jeongsam
+ *
+ */
 public class StasticsModel {
 
     private Receipt receipt;
@@ -18,7 +24,6 @@ public class StasticsModel {
 	this.receipt = receipt;
 	this.menues = menues;
 
-	
 	saleStasticsModel = new SaleStasticsModel(receipt);
 	menuStasticsModel = new MenuStasticsModel(menues, receipt);
 

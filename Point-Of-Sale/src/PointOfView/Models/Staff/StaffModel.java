@@ -17,6 +17,12 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/**
+ * StaffModel 클래스
+ * 
+ * @author Jeongsam
+ *
+ */
 @XmlAccessorType(XmlAccessType.NONE)
 public class StaffModel {
 
@@ -24,7 +30,7 @@ public class StaffModel {
     private StringProperty category = new SimpleStringProperty();
     private StringProperty part = new SimpleStringProperty();
     private StringProperty status = new SimpleStringProperty();
-    
+
     private StringProperty pay = new SimpleStringProperty();
 
     private StopWatch stopwatch;
@@ -57,7 +63,7 @@ public class StaffModel {
 	lastMonth = Calendar.getInstance().get(Calendar.MONTH);
 
 	pay.set("6550");
-	
+
 	stopwatch = new StopWatch();
 
 	staffWorkListener();
@@ -96,14 +102,14 @@ public class StaffModel {
 		try {
 		    new Robot().delay(1000);
 		} catch (AWTException e) {
-		    //Sleep Interrupted가 반복하면 쓰레드 외부에서 Interrupted가 발생한것으로 판단하고 반복종료
+		    // Sleep Interrupted가 반복하면 쓰레드 외부에서 Interrupted가 발생한것으로 판단하고 반복종료
 		    break;
 		}
 
 	    }
 
 	});
-	
+
 	thread.setDaemon(true);
 	thread.start();
 
@@ -179,9 +185,9 @@ public class StaffModel {
     public void quitWork() {
 
 	try {
-	    
+
 	    thread.interrupt();
-	    
+
 	    if (isWork())
 		stopwatch.stop();
 
@@ -190,7 +196,6 @@ public class StaffModel {
 		stopwatch.stop();
 	    }
 
-	    
 	} catch (Exception e) {
 	    // ignore
 	}
@@ -221,7 +226,7 @@ public class StaffModel {
     public int getMonthlyWorkHour() {
 	return monthlyWorkHour;
     }
-    
+
     @XmlAttribute(name = "pay")
     public String getPay() {
 	return pay.get();

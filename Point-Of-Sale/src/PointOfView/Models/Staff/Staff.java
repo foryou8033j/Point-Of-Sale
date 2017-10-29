@@ -14,6 +14,12 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
+/**
+ * Staff 정보 관리
+ * 
+ * @author Jeongsam
+ *
+ */
 public class Staff {
 
     private ObservableList<StaffModel> staffModels = FXCollections.observableArrayList();
@@ -22,39 +28,39 @@ public class Staff {
     private ObservableList<String> jobPart;
 
     private int payPerHour = 6550;
-    
+
     private File file = new File("POS_Staff.xml");
 
     public Staff() {
 	initJobCategory();
 	initJobPart();
-	
+
 	loadDataFromFile();
 
     }
 
     private void initJobCategory() {
-	
+
 	jobCategory = FXCollections.observableArrayList("사장", "부사장", "직원", "아르바이트", "용역", "일당", "대타");
     }
 
     private void initJobPart() {
-	
+
 	jobPart = FXCollections.observableArrayList("홀", "주방", "사무실", "배달", "홍보", "관리", "매니저");
     }
-    
+
     public void saveAndQuit() {
-	
-	for(StaffModel model:staffModels) {
-	    
+
+	for (StaffModel model : staffModels) {
+
 	    model.quitWork();
-	    
+
 	}
-	
+
 	saveDataToFile();
-	
-	//saveAndQuit();
-	
+
+	// saveAndQuit();
+
     }
 
     public void loadDataFromFile() {

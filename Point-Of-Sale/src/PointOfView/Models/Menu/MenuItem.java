@@ -9,17 +9,23 @@ import javax.xml.bind.annotation.XmlType;
 
 import PointOfView.Models.OrderList.GridPositionModel;
 
+/**
+ * Menu 를 관리한다.
+ * 
+ * @author Jeongsam
+ *
+ */
 @XmlType(name = "menuitem")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class MenuItem extends GridPositionModel {
-    
+
     @XmlAttribute(name = "name")
     private String name = null;
     @XmlAttribute(name = "category")
     private String category = null;
     @XmlAttribute(name = "price")
     private int price;
-    
+
     @XmlAttribute(name = "stock")
     private int stock;
 
@@ -72,11 +78,11 @@ public class MenuItem extends GridPositionModel {
     public void setPrice(int price) {
 	this.price = price;
     }
-    
+
     public void setStock(int i) {
 	stock = i;
     }
-    
+
     public int getStock() {
 	return stock;
     }

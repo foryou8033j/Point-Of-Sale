@@ -11,6 +11,12 @@ import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ * 현금 결제 컨트롤러
+ * 
+ * @author Jeongsam
+ *
+ */
 public class CashPaymentLayoutController {
 
     @FXML

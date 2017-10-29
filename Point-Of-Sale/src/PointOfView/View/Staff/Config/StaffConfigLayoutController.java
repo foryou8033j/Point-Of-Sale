@@ -37,6 +37,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
+/**
+ * 직원 정보 수정 레이아웃
+ * @author Jeongsam
+ *
+ */
 public class StaffConfigLayoutController implements Initializable {
 
     // ContextMenu 활성화를 위한 enum
@@ -62,7 +67,7 @@ public class StaffConfigLayoutController implements Initializable {
     TableColumn pay;
 
     private MainApp mainApp;
-    private Stage stage; 
+    private Stage stage;
 
     final IntegerProperty dataDragFromData = new SimpleIntegerProperty(-1);
 
@@ -138,7 +143,8 @@ public class StaffConfigLayoutController implements Initializable {
 	delete.setOnAction(new EventHandler<ActionEvent>() {
 	    @Override
 	    public void handle(ActionEvent arg0) {
-		mainApp.getDataManagement().getStaffs().getStaffDatas().remove(table.getSelectionModel().getSelectedItem());
+		mainApp.getDataManagement().getStaffs().getStaffDatas()
+			.remove(table.getSelectionModel().getSelectedItem());
 	    }
 
 	});
@@ -247,7 +253,7 @@ public class StaffConfigLayoutController implements Initializable {
     private void handleAddMember() {
 
 	new StaffAddStage(stage, mainApp.getDataManagement().getStaffs()).showAndWait();
-	
+
     }
 
     public class EditingCell extends TableCell<StaffModel, String> {

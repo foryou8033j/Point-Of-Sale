@@ -5,6 +5,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+/**
+ * GridPane의 Column, Row 값 관리 클래스
+ * 
+ * @author Jeongsam
+ *
+ */
 @XmlType(name = "position")
 public class GridPositionModel {
 

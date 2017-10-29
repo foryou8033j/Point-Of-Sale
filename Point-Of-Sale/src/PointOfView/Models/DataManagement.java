@@ -9,6 +9,12 @@ import java.util.Properties;
 import PointOfView.Models.Menu.Menues;
 import PointOfView.Models.Staff.Staff;
 
+/**
+ * 고정 데이터 관리
+ * 
+ * @author Jeongsam
+ *
+ */
 public class DataManagement {
 
     private String propertiesFileName = "config.properties";
@@ -93,7 +99,7 @@ public class DataManagement {
 	adminPassword = password;
     }
 
-    public void loadProperties(){
+    public void loadProperties() {
 
 	try {
 
@@ -118,7 +124,7 @@ public class DataManagement {
 	    System.out.println(getPassword());
 
 	} catch (IOException e) {
-	    
+
 	}
 
     }

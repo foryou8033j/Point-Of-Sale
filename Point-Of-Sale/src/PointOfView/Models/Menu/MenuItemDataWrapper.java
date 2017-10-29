@@ -9,6 +9,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * {@link MenuItem} 을 JAXB 에 랩핑한다.
+ * 
+ * @author Jeongsam
+ *
+ */
 @XmlRootElement(name = "Menuitems")
 public class MenuItemDataWrapper {
 

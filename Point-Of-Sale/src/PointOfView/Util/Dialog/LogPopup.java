@@ -10,6 +10,12 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+/**
+ * MouseEvent 를 받아 LogDialog를 OverView 한다.
+ * 
+ * @author Jeongsam
+ *
+ */
 public class LogPopup extends Stage {
 
     public LogPopup(MouseEvent event, String title, String object) {
@@ -32,7 +38,7 @@ public class LogPopup extends Stage {
 	setScene(scene);
 
     }
-    
+
     public void movePos(MouseEvent event) {
 	setX(event.getScreenX() - (double) 5.0);
 	setY(event.getScreenY() - (double) 30.0);

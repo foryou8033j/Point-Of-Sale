@@ -8,6 +8,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * 영수증 데이터를 JAXB에 랩핑 하는 클래스
+ * 
+ * @author Jeongsam
+ *
+ */
 @XmlRootElement(name = "Receipt")
 public class ReceiptDataWrapper {
 

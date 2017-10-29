@@ -13,6 +13,12 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/**
+ * 주문 리스트 관리 클래스
+ * 
+ * @author Jeongsam
+ *
+ */
 @XmlType(name = "orderList")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class OrderList extends MenuItem {
