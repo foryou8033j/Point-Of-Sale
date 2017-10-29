@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-border-color: #000000; -fx-border-width: 3; -fx-border-radius: 80; -fx-background-radius: 87,81; -fx-background-color: #D7FFF1;" stylesheets="@../Resource/CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.RootLayoutController">
+<BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-border-color: #000000; -fx-border-width: 3; -fx-border-radius: 80; -fx-background-radius: 87,81; -fx-background-color: #D7FFF1;" stylesheets="https://ci.kumoh.ac.kr/api/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.RootLayoutController">
    <top>
       <VBox alignment="CENTER" prefHeight="121.0" prefWidth="265.0" BorderPane.alignment="CENTER">
          <children>

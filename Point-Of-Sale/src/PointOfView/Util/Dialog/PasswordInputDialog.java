@@ -1,5 +1,7 @@
 package PointOfView.Util.Dialog;
 
+import java.net.URL;
+
 import PointOfView.MainApp;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -74,9 +76,14 @@ public class PasswordInputDialog extends Stage {
 
     private void initLayout() {
 
-	String css = this.getClass().getResource("/PointOfView/Resource/CSS/JMetroLightTheme.css").toExternalForm();
+	/*URL url = this.getClass().getResource("https://ci.kumoh.ac.kr/api/JMetroLightTheme.css");
+	if (url == null) {
+	    System.out.println("Resource not found. Aborting.");
+	    System.exit(-1);
+	}
+	String css = url.toExternalForm();*/
 
-	vb.getStylesheets().add(css);
+	
 	vb.setStyle("-fx-border-width: 3; -fx-border-color: #F68657;");
 
 	vb.setPadding(new Insets(10, 10, 10, 10));
@@ -149,6 +156,7 @@ public class PasswordInputDialog extends Stage {
 	});
 
 	setTitle(mainApp.getDataManagement().getPOSTitle());
+	setAlwaysOnTop(true);
 	initOwner(mainApp.getPrimaryStage());
 	initModality(Modality.APPLICATION_MODAL);
 	initStyle(StageStyle.UNDECORATED);
@@ -158,6 +166,8 @@ public class PasswordInputDialog extends Stage {
 	setResizable(false);
 
 	Scene scene = new Scene(vb);
+	scene.getStylesheets().add("https://ci.kumoh.ac.kr/api/JMetroLightTheme.css");
+	
 	setScene(scene);
 
 	setOnCloseRequest(Event -> {

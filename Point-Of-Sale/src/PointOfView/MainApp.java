@@ -49,6 +49,8 @@ public class MainApp extends Application {
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	double width = screenSize.getWidth();
 	double height = screenSize.getHeight();
+	
+	
 
 	// primaryStage.setAlwaysOnTop(true);
 	primaryStage.setFocused(true);
@@ -56,6 +58,9 @@ public class MainApp extends Application {
 	primaryStage.setHeight(670);
 	primaryStage.setResizable(false);
 	primaryStage.initStyle(StageStyle.UNDECORATED);
+	
+	/*String css = this.getClass().getResource("/PointOfView/Resource/CSS/JMetroLightTheme.css").toExternalForm();
+	primaryStage.getScene().getStylesheets().add(css);*/
 
 	// 최초 화면을 무조건 화면 중앙으로 이동
 	primaryStage.setX(width / 2 - primaryStage.getWidth() / 2);

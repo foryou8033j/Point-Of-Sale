@@ -1,5 +1,7 @@
 package PointOfView.Util.Dialog;
 
+import java.net.URL;
+
 import PointOfView.MainApp;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -49,9 +51,6 @@ public class NumberInputDialog extends Stage {
 	this.mainApp = mainApp;
 	this.title = new Text(title);
 
-	String css = this.getClass().getResource("/PointOfView/Resource/CSS/JMetroLightTheme.css").toExternalForm();
-
-	vb.getStylesheets().add(css);
 	vb.setStyle("-fx-border-width: 3; -fx-border-color: #F68657;");
 
 	inputBox.setEditable(editable);
@@ -123,6 +122,7 @@ public class NumberInputDialog extends Stage {
 
 	setTitle(mainApp.getDataManagement().getPOSTitle());
 	initOwner(mainApp.getPrimaryStage());
+	setAlwaysOnTop(true);
 	initModality(Modality.APPLICATION_MODAL);
 	initStyle(StageStyle.UNDECORATED);
 
@@ -131,6 +131,7 @@ public class NumberInputDialog extends Stage {
 	setResizable(false);
 
 	Scene scene = new Scene(vb);
+	scene.getStylesheets().add("https://ci.kumoh.ac.kr/api/JMetroLightTheme.css");
 	setScene(scene);
 
 	setOnCloseRequest(Event -> {

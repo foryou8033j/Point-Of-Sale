@@ -36,7 +36,9 @@
     <table discount="0" payMoney="0" index="15" column="2" row="5" isShow="true"/>
     <table discount="0" payMoney="0" index="16" column="3" row="4" isShow="true"/>
     <table discount="0" payMoney="0" index="17" column="3" row="5" isShow="true"/>
-    <table discount="0" payMoney="0" index="18" column="4" row="4" isShow="true"/>
+    <table discount="0" payMoney="0" index="18" column="4" row="4" isShow="true">
+        <orderlist count="2" name="하이트" category="주류" price="4500" stock="0" column="0" row="6" isShow="true"/>
+    </table>
     <table discount="0" payMoney="0" index="19" column="4" row="5" isShow="true"/>
     <table discount="0" payMoney="0" index="20" column="5" row="4" isShow="true"/>
     <table discount="0" payMoney="0" index="21" column="5" row="5" isShow="true"/>

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../Resource/CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Title.TitleLayoutController">
+<BorderPane maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" stylesheets="https://ci.kumoh.ac.kr/api/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Title.TitleLayoutController">
    <top>
       <Button alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#handleTableManagementScreen" prefHeight="200.0" prefWidth="600.0" style="-fx-font-size: 48; -fx-font-family: &quot;Malgun Gothic&quot;; -fx-font-weight: bold;" text="주문 관리" BorderPane.alignment="CENTER">
          <BorderPane.margin>

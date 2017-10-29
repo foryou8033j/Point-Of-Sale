@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #EFFFE9; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-border-radius: 15; -fx-background-radius: 16.4, 5;" stylesheets="@../../../Resource/CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Table.Overview.TableOverviewLayoutController">
+<BorderPane prefHeight="80.0" prefWidth="160.0" style="-fx-background-color: #EFFFE9; -fx-border-color: #000000; -fx-border-width: 1.5; -fx-border-radius: 15; -fx-background-radius: 16.4, 5;" stylesheets="https://ci.kumoh.ac.kr/api/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Table.Overview.TableOverviewLayoutController">
    <top>
       <Label fx:id="tableNumber" alignment="CENTER" text="TableNumberLabel" BorderPane.alignment="CENTER">
          <BorderPane.margin>

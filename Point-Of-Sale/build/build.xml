@@ -19,21 +19,46 @@
 	
 		<mkdir dir="externalLibs" />
 	
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Jeongsam\git\Point-Of-Sale\Point-Of-Sale\src\PointOfView\Resource\API">
+				<filename name="commons-lang3-3.6-test-sources.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Jeongsam\git\Point-Of-Sale\Point-Of-Sale\src\PointOfView\Resource\API">
+				<filename name="commons-lang3-3.6-sources.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Jeongsam\git\Point-Of-Sale\Point-Of-Sale\src\PointOfView\Resource\API">
+				<filename name="commons-lang3-3.6-javadoc.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Jeongsam\git\Point-Of-Sale\Point-Of-Sale\src\PointOfView\Resource\CSS">
+				<filename name="JMetroLightTheme.css"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Jeongsam\git\Point-Of-Sale\Point-Of-Sale\src\PointOfView\Resource\API">
+				<filename name="commons-lang3-3.6-tests.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\Jeongsam\git\Point-Of-Sale\Point-Of-Sale\src\PointOfView\Resource\API">
+				<filename name="commons-lang3-3.6.jar"/>
+			</fileset>
+		</copy>
 	
 		<mkdir dir="project" />
 		<copy todir="project">
-			<fileset dir="C:\Users\foryo\git\Point-Of-Sale\Point-Of-Sale">
+			<fileset dir="C:\Users\Jeongsam\git\Point-Of-Sale\Point-Of-Sale">
 				<include name="src/**" />
 			</fileset>
 		</copy>
 		<copy todir="project">
-			<fileset dir="C:\Users\foryo\git\Point-Of-Sale\Point-Of-Sale">
+			<fileset dir="C:\Users\Jeongsam\git\Point-Of-Sale\Point-Of-Sale">
 				<include name="Image/**" />
-			</fileset>
-		</copy>
-		<copy todir="project">
-			<fileset dir="C:\Users\foryo\git\Point-Of-Sale\Point-Of-Sale">
-				<include name="CSS/**" />
 			</fileset>
 		</copy>
 	
@@ -48,17 +73,18 @@
 		<!-- Copy project-libs references -->
 		<copy todir="build/libs">
 			<fileset dir="externalLibs">
+				<include name="commons-lang3-3.6.jar"/>
+				<include name="commons-lang3-3.6-sources.jar"/>
+				<include name="commons-lang3-3.6-tests.jar"/>
+				<include name="JMetroLightTheme.css"/>
+				<include name="commons-lang3-3.6-test-sources.jar"/>
+				<include name="commons-lang3-3.6-javadoc.jar"/>
 			</fileset>
 		</copy>
 	
 		<!-- Copy project references -->
 	
 		<!-- Copy project sources itself -->
-		<copy todir="build/src">
-			<fileset dir="project/CSS">
-				<include name="**/*"/>
-			</fileset>
-		</copy>
 		<copy todir="build/src">
 			<fileset dir="project/src">
 				<include name="**/*"/>
@@ -80,9 +106,6 @@
 	
 		<!-- Copy over none Java-Files -->
 		<copy todir="build/classes">
-		<fileset dir="project/CSS">
-			<exclude name="**/*.java"/>
-		</fileset>
 		<fileset dir="project/src">
 			<exclude name="**/*.java"/>
 		</fileset>

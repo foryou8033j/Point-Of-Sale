@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="473.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Staff.Config.StaffConfigLayoutController">
+   <children>
+      <TableView fx:id="table" editable="true" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <tooltip>
+            <Tooltip text="오른쪽 마우스를 눌러 데이터를 추가하세요." />
+         </tooltip>
+      </TableView>
+      <ButtonBar layoutX="50.0" layoutY="566.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="15.0" />
+   </children>
+</AnchorPane>

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<GridPane fx:id="pane" prefHeight="35.0" prefWidth="507.0" stylesheets="@../../../Resource/CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Stock.Item.StockItemLayoutController">
+<GridPane fx:id="pane" prefHeight="35.0" prefWidth="507.0" stylesheets="https://ci.kumoh.ac.kr/api/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Stock.Item.StockItemLayoutController">
    <rowConstraints>
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
    </rowConstraints>

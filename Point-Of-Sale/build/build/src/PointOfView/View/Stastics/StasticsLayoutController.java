@@ -3,7 +3,6 @@ package PointOfView.View.Stastics;
 import PointOfView.MainApp;
 import PointOfView.View.Stastics.Menu.MenuStasticsLayoutController;
 import PointOfView.View.Stastics.Sale.SaleStasticsLayoutController;
-import PointOfView.View.Stastics.Time.TimeStasticsLayoutController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +10,11 @@ import javafx.scene.control.Tab;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+/**
+ * 매출 통계 컨트롤러
+ * @author Jeongsam
+ *
+ */
 public class StasticsLayoutController {
 
     @FXML
@@ -19,8 +23,6 @@ public class StasticsLayoutController {
     @FXML
     private Tab menuStasticsTab;
 
-    @FXML
-    private Tab timeStasticsPane;
 
     @FXML
     void handleClose(ActionEvent event) {
@@ -34,6 +36,7 @@ public class StasticsLayoutController {
     		BorderPane pane = loader.load();
     		
     		SaleStasticsLayoutController controller = loader.getController();
+    		controller.setStastics(mainApp.getStasticsModel());
     		
     		saleStasticsTab.setContent(pane);
     	}catch (Exception e) {
@@ -48,22 +51,9 @@ public class StasticsLayoutController {
     		BorderPane pane = loader.load();
     		
     		MenuStasticsLayoutController controller = loader.getController();
+    		controller.setStastics(mainApp.getDataManagement().getMenues(), stage, mainApp.getStasticsModel());
     		
     		menuStasticsTab.setContent(pane);
-    	}catch (Exception e) {
-    		//ignore
-    	}
-    }
-
-    @FXML
-    void handleTimeTabSelected(ActionEvent event) {
-    	try {
-    		FXMLLoader loader = new FXMLLoader(getClass().getResource("Time/TimeStasticsLayout.fxml"));
-    		BorderPane pane = loader.load();
-    		
-    		TimeStasticsLayoutController controller = loader.getController();
-    		
-    		timeStasticsPane.setContent(pane);
     	}catch (Exception e) {
     		//ignore
     	}
@@ -76,8 +66,9 @@ public class StasticsLayoutController {
     	this.mainApp = mainApp;
     	this.stage = stage;
     	
+    	mainApp.getReceipts().loadDataFromFile();
+    	
     	handleSaleTabSelected(null);
-    	handleTimeTabSelected(null);
     	handleMenuTabSelected(null);
     	
     	

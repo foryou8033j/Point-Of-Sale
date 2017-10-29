@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #000000; -fx-border-width: 1.5; -fx-border-radius: 15.4, 16; -fx-background-radius: 16;" stylesheets="@../../Resource/CSS/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Config.ConfigLayoutController">
+<BorderPane maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #000000; -fx-border-width: 1.5; -fx-border-radius: 15.4, 16; -fx-background-radius: 16;" stylesheets="https://ci.kumoh.ac.kr/api/JMetroLightTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PointOfView.View.Config.ConfigLayoutController">
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
