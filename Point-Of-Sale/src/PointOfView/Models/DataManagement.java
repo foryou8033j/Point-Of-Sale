@@ -23,7 +23,7 @@ public class DataManagement {
     private String adminPassword = "1234";
 
     private Menues menues = new Menues();
-    private Staff staffs = new Staff();
+    private Staff staffs = null;
 
     public DataManagement() {
 	loadProperties();

@@ -54,6 +54,7 @@ public class NumberInputDialog extends Stage {
 	vb.setStyle("-fx-border-width: 3; -fx-border-color: #F68657;");
 
 	inputBox.setEditable(editable);
+	inputBox.fontProperty().set(Font.font("Malgun Gothic", 20));
 
 	vb.setPadding(new Insets(10, 10, 10, 10));
 
@@ -61,14 +62,14 @@ public class NumberInputDialog extends Stage {
 	for (int i = 0; i < 10; i++) {
 	    final int j = i;
 	    button[i] = new Button(String.valueOf(i));
-	    button[i].setPrefSize(100, 100);
+	    button[i].setPrefSize(200, 200);
 	    button[i].setOnAction(e -> {
 		inputBox.setText(inputBox.getText() + String.valueOf(j));
 	    });
 	}
 
 	button[10] = new Button("<");
-	button[10].setPrefSize(100, 100);
+	button[10].setPrefSize(200, 200);
 	button[10].setOnAction(e -> {
 	    if (inputBox.getText().equals(""))
 		return;
@@ -77,7 +78,7 @@ public class NumberInputDialog extends Stage {
 
 	button[11] = new Button("OK");
 	button[11].setDefaultButton(true);
-	button[11].setPrefSize(100, 100);
+	button[11].setPrefSize(200, 200);
 	button[11].setOnAction(e -> {
 	    close();
 	});
@@ -115,7 +116,7 @@ public class NumberInputDialog extends Stage {
 	inputBox.setFont(Font.font("Malgun Gothic"));
 
 	btnCancle.setCancelButton(true);
-	btnCancle.setPrefSize(150, 300);
+	btnCancle.setPrefSize(200, 400);
 	btnCancle.setOnAction(e -> {
 	    close();
 	});
@@ -126,8 +127,8 @@ public class NumberInputDialog extends Stage {
 	initModality(Modality.APPLICATION_MODAL);
 	initStyle(StageStyle.UNDECORATED);
 
-	setWidth(240);
-	setHeight(300);
+	setWidth(340);
+	setHeight(400);
 	setResizable(false);
 
 	Scene scene = new Scene(vb);

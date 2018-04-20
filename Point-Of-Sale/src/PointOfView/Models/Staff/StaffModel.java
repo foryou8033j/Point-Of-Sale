@@ -101,7 +101,7 @@ public class StaffModel {
 		// 1000ms 마다 스레드를 반복
 		try {
 		    new Robot().delay(1000);
-		} catch (AWTException e) {
+		} catch (Exception e) {
 		    // Sleep Interrupted가 반복하면 쓰레드 외부에서 Interrupted가 발생한것으로 판단하고 반복종료
 		    break;
 		}

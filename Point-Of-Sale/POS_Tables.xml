@@ -1,70 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Tables>
-    <table discount="0" payMoney="0" index="0" column="0" row="0" isShow="true">
-        <orderlist count="2" name="전통육개장" category="주메뉴" price="8000" stock="0" column="0" row="0" isShow="true"/>
-        <orderlist count="1" name="콜라" category="음료수" price="1000" stock="0" column="5" row="5" isShow="true"/>
-    </table>
-    <table discount="0" payMoney="0" index="1" column="0" row="1" isShow="true"/>
-    <table discount="0" payMoney="0" index="2" column="0" row="4" isShow="true">
-        <orderlist count="3" name="전통육개장" category="주메뉴" price="8000" stock="0" column="0" row="0" isShow="true"/>
-        <orderlist count="1" name="하이트" category="주류" price="4500" stock="0" column="0" row="6" isShow="true"/>
-        <orderlist count="1" name="맛있는 참" category="주류" price="4000" stock="0" column="0" row="7" isShow="true"/>
-    </table>
-    <table discount="0" payMoney="0" index="3" column="0" row="5" isShow="true"/>
-    <table discount="0" payMoney="0" index="4" column="0" row="7" isShow="true"/>
-    <table discount="0" payMoney="0" index="5" column="0" row="8" isShow="true">
-        <orderlist count="1" name="전통육개장" category="주메뉴" price="8000" stock="0" column="0" row="0" isShow="true"/>
-        <orderlist count="1" name="맑은육개장" category="주메뉴" price="8000" stock="0" column="1" row="0" isShow="true"/>
-        <orderlist count="1" name="어린이맑은육개장" category="어린이메뉴" price="5000" stock="0" column="1" row="1" isShow="true"/>
-        <orderlist count="1" name="맛있는 참" category="주류" price="4000" stock="0" column="0" row="7" isShow="true"/>
-    </table>
-    <table discount="0" payMoney="0" index="6" column="2" row="0" isShow="true">
-        <orderlist count="1" name="어린이맑은육개장" category="어린이메뉴" price="5000" stock="0" column="1" row="1" isShow="true"/>
-        <orderlist count="1" name="콜라" category="음료수" price="1000" stock="0" column="5" row="5" isShow="true"/>
-        <orderlist count="1" name="전통육개장" category="주메뉴" price="8000" stock="0" column="0" row="0" isShow="true"/>
-    </table>
-    <table discount="0" payMoney="0" index="7" column="2" row="1" isShow="true"/>
-    <table discount="0" payMoney="0" index="8" column="3" row="1" isShow="true"/>
-    <table discount="0" payMoney="0" index="9" column="3" row="0" isShow="true"/>
-    <table discount="0" payMoney="0" index="10" column="4" row="0" isShow="true"/>
-    <table discount="0" payMoney="0" index="11" column="4" row="1" isShow="true"/>
-    <table discount="0" payMoney="0" index="12" column="5" row="0" isShow="true">
-        <orderlist count="1" name="육개장칼국수" category="주메뉴" price="8000" stock="0" column="2" row="0" isShow="true"/>
-    </table>
-    <table discount="0" payMoney="0" index="13" column="5" row="1" isShow="true"/>
-    <table discount="0" payMoney="0" index="14" column="2" row="4" isShow="true"/>
-    <table discount="0" payMoney="0" index="15" column="2" row="5" isShow="true"/>
-    <table discount="0" payMoney="0" index="16" column="3" row="4" isShow="true"/>
-    <table discount="0" payMoney="0" index="17" column="3" row="5" isShow="true"/>
-    <table discount="0" payMoney="0" index="18" column="4" row="4" isShow="true">
-        <orderlist count="2" name="하이트" category="주류" price="4500" stock="0" column="0" row="6" isShow="true"/>
-    </table>
-    <table discount="0" payMoney="0" index="19" column="4" row="5" isShow="true"/>
-    <table discount="0" payMoney="0" index="20" column="5" row="4" isShow="true"/>
-    <table discount="0" payMoney="0" index="21" column="5" row="5" isShow="true"/>
-    <table discount="0" payMoney="0" index="22" column="2" row="7" isShow="true"/>
-    <table discount="0" payMoney="0" index="23" column="2" row="8" isShow="true"/>
-    <table discount="0" payMoney="0" index="24" column="3" row="7" isShow="true"/>
-    <table discount="0" payMoney="0" index="25" column="3" row="8" isShow="true"/>
-    <table discount="0" payMoney="0" index="26" column="4" row="7" isShow="true"/>
-    <table discount="0" payMoney="0" index="27" column="4" row="8" isShow="true">
-        <orderlist count="1" name="맑은육개장" category="주메뉴" price="8000" stock="0" column="1" row="0" isShow="true"/>
-        <orderlist count="1" name="맛있는 참" category="주류" price="4000" stock="0" column="0" row="7" isShow="true"/>
-    </table>
-    <table discount="0" payMoney="0" index="28" column="5" row="7" isShow="true"/>
-    <table discount="0" payMoney="0" index="29" column="5" row="8" isShow="true"/>
-    <table discount="0" payMoney="0" index="30" column="7" row="1" isShow="true"/>
-    <table discount="0" payMoney="0" index="31" column="7" row="0" isShow="true">
-        <orderlist count="1" name="육개장칼국수" category="주메뉴" price="8000" stock="0" column="2" row="0" isShow="true"/>
-    </table>
-    <table discount="0" payMoney="0" index="32" column="7" row="4" isShow="true"/>
-    <table discount="0" payMoney="0" index="33" column="7" row="5" isShow="true"/>
-    <table discount="0" payMoney="0" index="34" column="7" row="7" isShow="true">
-        <orderlist count="1" name="전통육개장" category="주메뉴" price="8000" stock="0" column="0" row="0" isShow="true"/>
-        <orderlist count="1" name="맑은육개장" category="주메뉴" price="8000" stock="0" column="1" row="0" isShow="true"/>
-        <orderlist count="1" name="모듬육개장전골(소)" category="주메뉴" price="21000" stock="0" column="0" row="4" isShow="true"/>
-        <orderlist count="5" name="맛있는 참" category="주류" price="4000" stock="0" column="0" row="7" isShow="true"/>
-    </table>
-    <table discount="0" payMoney="0" index="35" column="7" row="8" isShow="true"/>
-    <table discount="0" payMoney="0" index="36" column="1" row="3" isShow="true"/>
+    <table discount="0" payMoney="0" index="0" column="0" row="0" isShow="true"/>
+    <table discount="0" payMoney="0" index="1" column="1" row="0" isShow="true"/>
+    <table discount="0" payMoney="0" index="2" column="3" row="0" isShow="true"/>
+    <table discount="0" payMoney="0" index="3" column="4" row="0" isShow="true"/>
+    <table discount="0" payMoney="0" index="4" column="6" row="0" isShow="true"/>
+    <table discount="0" payMoney="0" index="5" column="7" row="0" isShow="true"/>
+    <table discount="0" payMoney="0" index="6" column="0" row="2" isShow="true"/>
+    <table discount="0" payMoney="0" index="7" column="1" row="2" isShow="true"/>
+    <table discount="0" payMoney="0" index="8" column="3" row="2" isShow="true"/>
+    <table discount="0" payMoney="0" index="9" column="4" row="2" isShow="true"/>
+    <table discount="0" payMoney="0" index="10" column="6" row="2" isShow="true"/>
+    <table discount="0" payMoney="0" index="11" column="7" row="2" isShow="true"/>
+    <table discount="0" payMoney="0" index="12" column="0" row="4" isShow="true"/>
+    <table discount="0" payMoney="0" index="13" column="1" row="4" isShow="true"/>
+    <table discount="0" payMoney="0" index="14" column="3" row="4" isShow="true"/>
+    <table discount="0" payMoney="0" index="15" column="4" row="4" isShow="true"/>
+    <table discount="0" payMoney="0" index="16" column="6" row="4" isShow="true"/>
+    <table discount="0" payMoney="0" index="17" column="7" row="4" isShow="true"/>
+    <table discount="0" payMoney="0" index="18" column="0" row="6" isShow="true"/>
+    <table discount="0" payMoney="0" index="19" column="1" row="6" isShow="true"/>
+    <table discount="0" payMoney="0" index="20" column="3" row="6" isShow="true"/>
+    <table discount="0" payMoney="0" index="21" column="4" row="6" isShow="true"/>
+    <table discount="0" payMoney="0" index="22" column="6" row="6" isShow="true"/>
+    <table discount="0" payMoney="0" index="23" column="7" row="6" isShow="true"/>
+    <table discount="0" payMoney="0" index="24" column="0" row="8" isShow="true"/>
+    <table discount="0" payMoney="0" index="25" column="1" row="8" isShow="true"/>
+    <table discount="0" payMoney="0" index="26" column="3" row="8" isShow="true"/>
+    <table discount="0" payMoney="0" index="27" column="4" row="8" isShow="true"/>
+    <table discount="0" payMoney="0" index="28" column="6" row="8" isShow="true"/>
+    <table discount="0" payMoney="0" index="29" column="7" row="8" isShow="true"/>
 </Tables>

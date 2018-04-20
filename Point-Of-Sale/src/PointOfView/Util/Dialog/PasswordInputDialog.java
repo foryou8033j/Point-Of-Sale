@@ -92,14 +92,14 @@ public class PasswordInputDialog extends Stage {
 	for (int i = 0; i < 10; i++) {
 	    final int j = i;
 	    button[i] = new Button(String.valueOf(i));
-	    button[i].setPrefSize(100, 100);
+	    button[i].setPrefSize(200, 200);
 	    button[i].setOnAction(e -> {
 		password.setText(password.getText() + String.valueOf(j));
 	    });
 	}
 
 	button[10] = new Button("<");
-	button[10].setPrefSize(100, 100);
+	button[10].setPrefSize(200, 200);
 	button[10].setOnAction(e -> {
 	    if (password.getText().equals(""))
 		return;
@@ -108,7 +108,7 @@ public class PasswordInputDialog extends Stage {
 
 	button[11] = new Button("OK");
 	button[11].setDefaultButton(true);
-	button[11].setPrefSize(100, 100);
+	button[11].setPrefSize(200, 200);
 	button[11].setOnAction(e -> {
 
 	    if (mode.equals(Mode.INPUT))
@@ -150,7 +150,7 @@ public class PasswordInputDialog extends Stage {
 	password.setFont(Font.font("Malgun Gothic"));
 
 	btnCancle.setCancelButton(true);
-	btnCancle.setPrefSize(150, 300);
+	btnCancle.setPrefSize(200, 400);
 	btnCancle.setOnAction(e -> {
 	    close();
 	});
@@ -161,8 +161,8 @@ public class PasswordInputDialog extends Stage {
 	initModality(Modality.APPLICATION_MODAL);
 	initStyle(StageStyle.UNDECORATED);
 
-	setWidth(240);
-	setHeight(300);
+	setWidth(340);
+	setHeight(400);
 	setResizable(false);
 
 	Scene scene = new Scene(vb);

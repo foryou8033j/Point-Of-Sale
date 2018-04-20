@@ -1558,7 +1558,7 @@
     <receipt>
         <payWay>CARD</payWay>
         <payTime>2017-10-29T03:30:31.955+09:00</payTime>
-        <tableData discount="0" payMoney="190000" index="14" column="0" row="0" isShow="false">
+        <tableData discount="0" payMoney="190000" index="14" column="-1" row="-1" isShow="false">
             <orderlist count="8" name="전통육개장" category="주메뉴" price="8000" stock="0" column="0" row="0" isShow="true"/>
             <orderlist count="3" name="맛있는 참" category="주류" price="4000" stock="0" column="0" row="7" isShow="true"/>
             <orderlist count="1" name="양지육개장전골(중)" category="주메뉴" price="26000" stock="0" column="1" row="3" isShow="true"/>
@@ -1575,13 +1575,54 @@
     <receipt>
         <payWay>CASH</payWay>
         <payTime>2017-10-29T03:30:43.964+09:00</payTime>
-        <tableData discount="0" payMoney="65000" index="23" column="0" row="0" isShow="false">
+        <tableData discount="0" payMoney="65000" index="23" column="-1" row="-1" isShow="false">
             <orderlist count="1" name="모듬육개장전골(대)" category="주메뉴" price="32000" stock="0" column="2" row="4" isShow="true"/>
             <orderlist count="1" name="메밀전병" category="부매뉴" price="5000" stock="0" column="4" row="3" isShow="true"/>
             <orderlist count="6" name="맛있는 참" category="주류" price="4000" stock="0" column="0" row="7" isShow="true"/>
         </tableData>
         <returnedCash>-4000</returnedCash>
         <tradeIndex>108</tradeIndex>
+        <cardCompany></cardCompany>
+        <cardName></cardName>
+        <cardNumber></cardNumber>
+    </receipt>
+    <receipt>
+        <payWay>CASH</payWay>
+        <payTime>2018-04-19T21:58:34.077+09:00</payTime>
+        <tableData discount="0" payMoney="85000" index="14" column="-1" row="-1" isShow="false">
+            <orderlist count="4" name="양지육개장전골(소)" category="주메뉴" price="21000" stock="0" column="0" row="3" isShow="true"/>
+        </tableData>
+        <returnedCash>-1000</returnedCash>
+        <tradeIndex>109</tradeIndex>
+        <cardCompany></cardCompany>
+        <cardName></cardName>
+        <cardNumber></cardNumber>
+    </receipt>
+    <receipt>
+        <payWay>CASH</payWay>
+        <payTime>2018-04-19T21:58:49.668+09:00</payTime>
+        <tableData discount="0" payMoney="42000" index="16" column="-1" row="-1" isShow="false">
+            <orderlist count="1" name="양지육개장전골(소)" category="주메뉴" price="21000" stock="0" column="0" row="3" isShow="true"/>
+            <orderlist count="1" name="전통육개장" category="주메뉴" price="8000" stock="0" column="0" row="0" isShow="true"/>
+            <orderlist count="1" name="맑은육개장" category="주메뉴" price="8000" stock="0" column="1" row="0" isShow="true"/>
+            <orderlist count="1" name="하이트" category="주류" price="4500" stock="0" column="0" row="6" isShow="true"/>
+        </tableData>
+        <returnedCash>-500</returnedCash>
+        <tradeIndex>110</tradeIndex>
+        <cardCompany></cardCompany>
+        <cardName></cardName>
+        <cardNumber></cardNumber>
+    </receipt>
+    <receipt>
+        <payWay>CASH</payWay>
+        <payTime>2018-04-19T21:59:47.403+09:00</payTime>
+        <tableData discount="0" payMoney="37000" index="2" column="0" row="0" isShow="false">
+            <orderlist count="3" name="전통육개장" category="주메뉴" price="8000" stock="0" column="0" row="0" isShow="true"/>
+            <orderlist count="2" name="하이트" category="주류" price="4500" stock="0" column="0" row="6" isShow="true"/>
+            <orderlist count="1" name="맛있는 참" category="주류" price="4000" stock="0" column="0" row="7" isShow="true"/>
+        </tableData>
+        <returnedCash>0</returnedCash>
+        <tradeIndex>111</tradeIndex>
         <cardCompany></cardCompany>
         <cardName></cardName>
         <cardNumber></cardNumber>

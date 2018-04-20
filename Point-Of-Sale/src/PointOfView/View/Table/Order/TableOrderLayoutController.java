@@ -374,12 +374,12 @@ public class TableOrderLayoutController implements Initializable {
 	    pane.setStyle("-fx-border-color: #000000;" + "-fx-border-width: 1.5;" + "-fx-border-radius: 15;"
 		    + "-fx-background-radius: 16.4, 15;" + "-fx-background-color: #EFFFE9");
 
-	    pane.setOnMousePressed(e -> {
+	    pane.setOnTouchPressed(e -> {
 		pane.setStyle("-fx-border-color: #0000FF;" + "-fx-border-width: 1.5;" + "-fx-border-radius: 15;"
 			+ "-fx-background-radius: 16.4, 15;" + "-fx-background-color: #FFFFFF");
 	    });
 
-	    pane.setOnMouseReleased(e -> {
+	    pane.setOnTouchReleased(e -> {
 		pane.setStyle("-fx-border-color: #000000; " + "-fx-border-width: 1.5;" + "-fx-border-radius: 15;"
 			+ "-fx-background-radius: 16.4, 15;" + "-fx-background-color: #EFFFE9");
 	    });

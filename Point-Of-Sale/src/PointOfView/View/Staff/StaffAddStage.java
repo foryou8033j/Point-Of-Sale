@@ -29,90 +29,90 @@ import javafx.stage.StageStyle;
  */
 public class StaffAddStage extends Stage {
 
-    private Staff staff;
+	private Staff staff;
 
-    public StaffAddStage(Stage stage, Staff staff) {
+	public StaffAddStage(Stage stage, Staff staff) {
 
-	super(StageStyle.UNDECORATED);
+		super(StageStyle.UNDECORATED);
 
-	this.staff = staff;
+		this.staff = staff;
 
-	initOwner(stage);
-	initModality(Modality.APPLICATION_MODAL);
-	setTitle("직원 추가");
+		initOwner(stage);
+		initModality(Modality.APPLICATION_MODAL);
+		setTitle("직원 추가");
 
-	initLayout();
+		initLayout();
 
-    }
+	}
 
-    private void initLayout() {
+	private void initLayout() {
 
-	VBox vb = new VBox(10);
-	vb.setAlignment(Pos.CENTER);
-	HBox hb = new HBox(15);
-	hb.setAlignment(Pos.CENTER);
+		VBox vb = new VBox(10);
+		vb.setAlignment(Pos.CENTER);
+		HBox hb = new HBox(15);
+		hb.setAlignment(Pos.CENTER);
 
-	vb.setStyle("-fx-border-width: 3; -fx-border-color:#F68657");
-	vb.setPadding(new Insets(15, 15, 15, 15));
+		vb.setStyle("-fx-border-width: 3; -fx-border-color:#F68657");
+		vb.setPadding(new Insets(15, 15, 15, 15));
 
-	VBox vbSub_1 = new VBox(5);
-	vbSub_1.setAlignment(Pos.CENTER);
-	VBox vbSub_2 = new VBox(5);
-	vbSub_2.setAlignment(Pos.CENTER);
-	VBox vbSub_3 = new VBox(5);
-	vbSub_3.setAlignment(Pos.CENTER);
+		VBox vbSub_1 = new VBox(5);
+		vbSub_1.setAlignment(Pos.CENTER);
+		VBox vbSub_2 = new VBox(5);
+		vbSub_2.setAlignment(Pos.CENTER);
+		VBox vbSub_3 = new VBox(5);
+		vbSub_3.setAlignment(Pos.CENTER);
 
-	TextField name = new TextField();
-	ComboBox<String> category = new ComboBox<String>();
-	ComboBox<String> part = new ComboBox<String>();
+		TextField name = new TextField();
+		ComboBox<String> category = new ComboBox<String>();
+		ComboBox<String> part = new ComboBox<String>();
 
-	category.setItems(staff.getJobCategory());
-	part.setItems(staff.getJobPart());
+		category.setItems(staff.getJobCategory());
+		part.setItems(staff.getJobPart());
 
-	vbSub_1.getChildren().addAll(new Label("이름"), name);
-	vbSub_2.getChildren().addAll(new Label("직별"), category);
-	vbSub_3.getChildren().addAll(new Label("파트"), part);
+		vbSub_1.getChildren().addAll(new Label("이름"), name);
+		vbSub_2.getChildren().addAll(new Label("직별"), category);
+		vbSub_3.getChildren().addAll(new Label("파트"), part);
 
-	hb.getChildren().addAll(vbSub_1, vbSub_2, vbSub_3);
+		hb.getChildren().addAll(vbSub_1, vbSub_2, vbSub_3);
 
-	HBox hbSub = new HBox(5);
-	hbSub.setAlignment(Pos.CENTER);
-	Button save = new Button("추가");
-	save.setDefaultButton(true);
-	save.setOnAction(e -> {
+		HBox hbSub = new HBox(5);
+		hbSub.setAlignment(Pos.CENTER);
+		Button save = new Button("추가");
+		save.setDefaultButton(true);
+		save.setOnAction(e -> {
 
-	    Alert alert = new Alert(AlertType.ERROR, "오류", ButtonType.OK);
-	    alert.initOwner(this);
-	    alert.setContentText(null);
+			Alert alert = new Alert(AlertType.ERROR, "오류", ButtonType.OK);
+			alert.initOwner(this);
+			alert.setContentText(null);
 
-	    if (name.getText().equals("")) {
-		alert.setHeaderText("이름을 입력 해 주세요.");
-		alert.showAndWait();
-		return;
-	    }
+			if (name.getText().equals("")) {
+				alert.setHeaderText("이름을 입력 해 주세요.");
+				alert.showAndWait();
+				return;
+			}
 
-	    staff.getStaffDatas().add(new StaffModel(name.getText(), category.getSelectionModel().getSelectedItem(),
-		    part.getSelectionModel().getSelectedItem()));
-	    staff.saveDataToFile();
+			staff.getStaffDatas().add(new StaffModel(name.getText(), category.getSelectionModel().getSelectedItem(),
+					part.getSelectionModel().getSelectedItem()));
+			staff.saveDataToFile();
 
-	    close();
-	});
+			close();
+		});
 
-	Button cancle = new Button("취소");
-	cancle.setCancelButton(true);
-	cancle.setOnAction(e -> {
-	    close();
-	});
-	hbSub.getChildren().addAll(save, cancle);
+		Button cancle = new Button("취소");
+		cancle.setCancelButton(true);
+		cancle.setOnAction(e -> {
+			close();
+		});
+		hbSub.getChildren().addAll(save, cancle);
 
-	vb.getChildren().addAll(hb, hbSub);
+		vb.getChildren().addAll(hb, hbSub);
 
-	Scene scene = new Scene(vb);
-	String css = this.getClass().getResource("/PointOfView/Resource/CSS/JMetroLightTheme.css").toExternalForm();
-	scene.getStylesheets().add(css);
+		Scene scene = new Scene(vb);
+		String css = this.getClass().getResource("/PointOfView/Resource/CSS/JMetroLightTheme.css").toExternalForm();
+		scene.getStylesheets().add(css);
 
-	setScene(scene);
+		setScene(scene);
 
-    }
+	}
 
 }
